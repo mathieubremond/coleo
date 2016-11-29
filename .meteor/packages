@@ -20,3 +20,18 @@ shell-server@0.2.1            # Server-side component of the `meteor shell` comm
 
 # autopublish@1.0.7             # Publish all data to the clients (for prototyping)
 # insecure@1.0.7                # Allow all DB writes from clients (for prototyping)
+
+kadira:flow-router          # Defines custom routes
+zimme:active-route          # To know if some route or path is the currently active route
+accounts-ui                 # Enable automatic login form
+accounts-password           # Enable automatic password encryption
+gwendall:auth-client-callbacks  # Callback after user authentication / logout
+meteortoys:allthings        # Dev tools to know what's inside the client db / session etc
+check                       # Add check verification en JS
+aldeed:collection2          # Allow to attach a schema to a Mongo Collection
+aldeed:autoform             # Generates HTML5 forms based on a Mongo Schema
+dburles:collection-helpers  # Ajoute des helpers aux collections
+kadira:blaze-layout         # Utilisation de {{ }}
+useraccounts:unstyled
+softwarerero:accounts-t9n
+useraccounts:flow-routing
