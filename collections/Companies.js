@@ -1,18 +1,17 @@
 import {defaultValidationMessages} from './defaultValidationMessages';
 
-var Companies = new Mongo.Collection('Companies');
+Companies = new Mongo.Collection('Companies');
 
-// Autorise l'insertion
+// Autorise l'insertion uniquement
 Companies.allow({
-    insert: () => true
-});
-// Empeche la suppression ou la modification
-Companies.deny({
-    remove: () => true,
-    update: () => true
+    'insert': function (userId,doc) {
+        /* user and doc checks ,
+         return true to allow insert */
+        return true;
+    }
 });
 
-var CompanySchema = new SimpleSchema({
+CompanySchema = new SimpleSchema({
     name: {
         type: String,
         label: 'Nom',
@@ -25,6 +24,7 @@ var CompanySchema = new SimpleSchema({
     }
 });
 
+
 // Ajout de messages de validation en français,
 // plus un message personnalisé pour ce schema
 if (Meteor.isClient) {
@@ -34,8 +34,6 @@ if (Meteor.isClient) {
     });
 }
 
-// Ajout du schema dans notre collection mongodb
-// /!\ MAJ automatique de la base de donnée si modification du schema
-// Des ajouts c'est pas trop problématiques, mais attention au suppression !!
+// Ajout du schema pour notre collection mongodb
 Companies.attachSchema(CompanySchema);
 

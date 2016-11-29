@@ -15,16 +15,16 @@ Template.inscription.onCreated(function () {
 AutoForm.addHooks(['NewCompanyForm'], {
     after: {
         insert: function (error, result) {
-            console.log("instance : " + INSTANCE);
+            console.log("instance : ", INSTANCE);
             if (!error) {
 
                 // On retient dans la ReactiveVar companyId l'id de
                 // la company tout juste créée
                 INSTANCE.companyId.set(result);
-                console.log("Id : " + result);
+                console.log("Id : ", result);
             } else {
                 INSTANCE.companyId.set(null);
-                console.log("error : " + error);
+                console.log("error : ", error);
             }
         }
     }
@@ -35,17 +35,27 @@ AutoForm.addHooks(['NewColeoUserForm'], {
         insert: function (doc) {
             console.log("Before inserting the coleo user");
             var userId = Meteor.userId();
-            console.log("User id = " + userId);
+            console.log("User id = ", userId);
 
             // Ajout des clés étrangères au document coleo user avant insertion
             doc.companyId = INSTANCE.companyId.get();
             doc.userId = userId;
 
-            console.log("doc = " + doc);
+            console.log("doc = ", doc);
 
             // Et maintenant on laisse autoform sauvegardé le document
             // Avec les clés etrangères qui vont bien
             return doc;
+        }
+    },
+    after: {
+        insert: function(doc) {
+            // Redirection vers suivi suite à l'inscription
+            if (!!Meteor.userId()) {
+                FlowRouter.go('suivi');
+            } else {
+                FlowRouter.go('login');
+            }
         }
     }
 });
@@ -55,10 +65,12 @@ Template.inscription.helpers({
     // Permet de modifier le dom en conséquence
     companyCreated: function () {
         return !!Template.instance().companyId.get();
+        // Si true, affiche l'étape suivante de l'inscription
     },
     // Un helper pour savoir on nous en sommes dans le processus d'inscription
     // Depuis le html
     userCreated: function () {
         return !!Meteor.userId();
+        // Si true, affiche l'étape suivante de l'inscription
     }
 });

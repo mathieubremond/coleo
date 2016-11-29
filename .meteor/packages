@@ -28,6 +28,7 @@ accounts-password           # Enable automatic password encryption
 gwendall:auth-client-callbacks  # Callback after user authentication / logout
 meteortoys:allthings        # Dev tools to know what's inside the client db / session etc
 check                       # Add check verification en JS
+aldeed:simple-schema        # Schema pour les collection mongo
 aldeed:collection2          # Allow to attach a schema to a Mongo Collection
 aldeed:autoform             # Generates HTML5 forms based on a Mongo Schema
 dburles:collection-helpers  # Ajoute des helpers aux collections
@@ -35,3 +36,4 @@ kadira:blaze-layout         # Utilisation de {{ }}
 useraccounts:unstyled
 softwarerero:accounts-t9n
 useraccounts:flow-routing
+ongoworks:security
