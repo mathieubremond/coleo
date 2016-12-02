@@ -1,0 +1,8 @@
+<template name="listUsers">
+    <h3>Liste des utilisateurs</h3>
+    <ul>
+        {{#each users}}
+            <li>{{firstName}} {{lastName}}</li>
+        {{/each}}
+    </ul>
+</template>

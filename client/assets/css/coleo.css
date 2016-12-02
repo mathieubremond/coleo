@@ -1,0 +1,58 @@
+.bg-login {
+
+}
+#logo{
+    background-image: url("assets/img/logo_beta.svg");
+    height: 50px;
+    width: 100px;
+    background-repeat: no-repeat;
+    margin-top: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#logoBig{
+    background-image: url("assets/img/logo_beta.svg");
+    width:30vw;
+    height: 25vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#logoOcelo{
+    position: absolute!important;
+    right: 5px;
+    bottom: 5px;
+    background-image: url("assets/img/Ocelo.svg");
+    width: 10vh;
+    height: 10vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size : contain;
+}
+
+input{
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+    padding-bottom: 1vh;
+    padding-top: 1vh;
+    border-bottom: 1px solid #EA6037;
+    border-top: none;
+    border-left:none;
+    border-right:none;
+}
+
+input[type="button"]{
+    border: none;
+    background-color: #EA6037;
+    color:white;
+    padding: 10px 15px;
+    margin-top:2vh;
+}
+
+#loginForm.at-form label {
+    display: none;
+}

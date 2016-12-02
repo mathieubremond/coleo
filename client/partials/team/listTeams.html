@@ -1,0 +1,27 @@
+<template name="listTeams">
+    <div class="header">
+        <h4 class="title">Équipes</h4>
+        <p class="category search-wrap"><input type="text" name="search" class="form-control" width="250px"
+                                               placeholder="Rechercher"></p>
+    </div>
+
+    <div class="content">
+        <ul>
+            {{#if searching}}
+                {{> loading}}
+            {{else}}
+                {{#each teams}}
+                    <li id="list_team_item_{{_id}}" class="{{selected}}">
+                        <input type="checkbox" value="{{_id}}"
+                               id="team_{{_id}}" name="team_{{_id}}"
+                               class="list-checkbox" checked="{{checked}}"
+                        />
+                        <label for="team_{{_id}}">{{name}}</label>
+                    </li>
+                {{else}}
+                    <p class="alert alert-warning">Aucun résultat pour {{query}}.</p>
+                {{/each}}
+            {{/if}}
+        </ul>
+    </div>
+</template>

@@ -33,7 +33,10 @@ aldeed:collection2          # Allow to attach a schema to a Mongo Collection
 aldeed:autoform             # Generates HTML5 forms based on a Mongo Schema
 dburles:collection-helpers  # Ajoute des helpers aux collections
 kadira:blaze-layout         # Utilisation de {{ }}
-useraccounts:unstyled
-softwarerero:accounts-t9n
-useraccounts:flow-routing
+useraccounts:unstyled       # Pour s'occuper du style nous meme
+softwarerero:accounts-t9n   # Pour le support multilingue
+useraccounts:flow-routing   # Pour les redirections au login, logout etc
 ongoworks:security
+session                     # Session.set('name', value); Session.get('name');
+gfk:notifications           # Notifications UI
+gfk:server-messages         # Notifications depuis le serveur

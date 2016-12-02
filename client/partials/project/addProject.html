@@ -1,0 +1,15 @@
+<template name="addProject">
+
+    <h1>Ajouter un projet</h1>
+
+    {{#autoForm schema=temporaryProjectSchema id="AddProjectForm"
+                type="method" meteormethod="projects.create" class="add-project-form"}}
+
+        {{> afQuickField name='name'}}
+        {{> afQuickField name='desc' rows=5}}
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+    {{/autoForm}}
+
+    <a href="/suivi">Retour vers l'accueil</a>
+
+</template>

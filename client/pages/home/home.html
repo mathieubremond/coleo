@@ -1,0 +1,42 @@
+<template name="home">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="logoBig"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        {{#unless loggedIn}}
+
+            <div class="col-md-12 text-center">
+                <input type="button" id="connexionBtn" value="Connexion">
+                <input type="button" id="inscriptionBtn" value="Inscription">
+            </div>
+        {{else}}
+            <div class="col-md-12 text-center">
+                <input type="button" id="suiviBtn" value="Vers l'application">
+            </div>
+        {{/unless}}
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4 ">
+            <h1>Gérez rapidement vos tâches</h1>
+            <p>Outils de gestion collaborative des tâches. </p>
+            <p> Définissez vos projets, équipes et gérez vos tâches en
+                cours.</p>
+        </div>
+        <div class="col-md-4 ">
+            <h1>Simplement efficace</h1>
+
+            <p>Accès aux stats</p>
+            <p>Accès pour vos clients</p>
+
+        </div>
+    </div>
+    <!--<footer>
+        <div id="logoOcelo"></div>
+    </footer>-->
+</template>

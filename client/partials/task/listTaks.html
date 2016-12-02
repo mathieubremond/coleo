@@ -1,0 +1,33 @@
+<template name="listTasks">
+
+    <div class="header">
+        <h4 class="title">Tâches</h4>
+        <p class="category search-wrap"><input type="text" name="search" class="form-control" width="250px"
+                                               placeholder="Rechercher"></p>
+    </div>
+
+
+    <div class="content table-responsive table-full-width">
+        <table class="table table-striped">
+            <thead>
+            <th>Fait</th>
+            <th>Nom</th>
+            <th>Projet</th>
+            <th>Equipe</th>
+            <th>Temps passé</th>
+            </thead>
+            <tbody>
+            {{#each tasks}}
+                <tr>
+                    <td>{{done}}</td>
+                    <td>{{name}}</td>
+                    <td>{{projectId}}</td>
+                    <td>{{teamId}}</td>
+                    <td>{{time}}</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+
+    </div>
+</template>

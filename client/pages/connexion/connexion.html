@@ -1,0 +1,29 @@
+<template name="connexion">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="logoBig"></div>
+        </div>
+    </div>
+    {{#unless onGoing}}
+        <div class="row" id="loginForm">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6">
+                {{> atForm state="signIn" }}
+            </div>
+            <div class="col-md-3">
+                <ul id="infosInscription">
+                    <li>Votre entreprise n'utilise pas encore Coleo ? <a href="/inscription">S'inscrire</a></li>
+                    <li>Si vous ne possédez pas de compte mais votre entreprise utilise déjà Coleo, demandez à un
+                        administrateur de vous ajouter.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    {{else}}
+        <div class="loading"></div>
+    {{/unless}}
+    <!--<footer>
+        <div id="logoOcelo"></div>
+    </footer>-->
+</template>

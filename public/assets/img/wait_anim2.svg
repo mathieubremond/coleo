@@ -1,0 +1,18 @@
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 510.96 512"><defs><style>.cls-1{fill:#eb6847;}.cls-2{fill:#80757e;}</style></defs><title>wait_anim2</title>
+<path class="cls-1" d="M256,510.5A254.5,254.5,0,0,1,76,76,252.83,252.83,0,0,1,256,1.5h.5v55H256C146,56.5,56.5,146,56.5,256S146,455.5,256,455.5c100.89,0,185.77-75.14,198-175h55.32A254.52,254.52,0,0,1,256,510.5Z" transform="translate(0)">
+	<animateTransform attributeName="transform" type="rotate"
+        from="0 255.48 255.48" to="360 255.48 255.48" dur="3.5s" additive="sum" repeatDur="indefinite"/>
+</path>
+<path class="cls-2" d="M255,3V55a201.05,201.05,0,0,0-77.24,386.2A201.07,201.07,0,0,0,455.32,282h52.34A253.13,253.13,0,1,1,255,3m1-3C114.62,0,0,114.62,0,256S114.62,512,256,512c133.63,0,243.33-102.39,255-233h-58.3C441.26,377.51,357.57,454,256,454,146.65,454,58,365.35,58,256S146.65,58,256,58l2,0V0l-2,0Z" transform="translate(0)">
+	<animateTransform attributeName="transform" type="rotate"
+        from="0 255.48 255.48" to="360 255.48 255.48" dur="3.5s" additive="sum" repeatDur="indefinite"/>
+</path>
+<path class="cls-1" d="M254.5,395.48c76.84-.06,139.35-62.6,139.35-139.45S331.29,116.57,254.39,116.57A139.33,139.33,0,0,0,116,238.5H78.4a176.88,176.88,0,0,1,176-159.34c97.52,0,176.86,79.34,176.86,176.86S352,432.83,254.5,432.89Z" transform="translate(0)">
+	<animateTransform attributeName="transform" type="rotate"
+        from="360 255.48 255.48" to="0 255.48 255.48" dur="2s" additive="sum" repeatDur="indefinite"/>
+</path>
+<path class="cls-2" d="M254.39,80.66A175.36,175.36,0,0,1,256,431.38V397A140.95,140.95,0,1,0,114.73,237H80.07A175.38,175.38,0,0,1,254.39,80.66m0-3A178.37,178.37,0,0,0,76.76,240h40.62a138,138,0,1,1,137,154L253,394v40.41l1.39,0a178.36,178.36,0,1,0,0-356.72Z" transform="translate(0)">
+	<animateTransform attributeName="transform" type="rotate"
+        from="360 255.48 255.48" to="0 255.48 255.48" dur="2s" additive="sum" repeatDur="indefinite"/>
+</path>
+</svg>

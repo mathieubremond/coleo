@@ -1,0 +1,13 @@
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500.84 455.74"><defs><style>.cls-1{fill:#dcd8da;}.cls-2{fill:#e95f36;}</style></defs><title>wait_anim</title>
+<path class="cls-1" d="M255.58,28.38C117.28,28.38,5.16,140.49,5.16,278.8c0,3.77.13,7.51.32,11.23C12,157.58,121.5,52.21,255.58,52.21S499.12,157.58,505.68,290c.19-3.72.32-7.46.32-11.23C506,140.49,393.88,28.38,255.58,28.38Z" transform="translate(-5.16 -28.38)"/>
+<path class="cls-1" d="M255.58,462.68a166.76,166.76,0,0,1-166.4-156c-.23,3.53-.38,7.08-.38,10.67a166.78,166.78,0,1,0,333.56,0c0-3.59-.15-7.14-.38-10.67A166.76,166.76,0,0,1,255.58,462.68Z" transform="translate(-5.16 -28.38)"/>
+<circle class="cls-2" cx="251.34" cy="227.12" r="10.5"/>
+<rect class="cls-2" x="250.84" y="225.62" width="92" height="4" rx="2" ry="2">
+	<animateTransform attributeName="transform" type="rotate"
+        from="0 250.84 229.62" to="360 250.84 229.62" dur="3s" repeatDur="indefinite"/>
+</rect>
+<rect class="cls-2" x="192.5" y="192.5" width="127" height="4" rx="2" ry="2" transform="translate(56.34 422.12) rotate(-90)">
+	<animateTransform attributeName="transform" type="rotate"
+        from="0 192.5 196.5" to="360 192.5 196.5" dur="1.5s" additive="sum" repeatDur="indefinite"/>
+</rect>
+</svg>

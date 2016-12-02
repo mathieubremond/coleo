@@ -1,0 +1,7 @@
+<template name="addTask">
+    <h4>Ajouter une tâche</h4>
+
+    {{> quickForm schema=temporaryTaskSchema id="AddTaskForm"
+            type="method" meteormethod="tasks.create" class="add-task-form"}}
+
+</template>

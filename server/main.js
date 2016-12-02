@@ -1,5 +1,2 @@
-import { Meteor } from 'meteor/meteor';
+console.log("Loading server application...");
 
-Meteor.startup(() => {
-  // code to run on server at startup
-});

@@ -1,0 +1,26 @@
+<template name="listProjects">
+    <div class="header">
+        <h4 class="title">Projets</h4>
+        <p class="category search-wrap"><input type="text" name="search" class="form-control" width="250px"
+                                               placeholder="Rechercher"></p>
+    </div>
+    <div class="content">
+        <ul>
+            {{#if searching}}
+                {{> loading}}
+            {{else}}
+                {{#each projects}}
+                    <li id="list_project_item_{{_id}}" class="{{selected}}">
+                        <input type="checkbox" value="{{_id}}"
+                               id="project_{{_id}}" name="project_{{_id}}"
+                               class="list-checkbox" checked="{{checked}}"
+                        />
+                        <label for="project_{{_id}}">{{name}}</label>
+                    </li>
+                {{else}}
+                    <p>Aucun résultat pour {{query}}.</p>
+                {{/each}}
+            {{/if}}
+        </ul>
+    </div>
+</template>
