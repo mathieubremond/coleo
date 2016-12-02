@@ -1,7 +1,8 @@
 .bg-login {
 
 }
-#logo{
+
+#logo {
     background-image: url("assets/img/logo_beta.svg");
     height: 50px;
     width: 100px;
@@ -11,9 +12,21 @@
     margin-right: 10px;
 }
 
-#logoBig{
+#logoOceloFooter {
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+    background-image: url("assets/img/Ocelo.svg");
+    width: 10vh;
+    height: 10vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#logoBig {
     background-image: url("assets/img/logo_beta.svg");
-    width:30vw;
+    width: 30vw;
     height: 25vw;
     background-repeat: no-repeat;
     background-position: center;
@@ -22,37 +35,170 @@
     margin-right: auto;
 }
 
-#logoOcelo{
-    position: absolute!important;
-    right: 5px;
-    bottom: 5px;
+#logoOcelo {
     background-image: url("assets/img/Ocelo.svg");
-    width: 10vh;
-    height: 10vh;
+    width: 5vh;
+    height: 5vh;
     background-repeat: no-repeat;
-    background-position: center;
-    background-size : contain;
+    /*background-position: center;*/
+    background-size: contain;
 }
 
-input{
+.logoOcelo {
+    background-image: url("assets/img/Ocelo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 40px!important;
+    height: 40px!important;
+    text-align: center;
+}
+
+.copyright {
+    vertical-align: middle;
+}
+
+input {
     margin-bottom: 1vh;
     margin-top: 1vh;
     padding-bottom: 1vh;
     padding-top: 1vh;
     border-bottom: 1px solid #EA6037;
     border-top: none;
-    border-left:none;
-    border-right:none;
+    border-left: none;
+    border-right: none;
 }
 
-input[type="button"]{
+input[type="button"] {
     border: none;
     background-color: #EA6037;
-    color:white;
+    color: white;
     padding: 10px 15px;
-    margin-top:2vh;
+    margin-top: 2vh;
 }
 
-#loginForm.at-form label {
+#loginForm label, .new-admin-signup label {
     display: none;
+}
+
+#loginForm input, .new-admin-signup input {
+    width: 300px;
+}
+
+#loginForm .submit, .new-admin-signup .submit {
+    border: none;
+    background-color: #EA6037;
+    color: white;
+    padding: 10px 15px;
+    margin-top: 2vh;
+}
+
+#loginForm .at-title h3 {
+    margin-top: 0;
+}
+
+#loginForm #infosInscription {
+    margin-top: 30px;
+}
+
+.info-home {
+    margin-top: 40px;
+    min-height: 350px;
+}
+
+.addAction {
+    position: absolute;
+    right: 17px;
+    top: 10px;
+}
+
+.addAction a {
+    color: #dd6b28 !important;;
+}
+
+.new-company-form label {
+    display: none;
+}
+
+.add-entreprise-title h1 {
+    margin-top: 0;
+}
+
+.new-company-form label, .new-admin-signup label, .new-admin-signup .at-title {
+    display: none !important;;
+}
+
+.new-company-form input, .new-admin-signup .at-input, #loginForm .at-input {
+    width: 300px !important;
+    margin-bottom: 10px !important;
+}
+
+.new-company-form .btn-primary, .new-admin-signup .btn-primary {
+    border: none !important;
+    background-color: #EA6037 !important;;
+    color: white !important;;
+    padding: 10px 15px !important;;
+    margin-top: 2vh !important;;
+    border-radius: 0;
+}
+
+.new-company-form input, .new-admin-signup input,
+.new-company-form textarea, .new-admin-signup textarea {
+    margin-bottom: 1vh !important;;
+    margin-top: 1vh !important;;
+    padding-bottom: 1vh !important;;
+    padding-top: 1vh !important;;
+    border-bottom: 1px solid #EA6037 !important;;
+    border-top: none !important;;
+    border-left: none !important;;
+    border-right: none !important;;
+}
+
+.new-company-form .form-control, .new-admin-signup .form-control {
+    background-color: white;
+}
+
+.loading {
+    background-image: url("assets/img/wait_anim.svg");
+    height: 100px;
+    width: 100px;
+    background-repeat: no-repeat;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+
+/*
+  Pour les listes de projets ou d'équipes
+*/
+.selected {
+    background-color: #fffcf5;
+}
+.ul-list {
+    padding-left: 0;
+}
+input[name='search'] {
+    margin-top: 10px;
+}
+.no-results {
+    padding: 16px 14px 14px 16px;
+}
+.pjt_list_name {
+    padding-left: -15px;
+}
+.fixed-height {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.ocelo-dropdown > li > a:hover,
+.ocelo-dropdown > li > a:focus {
+    background-color: #66615B!important;
+    color: rgba(255, 255, 255, 0.7)!important;
+    opacity: 1;
+    text-decoration: none;
+}
+
+.ocelo-href {
+    color: #dd6b28;;
 }

@@ -44,11 +44,19 @@ Template.listProjects.helpers({
         } else {
             return "";
         }
+    },
+    btnSelected() {
+        let arr = Session.get('selectedProjectIds');
+        if(Array.isArray(arr) && arr.indexOf(this._id) > -1) {
+            return "btn-fill";
+        } else {
+            return "";
+        }
     }
 });
 
 Template.listProjects.events({
-    'click .list-checkbox': projectClickEvent,
+    'click .team-members li': projectClickEvent,
     'keyup [name="search"]': searchKeyUpEvent,
     'click button[name="searchButton"]': searchClickEvent
 });
@@ -76,9 +84,9 @@ function searchClickEvent(event, template) {
 }
 function projectClickEvent(event) {
     let selectedIds = Session.get('selectedProjectIds');
-    let id = event.target.value;
+    let id = event.currentTarget.id.substr(15);
     let index = selectedIds.indexOf(id);
-    if (event.target.checked && index < 0) {
+    if (index < 0) {
         selectedIds.push(id);
     } else if (index > -1) {
         selectedIds.splice(index, 1);

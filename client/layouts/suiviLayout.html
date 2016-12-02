@@ -14,22 +14,33 @@
                 </div>
 
                 <ul class="nav">
-                    <li class="active">
+                    <li class="{{active 'Suivi'}}">
                         <a href="/suivi">
                             <i class="ti-home"></i>
                             <p>Suivi</p>
                         </a>
                     </li>
-                    <li>
+                    <li class="dropdown {{active 'Gestion'}}">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="ti-ruler-pencil"></i>
+                            <p>Gestion</p>
+                        </a>
+                        <ul class="dropdown-menu ocelo-dropdown">
+                            <li><a href="/suivi/users">Utilisateurs</a></li>
+                            <li><a href="/suivi/projects">Projets</a></li>
+                            <li><a href="/suivi/teams">Équipes</a></li>
+                        </ul>
+                    </li>
+                    <li class="{{active 'Statistiques'}}">
                         <a href="">
                             <i class="ti-stats-up"></i>
                             <p>Statistiques</p>
                         </a>
                     </li>
-                    <li>
+                    <li class="{{active 'Administration'}}">
                         <a href="">
                             <i class="ti-settings"></i>
-                            <p>Gestion</p>
+                            <p>Administration</p>
                         </a>
                     </li>
                 </ul>
@@ -46,14 +57,21 @@
                             <span class="icon-bar bar2"></span>
                             <span class="icon-bar bar3"></span>
                         </button>
-                        <a class="navbar-brand" href="/suivi">Suivi</a>
+                        <a class="navbar-brand">{{currentPage}}</a>
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li>
                                 <a href="">
+                                    <p>Ajouter une tâche</p>
+                                    <i class="ti-plus"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
                                     <i class="ti-user"></i>
-                                    <p>{{currentColeoUser.firstName}} {{currentColeoUser.lastName}} ({{currentCompany.name}})</p>
+                                    <p>{{currentColeoUser.firstName}} {{currentColeoUser.lastName}}
+                                        ({{currentCompany.name}})</p>
                                 </a>
                             </li>
                             <li>
@@ -78,11 +96,25 @@
 
             <footer class="footer">
                 <div class="container-fluid">
-                    <div class="copyright pull-right">
-                        &copy;
-                        2016
-                        , avec <i class="fa fa-heart heart"></i> par <a href="http://www.ocelo.com">Ocelo</a>
+                    <div class="pull-right">
+                        <div class="row">
+                            <div class="copyright ">
+                                &copy;
+                                2016
+                                , avec <i class="fa fa-heart heart"></i> par
+                                <a class="ocelo-href" href="http://ocelo.fr">
+                                    Ocelo
+                                </a>
+                            </div><!--
+                            <div class="pull-right">
+                                <a class="href-logo" href="http://www.ocelo.fr">
+                                    <i class="logoOcelo"></i>
+                                </a>
+                            </div>-->
+                        </div>
+
                     </div>
+
                 </div>
             </footer>
 

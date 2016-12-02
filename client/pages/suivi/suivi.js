@@ -1,3 +1,6 @@
+Template.suivi.onCreated(()=>{
+    Session.set('currentPage', 'Suivi');
+});
 Template.suivi.helpers({
     currentColeoUser: function () {
         // L'utilisateur coleo courant

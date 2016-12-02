@@ -32,9 +32,9 @@ AutoForm.addHooks(['NewCompanyForm'], {
 
 AutoForm.addHooks(['NewColeoUserForm'], {
     before: {
-        insert: function (doc) {
+        method: function (doc) {
             console.log("Before inserting the coleo user");
-            var userId = Meteor.userId();
+            let userId = Meteor.userId();
             console.log("User id = ", userId);
 
             // Ajout des clés étrangères au document coleo user avant insertion
@@ -49,13 +49,21 @@ AutoForm.addHooks(['NewColeoUserForm'], {
         }
     },
     after: {
-        insert: function(doc) {
-            // Redirection vers suivi suite à l'inscription
-            if (!!Meteor.userId()) {
-                FlowRouter.go('suivi');
+        method: function(doc) {
+            console.log("after insert coleo user : ", doc);
+
+            if(!!doc.error) {
+
+                return doc;
             } else {
-                FlowRouter.go('login');
+                // Redirection vers suivi suite à l'inscription
+                if (!!Meteor.userId()) {
+                    FlowRouter.go('suivi');
+                } else {
+                    FlowRouter.go('login');
+                }
             }
+
         }
     }
 });

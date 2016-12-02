@@ -1,3 +1,4 @@
+import {Schema} from '../../../lib/api/schemas/index.js';
 // Ajout d'un hook avant la création de la tâche
 AutoForm.hooks({
     AddTaskForm: {

@@ -1,3 +1,6 @@
+import {Schema} from '../../lib/api/schemas/index.js';
+import {getCurrentUserCompanyId} from '../helpers/getCurrentUserCompanyId.js';
+
 export function createTeam (team) {
     Schema.teamSchema.clean(team);
     let companyId = getCurrentUserCompanyId(Meteor.userId());

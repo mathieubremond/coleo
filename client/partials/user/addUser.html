@@ -1,6 +1,4 @@
 <template name="addUser">
-    <h3>Ajouter un utilisateur</h3>
-
     {{#autoForm schema=temporaryUserSchema id="AddColeoUserForm" class="add-coleo-user-form"
         type="method" meteormethod="users.create"}}
 
@@ -11,5 +9,4 @@
 
         <button type="submit" class="btn btn-primary">Ajouter</button>
     {{/autoForm}}
-
 </template>

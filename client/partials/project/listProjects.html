@@ -5,20 +5,28 @@
                                                placeholder="Rechercher"></p>
     </div>
     <div class="content">
-        <ul>
+        <ul class="list-unstyled team-members">
             {{#if searching}}
                 {{> loading}}
             {{else}}
                 {{#each projects}}
-                    <li id="list_project_item_{{_id}}" class="{{selected}}">
-                        <input type="checkbox" value="{{_id}}"
-                               id="project_{{_id}}" name="project_{{_id}}"
-                               class="list-checkbox" checked="{{checked}}"
-                        />
-                        <label for="project_{{_id}}">{{name}}</label>
+                    <li id="list_pjts_item_{{_id}}" class="{{selected}}" >
+                        <div class="row">
+                            <div class="col-xs-9 pjt_list_name">
+                                {{name}}
+                                <br />
+                                <span class="text-muted"><small>{{desc}}</small></span>
+                            </div>
+                            <div class="col-xs-3 text-right">
+                                <btn class="btn btn-sm btn-success
+                                    btn-icon {{btnSelected}}">
+                                    <i class="fa fa-check"></i>
+                                </btn>
+                            </div>
+                        </div>
                     </li>
                 {{else}}
-                    <p>Aucun résultat pour {{query}}.</p>
+                    <p class="no-results">Aucun résultat.</p>
                 {{/each}}
             {{/if}}
         </ul>

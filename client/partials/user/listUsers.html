@@ -1,8 +1,32 @@
 <template name="listUsers">
-    <h3>Liste des utilisateurs</h3>
-    <ul>
+    <table class="table table-striped">
+        <thead>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Email</th>
+        <th>Créé le</th>
+        <th>Action</th>
+        </thead>
+        <tbody>
         {{#each users}}
-            <li>{{firstName}} {{lastName}}</li>
+            <tr>
+                <td>{{lastName}}</td>
+                <td>{{firstName}}</td>
+                <td>{{email userId}}</td>
+                <td>{{createdAt userId}}</td>
+                <td>
+                    <i class="ti-pencil-alt"></i>
+                    <i class="ti-close" style="margin-left: 10px;"></i>
+                </td>
+            </tr>
+        {{else}}
+            <tr>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+            </tr>
         {{/each}}
-    </ul>
+        </tbody>
+    </table>
 </template>

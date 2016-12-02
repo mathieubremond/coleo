@@ -6,20 +6,33 @@
     </div>
 
     <div class="content">
-        <ul>
+
+        <ul class="list-unstyled team-members">
             {{#if searching}}
                 {{> loading}}
             {{else}}
                 {{#each teams}}
-                    <li id="list_team_item_{{_id}}" class="{{selected}}">
-                        <input type="checkbox" value="{{_id}}"
-                               id="team_{{_id}}" name="team_{{_id}}"
-                               class="list-checkbox" checked="{{checked}}"
-                        />
-                        <label for="team_{{_id}}">{{name}}</label>
-                    </li>
+                        <li id="list_team_item_{{_id}}" class="{{selected}}" >
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <div class="avatar">
+                                        <img src="assets/img/faces/face-0.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    {{name}}
+                                </div>
+
+                                <div class="col-xs-3 text-right">
+                                    <btn class="btn btn-sm btn-success
+                                    btn-icon {{btnSelected}}">
+                                        <i class="fa fa-check"></i>
+                                    </btn>
+                                </div>
+                            </div>
+                        </li>
                 {{else}}
-                    <p class="alert alert-warning">Aucun résultat pour {{query}}.</p>
+                    <p class="no-results">Aucun résultat.</p>
                 {{/each}}
             {{/if}}
         </ul>

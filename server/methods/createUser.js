@@ -1,3 +1,6 @@
+import {Schema} from '../../lib/api/schemas/index.js';
+import {getCurrentUserCompanyId} from '../helpers/getCurrentUserCompanyId.js';
+
 export function createColeoUser (user) {
     var userId = Accounts.createUser({
         email: user.email,
@@ -27,4 +30,10 @@ export function createColeoUser (user) {
 
     Schema.teamSchema.validate(newTeam);
     Teams.insert(newTeam);
+}
+
+export function CreateFirstUser(user) {
+    Schema.userSchema.clean(user);
+    Schema.userSchema.validate(user);
+    ColeoUsers.insert(user);
 }

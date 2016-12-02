@@ -1,6 +1,5 @@
 export function initPaperDashboard () {
     var fixedTop = false;
-    console.log("suis appelé ?");
     var navbar_initialized = false;
     $(document).ready(function () {
         window_width = $(window).width();

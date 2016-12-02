@@ -44,11 +44,19 @@ Template.listTeams.helpers({
         } else {
             return "";
         }
+    },
+    btnSelected() {
+        let arr = Session.get('selectedTeamIds');
+        if(Array.isArray(arr) && arr.indexOf(this._id) > -1) {
+            return "btn-fill";
+        } else {
+            return "";
+        }
     }
 });
 
 Template.listTeams.events({
-    'click .list-checkbox': teamClickEvent,
+    'click .team-members li': teamClickEvent,
     'keyup [name="search"]': searchKeyUpEvent,
     'click button[name="searchButton"]': searchClickEvent
 });
@@ -76,9 +84,9 @@ function searchClickEvent(event, template) {
 }
 function teamClickEvent(event) {
     let selectedIds = Session.get('selectedTeamIds');
-    let id = event.target.value;
+    let id = event.currentTarget.id.substr(15);
     let index = selectedIds.indexOf(id);
-    if (event.target.checked && index < 0) {
+    if (index < 0) {
         selectedIds.push(id);
     } else if (index > -1) {
         selectedIds.splice(index, 1);

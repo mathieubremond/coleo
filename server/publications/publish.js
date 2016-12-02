@@ -10,6 +10,7 @@ Meteor.publish('companies.current', function () {
 });
 
 Meteor.publish('coleousers.current', function () {
+    console.log("ColeoUsers : ", ColeoUsers.findOne({userId: this.userId}));
     return ColeoUsers.find({userId: this.userId});
 });
 
@@ -24,3 +25,7 @@ Meteor.publish('users.list', function () {
 Meteor.publish('projects.list', listProjects);
 Meteor.publish('teams.list', listTeams);
 Meteor.publish('tasks.list', listTasks);
+
+Meteor.publish('users.meteor.public', function() {
+    return Meteor.users.find({}, {fields: {emails: 1, createdAt: 1}});
+});

@@ -1,9 +1,24 @@
 <template name="usersPage">
-    <h1>Les utilisateurs</h1>
-    {{> listUsers }}
-    {{> addUser }}
-
-    <br/>
-
-    <a href="/suivi">Retour vers l'accueil</a>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">Utilisateurs</h4>
+                </div>
+                <div class="content table-responsive table-full-width">
+                    {{> listUsers }}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">Ajouter</h4>
+                </div>
+                <div class="content">
+                    {{> addUser }}
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
