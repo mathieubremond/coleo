@@ -1,0 +1,22 @@
+<template name="listProjectsSimplified">
+
+    <div class="header">
+        <h4 class="title">Projets</h4>
+        </div>
+    <div class="content fixed-height">
+        <ul class="list-unstyled team-members projects-item">
+            {{#if searching}}
+                {{> loading}}
+            {{else}}
+                {{#each projects}}
+                    <li id="list_pjts_item_{{_id}}" class="{{selected}} {{liSelected}}" >
+                        {{name}}
+                    </li>
+                {{else}}
+                    <p class="no-results">Aucun résultat.</p>
+                {{/each}}
+            {{/if}}
+        </ul>
+    </div>
+
+</template>

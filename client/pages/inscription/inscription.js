@@ -52,8 +52,7 @@ AutoForm.addHooks(['NewColeoUserForm'], {
         method: function(doc) {
             console.log("after insert coleo user : ", doc);
 
-            if(!!doc.error) {
-
+            if(!!doc) {
                 return doc;
             } else {
                 // Redirection vers suivi suite à l'inscription

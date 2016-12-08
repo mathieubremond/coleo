@@ -1,19 +1,13 @@
 <template name="addTeam">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="header">
-                    <h4 class="title">Ajouter une équipe</h4>
-                </div>
-                <div class="content">
-                    {{#autoForm schema=temporaryTeamSchema id="AddTeamtForm"
-                                type="method" meteormethod="teams.create" class="add-team-form"}}
+    <div class="header">
+        <h4 class="title">Ajouter une équipe</h4>
+    </div>
+    <div class="content">
+        {{#autoForm schema=temporaryTeamSchema id="AddTeamtForm"
+                    type="method" meteormethod="teams.create" class="add-team-form"}}
 
-                        {{> afQuickField name='name'}}
-                        <button type="submit" class="btn btn-primary">Ajouter</button>
-                    {{/autoForm}}
-                </div>
-            </div>
-        </div>
+            {{> afQuickField name='name'}}
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+        {{/autoForm}}
     </div>
 </template>

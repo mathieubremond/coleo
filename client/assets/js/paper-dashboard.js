@@ -1,27 +1,5 @@
 export function initPaperDashboard () {
-    var fixedTop = false;
-    var navbar_initialized = false;
-    $(document).ready(function () {
-        window_width = $(window).width();
-
-        // Init navigation toggle for small screens
-        if (window_width <= 991) {
-            lbd.initRightMenu();
-        }
-
-        //  Activate the tooltips
-        //$('[rel="tooltip"]').tooltip();
-
-    });
-
-// activate collapse right menu when the windows is resized
-    $(window).resize(function () {
-        if ($(window).width() <= 991) {
-            lbd.initRightMenu();
-        }
-    });
-
-    lbd = {
+    var lbd = {
         misc: {
             navbar_menu_visible: 0
         },
@@ -103,7 +81,31 @@ export function initPaperDashboard () {
             }
 
         }
-    }
+    };
+
+    var fixedTop = false;
+    var navbar_initialized = false;
+    $(document).ready(function () {
+        window_width = $(window).width();
+
+        // Init navigation toggle for small screens
+        if (window_width <= 991) {
+            lbd.initRightMenu();
+        }
+
+        //  Activate the tooltips
+        //$('[rel="tooltip"]').tooltip();
+
+    });
+
+// activate collapse right menu when the windows is resized
+    $(window).resize(function () {
+        if ($(window).width() <= 991) {
+            lbd.initRightMenu();
+        }
+    });
+
+
 
 
 // Returns a function, that, as long as it continues to be invoked, will not

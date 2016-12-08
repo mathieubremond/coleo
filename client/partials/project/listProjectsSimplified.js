@@ -1,4 +1,4 @@
-Template.listProjects.onCreated(function () {
+Template.listProjectsSimplified.onCreated(function () {
     let template = Template.instance();
 
     template.searchQuery = new ReactiveVar();
@@ -10,7 +10,7 @@ Template.listProjects.onCreated(function () {
     }
 });
 
-Template.listProjects.onRendered(function () {
+Template.listProjectsSimplified.onRendered(function () {
     let self = this;
     let template = Template.instance();
 
@@ -26,7 +26,7 @@ Template.listProjects.onRendered(function () {
     });
 });
 
-Template.listProjects.helpers({
+Template.listProjectsSimplified.helpers({
     projects() {
         if (!Session.get('currentColeoUser')) return null;
         return Projects.find({companyId: Session.get('currentColeoUser').companyId});
@@ -49,17 +49,17 @@ Template.listProjects.helpers({
             return "";
         }
     },
-    btnSelected() {
+    liSelected() {
         let arr = Session.get('selectedProjectIds');
         if(Array.isArray(arr) && arr.indexOf(this._id) > -1) {
-            return "btn-fill";
+            return "liSelected";
         } else {
             return "";
         }
     }
 });
 
-Template.listProjects.events({
+Template.listProjectsSimplified.events({
     'click .projects-item li': projectClickEvent,
     'keyup [name="search"]': searchKeyUpEvent,
     'click button[name="searchButton"]': searchClickEvent

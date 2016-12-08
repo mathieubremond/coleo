@@ -259,7 +259,7 @@ hr {
   max-height: none;
   min-height: 100%;
   overflow: hidden;
-  width: 260px;
+  width: 200px;
   z-index: 4;
   box-shadow: inset -1px 0px 0px 0px #DDDDDD;
 }
@@ -277,7 +277,7 @@ hr {
 
 .sidebar,
 .off-canvas-sidebar {
-  width: 260px;
+  width: 200px;
   display: block;
   font-weight: 200;
 }
@@ -463,7 +463,7 @@ hr {
   position: relative;
   z-index: 2;
   float: right;
-  width: calc(100% - 260px);
+  width: calc(100% - 200px);
   min-height: 100%;
 }
 .main-panel > .content {
@@ -965,7 +965,7 @@ hr {
 
 .form-control {
   background-color: #fffcf5;
-  border: medium none;
+  /*border: medium none;*/
   border-radius: 4px;
   color: #66615b;
   font-size: 14px;
@@ -2776,7 +2776,7 @@ textarea.form-control {
     display: block;
     top: 0;
     height: 100%;
-    width: 230px;
+    width: 200px;
     right: 0;
     z-index: 1032;
     visibility: visible;

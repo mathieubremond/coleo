@@ -1,23 +1,23 @@
-Template.listProjects.onCreated(function () {
+Template.listTeamsSimplified.onCreated(function () {
     let template = Template.instance();
 
     template.searchQuery = new ReactiveVar();
     template.searching = new ReactiveVar(false);
 
-    let arr = Session.get('selectedProjectIds');
+    let arr = Session.get('selectedTeamIds');
     if(!arr || arr.length == 0) {
-        Session.set('selectedProjectIds', []);
+        Session.set('selectedTeamIds', []);
     }
 });
 
-Template.listProjects.onRendered(function () {
+Template.listTeamsSimplified.onRendered(function () {
     let self = this;
     let template = Template.instance();
 
     self.autorun(function () {
-        self.subscribe('projects.list', {
+        self.subscribe('teams.list', {
             search: template.searchQuery.get(),
-            selectedIds: Session.get('selectedProjectIds') || []
+            selectedIds: Session.get('selectedTeamIds') || []
         }, function () {
             setTimeout(() => {
                 template.searching.set(false);
@@ -26,10 +26,10 @@ Template.listProjects.onRendered(function () {
     });
 });
 
-Template.listProjects.helpers({
-    projects() {
+Template.listTeamsSimplified.helpers({
+    teams: () => {
         if (!Session.get('currentColeoUser')) return null;
-        return Projects.find({companyId: Session.get('currentColeoUser').companyId});
+        return Teams.find({companyId: Session.get('currentColeoUser').companyId});
     },
     searching() {
         return Template.instance().searching.get();
@@ -38,29 +38,29 @@ Template.listProjects.helpers({
         return Template.instance().searchQuery.get();
     },
     checked() {
-        let arr = Session.get('selectedProjectIds');
+        let arr = Session.get('selectedTeamIds');
         return Array.isArray(arr) && arr.indexOf(this._id) > -1;
     },
     selected() {
-        let arr = Session.get('selectedProjectIds');
+        let arr = Session.get('selectedTeamIds');
         if(Array.isArray(arr) && arr.indexOf(this._id) > -1) {
             return "selected";
         } else {
             return "";
         }
     },
-    btnSelected() {
-        let arr = Session.get('selectedProjectIds');
+    liSelected() {
+        let arr = Session.get('selectedTeamIds');
         if(Array.isArray(arr) && arr.indexOf(this._id) > -1) {
-            return "btn-fill";
+            return "liSelected";
         } else {
             return "";
         }
     }
 });
 
-Template.listProjects.events({
-    'click .projects-item li': projectClickEvent,
+Template.listTeamsSimplified.events({
+    'click .team-members li': teamClickEvent,
     'keyup [name="search"]': searchKeyUpEvent,
     'click button[name="searchButton"]': searchClickEvent
 });
@@ -86,8 +86,8 @@ function searchClickEvent(event, template) {
         template.searchQuery.set(value);
     }
 }
-function projectClickEvent(event) {
-    let selectedIds = Session.get('selectedProjectIds');
+function teamClickEvent(event) {
+    let selectedIds = Session.get('selectedTeamIds');
     let id = event.currentTarget.id.substr(15);
     let index = selectedIds.indexOf(id);
     if (index < 0) {
@@ -95,5 +95,5 @@ function projectClickEvent(event) {
     } else if (index > -1) {
         selectedIds.splice(index, 1);
     }
-    Session.set('selectedProjectIds', selectedIds);
+    Session.set('selectedTeamIds', selectedIds);
 }

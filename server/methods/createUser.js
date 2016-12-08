@@ -23,7 +23,7 @@ export function createColeoUser (user) {
         });
 
     // On crée une equipe avec le nom de l'utilisateur
-    var newTeam = {
+    let newTeam = {
         name: user.firstName + " " + user.lastName,
         companyId: user.companyId
     };
@@ -32,8 +32,19 @@ export function createColeoUser (user) {
     Teams.insert(newTeam);
 }
 
-export function CreateFirstUser(user) {
+export function createFirstUser(user) {
     Schema.userSchema.clean(user);
     Schema.userSchema.validate(user);
-    ColeoUsers.insert(user);
+    let newUser = ColeoUsers.insert(user);
+
+    // On crée une equipe avec le nom de l'utilisateur
+    let newTeam = {
+        name: user.firstName + " " + user.lastName,
+        companyId: user.companyId
+    };
+
+    Schema.teamSchema.validate(newTeam);
+    Teams.insert(newTeam);
+
+    return newUser;
 }

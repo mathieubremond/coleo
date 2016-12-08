@@ -3,9 +3,12 @@ Template.registerHelper( 'currentPage', () => {
     return Session.get('currentPage') || 'Suivi';
 });
 Template.suiviLayout.onCreated(function () {
-    var self = this;
+    let self = this;
 
     Session.set('currentPage', 'Suivi');
+    Session.set('selectedTeamIds', []);
+    Session.set('selectedProjectIds', []);
+
 
     self.autorun(function () {
         if(Meteor.userId()) {
@@ -15,6 +18,8 @@ Template.suiviLayout.onCreated(function () {
             self.subscribe('coleousers.current', function() {
                 let currentColeoUser = ColeoUsers.findOne({userId: Meteor.userId()});
                 Session.set('currentColeoUser', currentColeoUser);
+
+                setUserTeamId();
             });
             self.subscribe('companies.current', function() {
                 let currentCompany = Companies.findOne({});
@@ -36,8 +41,6 @@ Template.suiviLayout.helpers({
     active: function(name) {
         let curName = Session.get('currentPage');
         let gestionTab = ['Utilisateurs', 'Projets', 'Équipes'];
-        console.log("name  = ", name);
-        console.log("curName = ", curName);
         if( curName == name ||  ( gestionTab.indexOf(curName) > -1 && name=="Gestion" ) ) {
             return 'active';
         } else {
@@ -46,4 +49,30 @@ Template.suiviLayout.helpers({
     }
 });
 
+Template.suiviLayout.events({
+    'click .add-task'() {
+        if(Session.get('selectedTeamIds').length == 0
+            || Session.get('selectedProjectIds').length == 0 ) {
+            Modal.show('selectProjectTeamModal');
+        } else {
+            Modal.show('addTask');
+        }
+    }
+});
+
 Template.suiviLayout.onRendered(initPaperDashboard);
+
+
+
+function setUserTeamId() {
+    let user = Session.get('currentColeoUser');
+    let userName = user.firstName + ' ' + user.lastName;
+    Meteor.call('teams.getTeamByName', userName, function(err, data) {
+        if(!!err) {
+            console.log(err);
+            return;
+        }
+        //console.log("data : ", data);
+        Session.set('selectedTeamIds', [data._id]);
+    });
+}

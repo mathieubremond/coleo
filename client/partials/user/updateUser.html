@@ -1,0 +1,18 @@
+<template name="updateUser">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">{{user.firstName}} {{user.lastName}}</h4>
+                </div>
+                <div class="content">
+                    {{> quickForm schema=temporaryUserSchema id="editExistingUserForm"
+                            doc=user type="method" meteormethod="users.update"
+                            buttonContent="Modifier"}}
+                    <br/>
+                    <button type="button" class="btn btn-default">Annuler</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

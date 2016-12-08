@@ -7,19 +7,24 @@ serverMessages.listen('serverMessage:company', function (subject, message, optio
         showNotification('top', 'right', subject, message);
     }
 });
-function showNotification(from, align, subject, message){
-    let type = ['','info','success','warning','danger'];
+
+export function showNotification(from, align, subject, message, type, icon){
+    //let type = ['','info','success','warning','danger'];
 
     $.notify({
-        icon: "ti-gift",
+        icon: icon || "ti-info-alt",
         subject: subject,
         message: message
     },{
-        type: 'info',
+        type: type || 'info',
         timer: 2000,
         placement: {
             from: from,
             align: align
         }
     });
+}
+
+export function showNotificationError(from, align, subject, message) {
+    showNotification(from, align, subject, message, 'warning', 'ti-face-sad');
 }

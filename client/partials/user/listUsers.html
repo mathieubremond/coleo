@@ -1,32 +1,38 @@
 <template name="listUsers">
     <table class="table table-striped">
         <thead>
-        <th>Nom</th>
-        <th>Prénom</th>
-        <th>Email</th>
-        <th>Créé le</th>
-        <th>Action</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Email</th>
+            <th>Créé le</th>
+            <th>Action</th>
         </thead>
         <tbody>
-        {{#each users}}
-            <tr>
-                <td>{{lastName}}</td>
-                <td>{{firstName}}</td>
-                <td>{{email userId}}</td>
-                <td>{{createdAt userId}}</td>
-                <td>
-                    <i class="ti-pencil-alt"></i>
-                    <i class="ti-close" style="margin-left: 10px;"></i>
-                </td>
-            </tr>
-        {{else}}
-            <tr>
-                <td>...</td>
-                <td>...</td>
-                <td>...</td>
-                <td>...</td>
-            </tr>
-        {{/each}}
+            {{#each users}}
+                {{> userLine}}
+            {{else}}
+                <tr>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                </tr>
+            {{/each}}
         </tbody>
     </table>
+</template>
+
+<template name="userLine">
+    <tr>
+        <td>{{lastName}}</td>
+        <td>{{firstName}}</td>
+        <td>{{email userId}}</td>
+        <td>{{createdAt userId}}</td>
+        <td>
+            <a href="/suivi/user/{{_id}}">
+                <i class="ti-pencil-alt edit"  data-id="{{_id}}"></i>
+            </a>
+        </td>
+    </tr>
 </template>

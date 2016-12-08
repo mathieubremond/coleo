@@ -1,22 +1,16 @@
 <template name="addProject">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="header">
-                    <h4 class="title">Ajouter un projet</h4>
-                </div>
-                <div class="content">
-                    {{#autoForm schema=temporaryProjectSchema id="AddProjectForm"
-                                type="method"
-                                meteormethod="projects.create"
-                                class="add-project-form"}}
+    <div class="header">
+        <h4 class="title">Ajouter un projet</h4>
+    </div>
+    <div class="content">
+        {{#autoForm schema=temporaryProjectSchema id="AddProjectForm"
+                    type="method"
+                    meteormethod="projects.create"
+                    class="add-project-form"}}
 
-                        {{> afQuickField name='name'}}
-                        {{> afQuickField name='desc' rows=5}}
-                        <button type="submit" class="btn btn-primary">Ajouter</button>
-                    {{/autoForm}}
-                </div>
-            </div>
-        </div>
+            {{> afQuickField name='name'}}
+            {{> afQuickField name='desc' rows=5}}
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+        {{/autoForm}}
     </div>
 </template>

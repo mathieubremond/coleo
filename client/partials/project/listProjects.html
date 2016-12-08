@@ -1,11 +1,14 @@
 <template name="listProjects">
     <div class="header">
         <h4 class="title">Projets</h4>
+        <div class="addAction"><a href="/suivi/projects">
+            <h5><i class="ti-plus"></i></h5>
+        </a></div>
         <p class="category search-wrap"><input type="text" name="search" class="form-control" width="250px"
-                                               placeholder="Rechercher"></p>
+                                               placeholder="Rechercher (appuyer sur entrée)"></p>
     </div>
-    <div class="content">
-        <ul class="list-unstyled team-members">
+    <div class="content fixed-height" style="margin-top: 15px">
+        <ul class="list-unstyled team-members projects-item">
             {{#if searching}}
                 {{> loading}}
             {{else}}
@@ -18,7 +21,7 @@
                                 <span class="text-muted"><small>{{desc}}</small></span>
                             </div>
                             <div class="col-xs-3 text-right">
-                                <btn class="btn btn-sm btn-success
+                                <btn class="btn btn-sm btn-info
                                     btn-icon {{btnSelected}}">
                                     <i class="fa fa-check"></i>
                                 </btn>

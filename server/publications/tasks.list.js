@@ -1,6 +1,6 @@
 import {getCurrentUserCompanyId} from '../helpers/getCurrentUserCompanyId.js';
 
-export function listTasks ({projectIds, teamIds}) {
+export function listTasks({projectIds, teamIds}) {
     let query = {
             $or: [
                 {teamId: {$in: teamIds}},
@@ -8,6 +8,7 @@ export function listTasks ({projectIds, teamIds}) {
             ]
         },
         projection = {limit: 100, sort: {createdAt: 1}};
+
     query.companyId = getCurrentUserCompanyId(this.userId);
     return Tasks.find(query, projection);
 }

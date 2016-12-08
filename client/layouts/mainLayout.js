@@ -6,11 +6,11 @@ Template.mainLayout.onCreated(function () {
             // Permettra de ne récupérer que les taches qui concerne l'entreprise
             // et l'utilisateur connecté
             self.subscribe('coleousers.current', function() {
-                var currentColeoUser = ColeoUsers.findOne({userId: Meteor.userId()});
+                let currentColeoUser = ColeoUsers.findOne({userId: Meteor.userId()});
                 Session.set('currentColeoUser', currentColeoUser);
             });
             self.subscribe('companies.current', function() {
-                var currentCompany = Companies.findOne({});
+                let currentCompany = Companies.findOne({});
                 Session.set('currentCompany', currentCompany);
             });
         }

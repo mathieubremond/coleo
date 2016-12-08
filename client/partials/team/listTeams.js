@@ -3,7 +3,11 @@ Template.listTeams.onCreated(function () {
 
     template.searchQuery = new ReactiveVar();
     template.searching = new ReactiveVar(false);
-    Session.set('selectedTeamIds', []);
+
+    let arr = Session.get('selectedTeamIds');
+    if(!arr || arr.length == 0) {
+        Session.set('selectedTeamIds', []);
+    }
 });
 
 Template.listTeams.onRendered(function () {
@@ -25,7 +29,7 @@ Template.listTeams.onRendered(function () {
 Template.listTeams.helpers({
     teams: () => {
         if (!Session.get('currentColeoUser')) return null;
-        else return Teams.find({companyId: Session.get('currentColeoUser').companyId});
+        return Teams.find({companyId: Session.get('currentColeoUser').companyId});
     },
     searching() {
         return Template.instance().searching.get();

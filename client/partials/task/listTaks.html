@@ -2,46 +2,16 @@
 
     <div class="header">
         <h4 class="title">Tâches </h4>
-        <div class="addAction"><a href="/suivi/addTask">
-            <h5><i class="ti-plus"></i></h5>
+        <div class="addAction"><a href="">
+            <h5><i class="ti-plus add-task"></i></h5>
         </a></div>
-        <p class="category search-wrap"><input type="text" name="search" class="form-control" width="250px"
-                                               placeholder="Rechercher"></p>
     </div>
 
+    <div class="content table-responsive table-condensed task-table-container">
 
-    <div class="content table-responsive table-full-width">
-        <table class="table table-striped">
-            <thead>
-            <th>Fait</th>
-            <th>Nom</th>
-            <th>Projet</th>
-            <th>Equipe</th>
-            <th>Temps passé</th>
-            <th>Action</th>
-            </thead>
-            <tbody>
-            {{#each tasks}}
-                <tr>
-                    <td>{{done}}</td>
-                    <td>{{name}}</td>
-                    <td>{{projectId}}</td>
-                    <td>{{teamId}}</td>
-                    <td>{{time}}</td>
-                    <td><i class="ti-pencil-alt"></i> </td>
-                </tr>
-            {{else}}
-                <tr>
-                    <td>...</td>
-                    <td>...</td>
-                    <td>...</td>
-                    <td>...</td>
-                    <td>...</td>
-                    <td><i class="ti-pencil-alt"></i></td>
-                </tr>
-            {{/each}}
-            </tbody>
-        </table>
+        {{> tabular selector=selectTasks
+                table=TabularTables.Tasks
+                class="table table-condensed margin-top"}}
 
     </div>
 </template>

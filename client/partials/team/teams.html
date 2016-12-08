@@ -1,10 +1,12 @@
 <template name="teamsPage">
-    {{> addTeam }}
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                {{> listTeams }}
-            </div>
+    <div class="col-md-4">
+        <div class="card">
+            {{> addTeam }}
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card">
+            {{> listTeamsSimplified }}
         </div>
     </div>
 </template>

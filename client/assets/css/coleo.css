@@ -57,8 +57,10 @@
 .copyright {
     vertical-align: middle;
 }
-
-input {
+.coleo-btn input,
+.new-admin-signup input,
+#loginForm input,
+.new-company-form input {
     margin-bottom: 1vh;
     margin-top: 1vh;
     padding-bottom: 1vh;
@@ -69,7 +71,13 @@ input {
     border-right: none;
 }
 
-input[type="button"] {
+.form-control.border-input {
+    border: 1px solid #CCC5B9!important;
+}
+.coleo-btn input[type=button],
+.new-admin-signup input[type="button"],
+#loginForm input[type="button"],
+.new-company-form input[type="button"]{
     border: none;
     background-color: #EA6037;
     color: white;
@@ -187,7 +195,7 @@ input[name='search'] {
     padding-left: -15px;
 }
 .fixed-height {
-    max-height: 300px;
+    max-height: 250px;
     overflow-y: auto;
 }
 
@@ -201,4 +209,42 @@ input[name='search'] {
 
 .ocelo-href {
     color: #dd6b28;;
+}
+.task-table-container .dataTables_filter label {
+    color: rgba(0,0,0,0);
+    width: 100%;
+}
+.task-table-container .dataTables_filter{
+
+    width: 100%;
+}
+.task-table-container input[type=search] {
+    width: 100%;
+    background-color: #fffcf5;
+    /*border: medium none;*/
+    border-radius: 4px;
+    color: #66615b;
+    font-size: 14px;
+    transition: background-color 0.3s ease 0s;
+    padding: 7px 18px;
+    height: 40px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid #ccc;
+
+}
+
+.task-table-container input[type=search]:focus {
+    background-color: #FFFFFF;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: 0 !important;
+}
+
+.edit-task {
+    margin-right: 15px;
+}
+
+.liSelected {
+    background-color: #fffcf5;
 }
