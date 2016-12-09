@@ -1,5 +1,6 @@
 Template.listTasks.onCreated(function() {
     let self = this;
+    self.selectTaskDone = new ReactiveVar(false);
     self.autorun(function() {
         self.subscribe('tasks.list', {
             projectIds: Session.get('selectedProjectIds'),
@@ -11,7 +12,13 @@ Template.listTasks.onCreated(function() {
 Template.listTasks.helpers({
     tasks: () => {
         if(!Session.get('currentColeoUser')) return null;
-        return Tasks.find({companyId: Session.get('currentColeoUser').companyId});
+        let selector = {
+            companyId: Session.get('currentColeoUser').companyId
+        };
+        if(!Template.instance().selectTaskDone.get()) {
+            selector.done = false;
+        }
+        return Tasks.find(selector);
     },
     selectTasks: () => {
         return {
@@ -20,7 +27,8 @@ Template.listTasks.helpers({
                 {projectId: {$in: Session.get('selectedProjectIds')}}
             ]
         };
-    }
+    },
+    selectTaskDone: () => {return Template.instance().selectTaskDone.get()}
 });
 
 Template.listTasks.events({
@@ -31,6 +39,10 @@ Template.listTasks.events({
         } else {
             Modal.show('addTask');
         }
+    },
+    'click #selectTaskDone'(event, template) {
+        console.log("this.selectTaskDone.get() : ", template.selectTaskDone.get());
+        template.selectTaskDone.set(true);
     }
 });
 

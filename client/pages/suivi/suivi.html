@@ -1,17 +1,16 @@
 <template name="suivi">
-    <!--<ul>
-        <li><a href="/suivi/users">Gestion des utilisateurs</a></li>
-        <li><a href="/suivi/addProject">Ajouter un projet</a></li>
-        <li><a href="/suivi/addTeam">Ajouter une équipe</a></li>
-    </ul>-->
-
     <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                {{> info }}
+            </div>
+        </div>
         <div class="col-md-4">
             <div class="card">
                 {{> listProjects }}
             </div>
         </div>
-        <div class="col-md-4 col-md-offset-4">
+        <div class="col-md-4">
             <div class="card">
                 {{> listTeams }}
             </div>
