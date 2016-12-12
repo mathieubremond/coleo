@@ -1,0 +1,107 @@
+<template name="totalHours">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="icon-big icon-warning text-center">
+                            <i class="ti-info-alt"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="numbers small">
+                            <p>Choisissez un projet et une équipe</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="icon-big icon-info text-center">
+                            <i class="ti-time"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="numbers">
+                            <p>Total heures</p>
+                            {{hoursInTotal}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <hr>
+                    <div class="stats small">
+                        <i class="ti-reload"></i> Depuis votre sélection
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-12">
+        <div class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="icon-big icon-info text-center">
+                            <i class="ti-bar-chart"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="numbers">
+                            <p>Nombre de tâches</p>
+                            {{tasksInTotal}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <hr>
+                    <div class="stats small">
+                        <i class="ti-reload"></i> Depuis votre sélection
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="col-md-12">
+        <div class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="icon-big icon-info text-center">
+                            <i class="ti-pie-chart"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="numbers">
+                            <p>Tâches en cours</p>
+                            {{ongoingTaskInTotal}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <hr>
+                    <div class="stats small">
+                        <i class="ti-reload"></i> Depuis votre sélection
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>

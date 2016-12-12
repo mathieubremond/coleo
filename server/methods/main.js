@@ -11,7 +11,7 @@ Meteor.methods({
     'users.findByEmail': function(email) {return Accounts.findUserByEmail(email);},
     'teams.getTeamByName': function(name) {
         let regex = new RegExp(name, 'i');
-        let team = Teams.findOne({name: regex});
+        let team = Teams.findOne({name: regex, hide:false});
         if(!!team) {
             return team;
         } else {

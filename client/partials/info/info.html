@@ -1,9 +1,19 @@
 <template name="info">
-    <div class="header">
-        <h4 class="title">Informations</h4>
+
+    <div class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="icon-big icon-warning text-center">
+                    <i class="ti-info-alt"></i>
+                </div>
+            </div>
+        </div>
     </div>
+
     <div class="content  fixed-height" style="margin-top: 15px">
 
-        Sélectionnez au moins un projet et une équipe pour afficher les tâches en cours.
+        <p>Bonjour {{userName}}.</p>
+        <p>Sélectionnez au moins un projet et une équipe pour afficher les tâches en cours.</p>
+        <p>Un bug ou une remarque ? <a HREF="mailto:contact@ocelo.fr">contact@ocelo.fr</a></p>
     </div>
 </template>

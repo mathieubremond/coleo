@@ -47,7 +47,7 @@ Template.editTask.helpers({
 
 Template.editTask.onRendered(function () {
     // Init du checkbox
-    $('input[type="checkbox"]').each(function () {
+    $('#editTaskDone input[type="checkbox"]').each(function () {
         let $checkbox = $(this);
         $checkbox.checkbox();
     });

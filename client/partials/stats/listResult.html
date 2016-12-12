@@ -1,0 +1,58 @@
+<template name="listResult">
+    <div class="header">
+        <h4 class="title">Tâches</h4>
+        <p><a href="" class="export-data">Exporter</a>  vers Excel.</p>
+    </div>
+    <div class="content table-responsive table-full-width">
+        <table class="table" id="listResultTable">
+            <thead>
+            <tr>
+                <th>Projet</th>
+                <th>Nom</th>
+                <th>Temps passé</th>
+            </tr></thead>
+            <tbody>
+            {{#each tasks}}
+                <tr>
+                    <td>{{projectName projectId}}</td>
+                    <td>{{name}}</td>
+                    <td>{{time}} heures {{#unless done}} (en cours) {{/unless}}</td>
+                </tr>
+            {{else}}
+                <p style="margin-left: 15px">Aucune tâche.</p>
+            {{/each}}
+
+            </tbody>
+        </table>
+
+        <table class="table" id="listResultTableToExport" style="display: none;">
+            <tr>
+                <td>Projet</td>
+                <td>Équipe</td>
+                <td>Nom</td>
+                <td>Temps passé (heures)</td>
+                <td>État</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            {{#each tasks}}
+                <tr>
+                    <td>{{projectName projectId}}</td>
+                    <td>{{teamName teamId}}</td>
+                    <td>{{name}}</td>
+                    <td>{{time}}</td>
+                    <td>{{#if done}}Terminé{{else}}En cours{{/if}}</td>
+                </tr>
+            {{else}}
+                <tr>
+                    <td>Aucune tâche.</td>
+                </tr>
+            {{/each}}
+        </table>
+
+    </div>
+</template>

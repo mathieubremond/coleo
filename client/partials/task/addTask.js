@@ -52,7 +52,7 @@ Template.addTask.events({
 
 Template.addTask.onRendered(function() {
     // Init du checkbox
-    $('input[type="checkbox"]').each(function () {
+    $('#addTaskDone input[type="checkbox"]').each(function () {
         let $checkbox = $(this);
         $checkbox.checkbox();
 

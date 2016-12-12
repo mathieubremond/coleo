@@ -4,13 +4,11 @@
         {{#if currentUser}}
             {{> notifications}}
         {{/if}}
-        <div class="sidebar" data-background-color="white" data-active-color="warning">
+        <div class="sidebar" data-background-color="white" data-active-color="danger">
 
             <div class="sidebar-wrapper">
                 <div class="logo">
-                    <a href="/suivi" class="simple-text">
-                        Coleo (beta)
-                    </a>
+                    <img class="img-responsive" src="{{hostname}}/assets/img/logo_beta.svg">
                 </div>
 
                 <ul class="nav">
@@ -32,7 +30,7 @@
                         </ul>
                     </li>
                     <li class="{{active 'Statistiques'}}">
-                        <a href="">
+                        <a href="/suivi/stats">
                             <i class="ti-stats-up"></i>
                             <p>Statistiques</p>
                         </a>

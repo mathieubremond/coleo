@@ -17,5 +17,6 @@ export function listTeams ({search, selectedIds}) {
         projection.limit = 10;
     }
     query.companyId = getCurrentUserCompanyId(this.userId);
+    query.hide = false;
     return Teams.find(query, projection);
 }

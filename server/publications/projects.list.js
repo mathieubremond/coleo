@@ -17,5 +17,6 @@ export function listProjects ({search, selectedIds}) {
         projection.limit = 10;
     }
     query.companyId = getCurrentUserCompanyId(this.userId);
+    query.hide = false;
     return Projects.find(query, projection);
 }

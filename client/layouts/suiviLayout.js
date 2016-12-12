@@ -46,6 +46,10 @@ Template.suiviLayout.helpers({
         } else {
             return '';
         }
+    },
+    hostname: () => {
+        let full = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '');
+        return full;
     }
 });
 
@@ -73,6 +77,7 @@ function setUserTeamId() {
             return;
         }
         //console.log("data : ", data);
-        Session.set('selectedTeamIds', [data._id]);
+        if(!!data)
+            Session.set('selectedTeamIds', [data._id]);
     });
 }

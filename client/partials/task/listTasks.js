@@ -1,34 +1,23 @@
 Template.listTasks.onCreated(function() {
     let self = this;
-    self.selectTaskDone = new ReactiveVar(false);
-    self.autorun(function() {
-        self.subscribe('tasks.list', {
-            projectIds: Session.get('selectedProjectIds'),
-            teamIds: Session.get('selectedTeamIds')
-        });
-    });
+    self.showTasksDone = new ReactiveVar();
+    self.showTasksDone.set(false);
 });
 
 Template.listTasks.helpers({
-    tasks: () => {
-        if(!Session.get('currentColeoUser')) return null;
-        let selector = {
-            companyId: Session.get('currentColeoUser').companyId
-        };
-        if(!Template.instance().selectTaskDone.get()) {
+    selectTasks: () => {
+        let selector = {};
+        if(Session.get('selectedTeamIds').length > 0) {
+            selector.teamId= {$in: Session.get('selectedTeamIds')}
+        }
+        if(Session.get('selectedProjectIds').length > 0) {
+            selector.projectId= {$in: Session.get('selectedProjectIds')}
+        }
+        if(Template.instance().showTasksDone.get() != true) {
             selector.done = false;
         }
-        return Tasks.find(selector);
-    },
-    selectTasks: () => {
-        return {
-            $or: [
-                {teamId: {$in: Session.get('selectedTeamIds')}},
-                {projectId: {$in: Session.get('selectedProjectIds')}}
-            ]
-        };
-    },
-    selectTaskDone: () => {return Template.instance().selectTaskDone.get()}
+        return selector;
+    }
 });
 
 Template.listTasks.events({
@@ -40,12 +29,13 @@ Template.listTasks.events({
             Modal.show('addTask');
         }
     },
-    'click #selectTaskDone'(event, template) {
-        console.log("this.selectTaskDone.get() : ", template.selectTaskDone.get());
-        template.selectTaskDone.set(true);
+    'change #showTasksDone'(event, template) {
+        let checked = $('#showTasksDone').prop('checked');
+        template.showTasksDone.set(checked);
     }
 });
 
 Template.listTasks.onRendered(function() {
     $(".task-table-container input[type=search]").attr("placeholder", "Rechercher (appuyer sur entrée)");
+    $(".dataTables_processing").first().remove();
 });

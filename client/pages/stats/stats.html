@@ -1,10 +1,12 @@
-<template name="suivi">
+<template name="stats">
+
     <div class="row">
         <div class="col-md-3">
-            <div class="card">
-                {{> info }}
+            <div class="row">
+                {{> totalHours}}
             </div>
         </div>
+
         <div class="col-md-5">
             <div class="card">
                 {{> listProjects }}
@@ -15,11 +17,10 @@
                 {{> listTeams }}
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
+
+        <div class="col-md-9">
             <div class="card">
-                {{> listTasks }}
+                {{> listResult}}
             </div>
         </div>
     </div>
