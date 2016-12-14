@@ -11,6 +11,9 @@ Template.info.helpers({
     },*/
     userName: () => {
         let u = Session.get('currentColeoUser');
-        return u.firstName + ' ' + u.lastName;
+        if(!!u)
+            return ' ' + u.firstName + ' ' + u.lastName;
+        else
+            return "";
     }
 });

@@ -19,7 +19,7 @@ Template.suiviLayout.onCreated(function () {
                 let currentColeoUser = ColeoUsers.findOne({userId: Meteor.userId()});
                 Session.set('currentColeoUser', currentColeoUser);
 
-                setUserTeamId();
+                //setUserTeamId();
             });
             self.subscribe('companies.current', function() {
                 let currentCompany = Companies.findOne({});
@@ -65,8 +65,7 @@ Template.suiviLayout.events({
 });
 
 Template.suiviLayout.onRendered(initPaperDashboard);
-
-
+/*
 
 function setUserTeamId() {
     let user = Session.get('currentColeoUser');
@@ -80,4 +79,4 @@ function setUserTeamId() {
         if(!!data)
             Session.set('selectedTeamIds', [data._id]);
     });
-}
+}*/

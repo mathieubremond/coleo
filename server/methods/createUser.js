@@ -1,7 +1,7 @@
 import {Schema} from '../../lib/api/schemas/index.js';
 import {getCurrentUserCompanyId} from '../helpers/getCurrentUserCompanyId.js';
 
-export function createColeoUser (user) {
+export function createColeoUser(user) {
     var userId = Accounts.createUser({
         email: user.email,
         password: user.password
@@ -14,7 +14,7 @@ export function createColeoUser (user) {
     user.companyId = companyId;
 
     Schema.userSchema.validate(user);
-    ColeoUsers.insert(user);
+    let newId = ColeoUsers.insert(user);
 
     serverMessages.notify('serverMessage:company', 'Info',
         'Utilisateur ajouté : ' + user.firstName + ' ' + user.lastName, {
@@ -25,26 +25,27 @@ export function createColeoUser (user) {
     // On crée une equipe avec le nom de l'utilisateur
     let newTeam = {
         name: user.firstName + " " + user.lastName,
-        companyId: user.companyId
+        companyId: user.companyId,
+        userId: newId
     };
 
-    Schema.teamSchema.validate(newTeam);
+    //Schema.teamSchema.validate(newTeam);
     Teams.insert(newTeam);
 }
 
 export function createFirstUser(user) {
     Schema.userSchema.clean(user);
     Schema.userSchema.validate(user);
-    let newUser = ColeoUsers.insert(user);
+    let newId = ColeoUsers.insert(user);
+
 
     // On crée une equipe avec le nom de l'utilisateur
     let newTeam = {
         name: user.firstName + " " + user.lastName,
-        companyId: user.companyId
+        companyId: user.companyId,
+        userId: newId
     };
 
-    Schema.teamSchema.validate(newTeam);
+    //Schema.teamSchema.validate(newTeam);
     Teams.insert(newTeam);
-
-    return newUser;
 }

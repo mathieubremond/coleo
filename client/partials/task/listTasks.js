@@ -2,21 +2,47 @@ Template.listTasks.onCreated(function() {
     let self = this;
     self.showTasksDone = new ReactiveVar();
     self.showTasksDone.set(false);
+
+    self.autorun(function() {
+        let selectPjt = {hide:false};
+        let selectedProjectIds = Session.get('selectedProjectIds');
+        if(!!selectedProjectIds || selectedProjectIds > 0) {
+            selectPjt._id = {$in: selectedProjectIds};
+        }
+        let pjtIds = Projects.find(selectPjt).map((item) => {
+            return item._id;
+        });
+        self.subscribe('tasks.list', {
+            projectIds: pjtIds,
+            teamIds: Session.get('selectedTeamIds')
+        });
+    })
 });
 
 Template.listTasks.helpers({
-    selectTasks: () => {
+    showTasksDone: () => {return Template.instance().showTasksDone.get();},
+    tasks: () => {
+        let teamIds = Session.get('selectedTeamIds');
+        let projectIds = Session.get('selectedProjectIds');
+        if(teamIds.length == 0 && projectIds.length == 0) {
+            return null;
+        }
+
         let selector = {};
-        if(Session.get('selectedTeamIds').length > 0) {
-            selector.teamId= {$in: Session.get('selectedTeamIds')}
-        }
-        if(Session.get('selectedProjectIds').length > 0) {
-            selector.projectId= {$in: Session.get('selectedProjectIds')}
-        }
+        // Si la checkbox est pas coché, on ne montre que les taches en cours
         if(Template.instance().showTasksDone.get() != true) {
             selector.done = false;
         }
-        return selector;
+
+        // On ne retourne que les tâches dont le projet n'est pas terminé
+        if(Projects.find().count() > 0) {
+            let pjtIds = Projects.find({hide: false}).map((item) => {
+                return item._id;
+            });
+            selector.projectId = {$in: pjtIds};
+        }
+
+        return Tasks.find(selector);
     }
 });
 
@@ -35,7 +61,17 @@ Template.listTasks.events({
     }
 });
 
-Template.listTasks.onRendered(function() {
-    $(".task-table-container input[type=search]").attr("placeholder", "Rechercher (appuyer sur entrée)");
-    $(".dataTables_processing").first().remove();
+Template.rowTask.events({
+    'click a.edit-task'(event, template) {
+        let t = Tasks.findOne({_id: this._id});
+        Modal.show('editTask', t);
+    },
+    'click a.delete-task'(event, template) {
+        let t = Tasks.findOne({_id: this._id});
+        Modal.show('removeTask', t);
+    },
+    'click tr'(){
+        let t = Tasks.findOne({_id: this._id});
+        Modal.show('editTask', t);
+    }
 });

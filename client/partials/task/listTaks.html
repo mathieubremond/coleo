@@ -2,7 +2,7 @@
 
     <div class="header">
         <h4 class="title">Tâches </h4>
-        <p><label for="showTasksDone">Terminées</label>
+        <p><label for="showTasksDone">Afficher les tâches terminées</label>
             <input id="showTasksDone" type="checkbox" class="show-tasks-done">
         </p>
         <div class="addAction"><a href="">
@@ -12,9 +12,51 @@
 
     <div class="content table-responsive table-condensed task-table-container">
 
-        {{> tabular selector=selectTasks
-                table=TabularTables.Tasks
-                class="table table-condensed margin-top"}}
-
+        <table class="table tableListTasks">
+            <thead>
+            <tr>
+                <th class="hideIfSmall">État</th>
+                <th>Nom</th>
+                <th class="hideIfSmall">Projet</th>
+                <th class="hideIfSmall">Équipe</th>
+                <th class="hideIfSmall">Temps passé</th>
+                <th>Deadline</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each tasks}}
+                {{> rowTask}}
+            {{else}}
+                <tr>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
     </div>
+</template>
+
+<template name="rowTask">
+    <tr class="{{#if done}}doneTask{{else}}ongoindTask{{/if}}" style="cursor:pointer">
+        <td class="hideIfSmall">
+            {{#if done}}<i class="ti-check"></i>
+            {{else}}<i class="ti-reload"></i>{{/if}}
+        </td>
+        <td style="max-width: 230px">{{name}}</td>
+        <td class="hideIfSmall">{{projectName}}</td>
+        <td class="hideIfSmall">{{teamName}}</td>
+        <td class="hideIfSmall">{{time}} h</td>
+        <td>{{deadline}}</td>
+        <td>
+            <a href="" class="edit-task"><i class="ti-pencil-alt"></i></a>
+            <a href="" class="delete-task"><i class="ti-trash"></i></a>
+        </td>
+    </tr>
 </template>

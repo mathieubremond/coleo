@@ -1,10 +1,14 @@
 <template name="listTeams">
     <div class="header">
         <h4 class="title">Équipes</h4>
+        <p style="color:#f4d387;">
+            <a href="" class="selectAll">Toutes</a> /
+            <a href="" class="unselectAll">Aucune</a>
+        </p>
         <div class="addAction"><a href="/suivi/teams">
             <h5><i class="ti-plus"></i></h5>
         </a></div>
-        <p class="category search-wrap"><input type="text" name="search" class="form-control" width="250px"
+        <p class="category search-wrap"><input type="text" name="search" class=" searchTeam form-control" width="250px"
                                                placeholder="Rechercher (appuyer sur entrée)"></p>
     </div>
 
@@ -15,7 +19,7 @@
                 {{> loading}}
             {{else}}
                 {{#each teams}}
-                        <li id="list_team_item_{{_id}}" class="{{selected}}" >
+                        <li id="list_team_item_{{_id}}" class="{{selected}}" style="cursor:pointer">
                             <div class="row">
                                 <div class="col-xs-3">
                                     <div class="avatar">
@@ -29,7 +33,7 @@
                                 <div class="col-xs-3 text-right">
                                     <btn class="btn btn-sm btn-info
                                     btn-icon {{btnSelected}}">
-                                        <i class="fa fa-check"></i>
+                                        <i class="fa"></i>
                                     </btn>
                                 </div>
                             </div>
@@ -37,6 +41,15 @@
                 {{else}}
                     <p class="no-results">Aucun résultat.</p>
                 {{/each}}
+                {{#if query}}
+                    <li>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <a href="" class="cancelSearch">Annuler la recherche</a>
+                            </div>
+                        </div>
+                    </li>
+                {{/if}}
             {{/if}}
         </ul>
     </div>

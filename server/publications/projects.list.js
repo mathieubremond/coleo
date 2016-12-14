@@ -5,8 +5,9 @@ export function listProjects ({search, selectedIds}) {
     check(selectedIds, Array);
 
     let query = {},
-        projection = {limit: 50, sort: {name: 1}};
+        projection = {sort: {name: 1}};
     if (search) {
+        console.log("searching...");
         let regex = new RegExp(search, 'i');
         query = {
             $or: [
@@ -14,9 +15,14 @@ export function listProjects ({search, selectedIds}) {
                 {_id: {$in: selectedIds}}
             ]
         };
-        projection.limit = 10;
     }
     query.companyId = getCurrentUserCompanyId(this.userId);
-    query.hide = false;
     return Projects.find(query, projection);
+}
+
+export function singleProject(id) {
+    let query = {};
+    query.companyId = getCurrentUserCompanyId(this.userId);
+    query._id = id;
+    return Projects.find(query);
 }

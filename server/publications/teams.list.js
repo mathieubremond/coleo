@@ -5,7 +5,7 @@ export function listTeams ({search, selectedIds}) {
     check(selectedIds, Array);
 
     let query = {},
-        projection = {limit: 50, sort: {name: 1}};
+        projection = {sort: {name: 1}};
     if (search) {
         let regex = new RegExp(search, 'i');
         query = {
@@ -14,9 +14,17 @@ export function listTeams ({search, selectedIds}) {
                 {_id: {$in: selectedIds}}
             ]
         };
-        projection.limit = 10;
     }
     query.companyId = getCurrentUserCompanyId(this.userId);
     query.hide = false;
     return Teams.find(query, projection);
+}
+
+
+
+export function singleTeam(id) {
+    let query = {};
+    query.companyId = getCurrentUserCompanyId(this.userId);
+    query._id = id;
+    return Teams.find(query);
 }

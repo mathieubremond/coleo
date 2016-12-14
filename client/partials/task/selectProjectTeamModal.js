@@ -11,7 +11,7 @@ Template.selectProjectTeamModal.events({
             Modal.hide(template);
             setTimeout(function() {
                 Modal.show('addTask');
-            }, 800);
+            }, 600);
             template.errorMessage.set(null);
         } else {
             template.errorMessage.set("Vous devez sélectionner un projet et une équipe.");

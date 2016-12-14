@@ -1,0 +1,42 @@
+<template name="listTeamsEdit">
+
+    <div class="header">
+        <h4 class="title">Équipes</h4>
+    </div>
+    <div class="content  table-responsive table-full-width">
+        <table class="table table-striped">
+            <thead>
+            <th>Nom</th>
+            <th>Modifier</th>
+            <th>Supprimer</th>
+            </thead>
+            <tbody>
+            {{#each teams}}
+                <tr>
+                    <td>{{name}}</td>
+                    <td>
+                        <a href="">
+                            <i class="ti-pencil-alt editTeam" ></i>
+                        </a>
+                    </td>
+
+                    <td>
+                        <a href="">
+                            <i class="ti-trash removeTeam" ></i>
+                        </a>
+                    </td>
+                </tr>
+            {{else}}
+                <tr>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+</template>

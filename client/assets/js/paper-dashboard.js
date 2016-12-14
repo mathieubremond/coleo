@@ -1,4 +1,5 @@
 export function initPaperDashboard () {
+
     var lbd = {
         misc: {
             navbar_menu_visible: 0
@@ -75,6 +76,28 @@ export function initPaperDashboard () {
                         $('html').addClass('nav-open');
                         lbd.misc.navbar_menu_visible = 1;
 
+                        $('.close-sidebar').click(function() {
+                            if( lbd.misc.navbar_menu_visible == 1 ) {
+                                $('html').removeClass('nav-open');
+                                lbd.misc.navbar_menu_visible = 0;
+                                $('#bodyClick').remove();
+                                setTimeout(function () {
+                                    $toggle.removeClass('toggled');
+                                }, 400);
+                            }
+                        });
+
+                        $('.add-task').click(function() {
+                            if( lbd.misc.navbar_menu_visible == 1 ) {
+                                console.log("click sur add-task");
+                                if (Session.get('selectedTeamIds').length == 0
+                                    || Session.get('selectedProjectIds').length == 0) {
+                                    Modal.show('selectProjectTeamModal');
+                                } else {
+                                    Modal.show('addTask');
+                                }
+                            }
+                        });
                     }
                 });
                 navbar_initialized = true;

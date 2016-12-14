@@ -192,23 +192,27 @@ input[name='search'] {
     padding: 16px 14px 14px 16px;
 }
 .pjt_list_name {
-    padding-left: -15px;
-}
-.fixed-height {
-    max-height: 250px;
-    overflow-y: auto;
+    padding-left: 8%;
 }
 
+
+@media (min-width: 992px) {
+    .fixed-height {
+        max-height: 250px;
+        overflow-y: auto;
+    }
+}
 .ocelo-dropdown > li > a:hover,
 .ocelo-dropdown > li > a:focus {
-    background-color: #66615B!important;
-    color: rgba(255, 255, 255, 0.7)!important;
+    background-color: #FFFCF5!important;
+    color: #dd6b28!important;
     opacity: 1;
     text-decoration: none;
 }
 
+
 .ocelo-href {
-    color: #dd6b28;;
+    color: #dd6b28;
 }
 .task-table-container .dataTables_filter label {
     color: rgba(0,0,0,0);
@@ -247,4 +251,72 @@ input[name='search'] {
 
 .liSelected {
     background-color: #fffcf5;
+}
+
+.doneTask {}
+
+.ongoindTask {
+    background-color: #fffcf5;
+}
+
+.tableListTasks th {
+}
+
+.tableListTasks td {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.show-tasks-done:checked {
+}
+
+.editProjectDiv {
+    width: 12%;
+}
+
+.btn-info{
+    color: #f4d387 !important;
+    background-color: transparent;
+    border-color: #f4d387 !important;
+}
+
+.btn-info.btn-fill{
+    color: white !important;
+    background-color: #f4d387 !important;
+}
+
+.btn-info:hover {
+    color: white !important;
+    background-color: #f4d387 !important;
+}
+
+a:not(.btn):hover, a:not(.btn):focus {
+    color:#dd6b28 !important
+}
+.btn-primary {
+    color: #f4d387 !important;
+    background-color: transparent;
+    border-color: #f4d387 !important;
+}
+.btn-primary.btn-fill{
+    color: white !important;
+    background-color: #f4d387 !important;
+}
+
+.btn-primary:hover {
+    color: white !important;
+    background-color: #f4d387 !important;
+}
+
+.off-canvas-sidebar .divider {
+    height: 1px;
+    margin: 10px 0;
+}
+
+@media (max-width: 991px) {
+    .hideIfSmall {
+        display: none;
+    }
 }

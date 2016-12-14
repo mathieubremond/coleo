@@ -1,10 +1,14 @@
 <template name="listProjects">
     <div class="header">
         <h4 class="title">Projets</h4>
+        <p style="color:#f4d387;">
+            <a href="" class="selectAll">Tous</a> /
+            <a href="" class="unselectAll">Aucun</a>
+        </p>
         <div class="addAction"><a href="/suivi/projects">
             <h5><i class="ti-plus"></i></h5>
         </a></div>
-        <p class="category search-wrap"><input type="text" name="search" class="form-control" width="250px"
+        <p class="category search-wrap"><input type="text" name="search" class="searchProject form-control" width="250px"
                                                placeholder="Rechercher (appuyer sur entrée)"></p>
     </div>
     <div class="content fixed-height" style="margin-top: 15px">
@@ -13,17 +17,17 @@
                 {{> loading}}
             {{else}}
                 {{#each projects}}
-                    <li id="list_pjts_item_{{_id}}" class="{{selected}}" >
+                    <li id="list_pjts_item_{{_id}}" class="{{selected}}" style="cursor:pointer">
                         <div class="row">
-                            <div class="col-xs-9 pjt_list_name">
+                            <div class="col-xs-8 pjt_list_name">
                                 {{name}}
                                 <br />
                                 <span class="text-muted"><small>{{desc}}</small></span>
                             </div>
-                            <div class="col-xs-3 text-right">
+                            <div class="col-xs-4 text-right">
                                 <btn class="btn btn-sm btn-info
                                     btn-icon {{btnSelected}}">
-                                    <i class="fa fa-check"></i>
+                                    <i class="fa"></i>
                                 </btn>
                             </div>
                         </div>
@@ -31,6 +35,15 @@
                 {{else}}
                     <p class="no-results">Aucun résultat.</p>
                 {{/each}}
+                {{#if query}}
+                    <li>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <a href="" class="cancelSearch">Annuler la recherche</a>
+                            </div>
+                        </div>
+                    </li>
+                {{/if}}
             {{/if}}
         </ul>
     </div>

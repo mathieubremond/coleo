@@ -29,7 +29,20 @@ Template.listResult.helpers({
 Template.listResult.events({
     'click .export-data'() {
         console.log("click .export-data");
-        export_table_to_excel('listResultTableToExport', "export_taches");
+
+        let download = true;
+
+        let ua = navigator.userAgent.toLowerCase();
+        if (ua.indexOf('safari') != -1) {
+            if (ua.indexOf('chrome') > -1) {
+            } else {
+                alert("Ce navigateur n'est pas supporté pour exporter les données pour l'instant. Chrome et Firefox sont supportés."); // Safari
+                download = false;
+            }
+        }
+
+        if(download)
+            export_table_to_excel('listResultTableToExport', "export_taches");
     }
 });
 

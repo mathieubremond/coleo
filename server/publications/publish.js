@@ -1,5 +1,7 @@
 import {getCurrentUserCompanyId} from '../helpers/getCurrentUserCompanyId.js';
 import {listProjects} from './projects.list.js';
+import {singleProject} from './projects.list.js';
+import {singleTeam} from './teams.list.js';
 import {listTasks} from'./tasks.list.js';
 import {listTeams} from'./teams.list.js';
 
@@ -33,3 +35,6 @@ Meteor.publish('users.single', function(id) {
     check(id, String);
     return ColeoUsers.find({_id: id, companyId: getCurrentUserCompanyId(this.userId)});
 });
+
+Meteor.publish('projects.single', singleProject);
+Meteor.publish('teams.single', singleTeam);

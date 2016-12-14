@@ -29,7 +29,7 @@ Template.listProjects.onRendered(function () {
 Template.listProjects.helpers({
     projects() {
         if (!Session.get('currentColeoUser')) return null;
-        return Projects.find({companyId: Session.get('currentColeoUser').companyId});
+        return Projects.find({hide:false,companyId: Session.get('currentColeoUser').companyId});
     },
     searching() {
         return Template.instance().searching.get();
@@ -62,7 +62,19 @@ Template.listProjects.helpers({
 Template.listProjects.events({
     'click .projects-item li': projectClickEvent,
     'keyup [name="search"]': searchKeyUpEvent,
-    'click button[name="searchButton"]': searchClickEvent
+    'click button[name="searchButton"]': searchClickEvent,
+    'click .selectAll': (evt, template) => {
+        let pjtIds = Projects.find({hide:false}).map((item)=>{return item._id;});
+        Session.set('selectedProjectIds', pjtIds);
+    },
+    'click .unselectAll': (evt, template) => {
+        Session.set('selectedProjectIds', []);
+    },
+    'click .cancelSearch': (evt, template) => {
+        template.searchQuery.set('');
+        $('.searchProject').val('');
+        Session.set('selectedProjectIds', []);
+    }
 });
 
 function searchKeyUpEvent(event, template) {

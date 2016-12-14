@@ -1,16 +1,43 @@
 <template name="updateUser">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="header">
                     <h4 class="title">{{user.firstName}} {{user.lastName}}</h4>
                 </div>
                 <div class="content">
-                    {{> quickForm schema=temporaryUserSchema id="editExistingUserForm"
-                            doc=user type="method" meteormethod="users.update"
-                            buttonContent="Modifier"}}
-                    <br/>
-                    <button type="button" class="btn btn-default">Annuler</button>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h5>Modifier les informations</h5>
+                            {{#autoForm schema=temporaryUserSchema id="editUserInfo" doc=user }}
+                                {{> afQuickField name='firstName'}}
+                                {{> afQuickField name='lastName'}}
+                            {{/autoForm}}
+                        </div>
+                        <div class="col-md-4">
+                            <h5>Modifier le mail</h5>
+                            {{#autoForm schema=temporaryUserSchema id="editUserMail" doc=user }}
+                                {{> afQuickField name='email' disabled=true}}
+                            {{/autoForm}}
+                        </div>
+                        <div class="col-md-4">
+                            <h5>Modifier le mot de passe</h5>
+                            {{#autoForm schema=temporaryUserSchema
+                                        id="editUserPassword" doc=user }}
+                                {{> afQuickField name='password'}}
+                            {{/autoForm}}
+                        </div>
+                    </div>
+
+                    <button type="button"
+                            class="btn btn-primary updateInfo">
+                        Sauvegarder
+                    </button>
+                    <button type="button"
+                            class="btn btn-primary delete">
+                        Supprimer
+                    </button>
                 </div>
             </div>
         </div>

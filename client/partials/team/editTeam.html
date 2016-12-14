@@ -1,0 +1,19 @@
+<template name="editTeam">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">{{team.name}}</h4>
+                </div>
+                <div class="content">
+                    {{> quickForm collection='Teams' id="editTeamForm"
+                            doc=team type="update"
+                            buttonContent="Sauvegarder"
+                            omitFields="hide,userId,companyId"
+                    }}
+                    <br/>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

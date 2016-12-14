@@ -1,0 +1,49 @@
+<template name="listProjectsEdit">
+
+    <div class="header">
+        <h4 class="title">Projets</h4>
+    </div>
+    <div class="content  table-responsive table-full-width">
+        <table class="table table-striped">
+            <thead>
+            <th>Terminé</th>
+            <th>Nom</th>
+            <th>Modifier</th>
+            <th>Supprimer</th>
+            </thead>
+            <tbody>
+            {{#each projects}}
+                <tr>
+                    <td>
+                        <btn class="btn btn btn-sm btn-info
+                                    btn-icon changeStatus">
+                            <i class="fa {{#if hide}}fa-check{{/if}}"></i>
+                        </btn>
+                    </td>
+                    <td>{{name}}</td>
+                    <td>
+                        <a href="">
+                            <i class="ti-pencil-alt editProject" ></i>
+                        </a>
+                    </td>
+
+                    <td>
+                        <a href="">
+                            <i class="ti-trash removeProject" ></i>
+                        </a>
+                    </td>
+                </tr>
+            {{else}}
+                <tr>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+</template>

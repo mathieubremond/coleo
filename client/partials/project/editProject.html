@@ -1,0 +1,17 @@
+<template name="editProject">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">{{project.name}}</h4>
+                </div>
+                <div class="content">
+                    {{> quickForm collection='Projects' id="editProjectForm"
+                            doc=project type="update"
+                            buttonContent="Sauvegarder" }}
+                    <br/>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

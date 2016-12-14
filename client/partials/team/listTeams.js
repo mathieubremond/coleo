@@ -62,7 +62,19 @@ Template.listTeams.helpers({
 Template.listTeams.events({
     'click .team-members li': teamClickEvent,
     'keyup [name="search"]': searchKeyUpEvent,
-    'click button[name="searchButton"]': searchClickEvent
+    'click button[name="searchButton"]': searchClickEvent,
+    'click .selectAll': (evt, template) => {
+        let tmIds = Teams.find({hide:false}).map((item)=>{return item._id;});
+        Session.set('selectedTeamIds', tmIds);
+    },
+    'click .unselectAll': (evt, template) => {
+        Session.set('selectedTeamIds', []);
+    },
+    'click .cancelSearch': (evt, template) => {
+        template.searchQuery.set('');
+        $('.searchTeam').val('');
+        Session.set('selectedTeamIds', []);
+    }
 });
 
 function searchKeyUpEvent(event, template) {
