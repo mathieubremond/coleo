@@ -4,6 +4,7 @@ var INSTANCE = null;
 
 // Création d'un variable reactive
 Template.inscription.onCreated(function () {
+    Meteor.logout();
     this.companyId = new ReactiveVar();
     this.companyId.set(null);
 
@@ -83,5 +84,17 @@ Template.inscription.helpers({
 });
 
 Template.inscription.events({
-    'click #logoBig' () {/*FlowRouter.go('home');*/}
+    'click #logoBig' () {/*FlowRouter.go('home');*/},
+    'change #cgu_agreement'(event, template) {
+        let checked = $('#cgu_agreement').prop('checked');
+        $(".next").prop('disabled', !checked);
+    }
+});
+
+Template.inscription.onRendered(function() {
+    // Init du checkbox
+    $('input[type="checkbox"]').each(function () {
+        let $checkbox = $(this);
+        $checkbox.checkbox();
+    });
 });

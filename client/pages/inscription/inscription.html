@@ -9,9 +9,23 @@
                             type="insert" class="at-pwd-form new-company-form" }}
                     {{> afQuickField name='name'}}
                     {{> afQuickField name='desc' rows=3 class="new-company-desc"}}
-                    <button type="submit" class="btn btn-primary">Suivant</button>
+
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label id="cgu_agreement_container">
+                                <span class="icons"><span class="first-icon fa fa-square fa-base"></span><span class="second-icon fa fa-check-square fa-base"></span></span><input type="checkbox" value="true" name="done" id="cgu_agreement" data-schema-key="done">
+                                Accepter les <a target="_blank" href="{{host}}/assets/CGU_Ocelo_Coleo.pdf">conditions générales de ventes</a>.
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <button type="submit" disabled class="btn btn-primary next">Suivant</button>
+
                 {{/autoForm}}
+
             </div>
+
 
         {{else}}
 

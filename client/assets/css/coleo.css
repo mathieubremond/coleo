@@ -105,7 +105,7 @@ body {
     border-top: none;
     border-left: none;
     border-right: none;
-    border-radius: 0!important;
+    border-radius: 0px!important;
     background-color: transparent!important;
 }
 
@@ -126,7 +126,7 @@ body {
     border-top: none!important;
     border-left: none!important;
     border-right: none!important;
-    border-radius: 0!important;
+    border-radius: 0px!important;
 }
 
 .form-control.border-input {
@@ -145,6 +145,10 @@ body {
 #loginForm label, .new-admin-signup label {
     display: none;
 }
+#cgu_agreement_container {
+    margin-top: 40px;
+    display: block!important;
+}
 .inscription-container {
     margin-right: 30px;
     margin-left: 40px;
@@ -159,6 +163,7 @@ body {
     color: white;
     padding: 10px 15px;
     margin-top: 2vh;
+    border-radius: 5px!important;
 }
 
 #loginForm .at-title h3 {
@@ -207,7 +212,7 @@ body {
     color: white !important;;
     padding: 10px 15px !important;
     margin-top: 2vh !important;
-    border-radius: 0!important;
+    border-radius: 5px!important;
 }
 
 .new-company-form input, .new-admin-signup input,
@@ -220,7 +225,7 @@ body {
     border-top: none !important;;
     border-left: none !important;;
     border-right: none !important;;
-    border-radius: 0!important;
+    border-radius: 0px!important;
     background-color: transparent!important;
 }
 
@@ -307,7 +312,7 @@ input[name='search']:focus {
     width: 100%;
     background-color: #f4f4f4;
     /*border: medium none;*/
-    border-radius: 4px;
+    border-radius: 0;
     color: #8a7c83;
     font-size: 14px;
     transition: background-color 0.3s ease 0s;
@@ -441,7 +446,6 @@ a:not(.btn):hover, a:not(.btn):focus {
     margin-top: 10px;
     background-color: #f4f4f4;
     /* border: medium none; */
-    border-radius: 4px;
     color: #8a7c83;
     font-size: 14px;
     transition: background-color 0.3s ease 0s;
