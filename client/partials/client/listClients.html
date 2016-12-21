@@ -1,0 +1,48 @@
+<template name="listClients">
+    <table class="table table-striped">
+        <thead>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Projets visibles</th>
+        <th>Équipes visibles</th>
+        <th>Supprimer</th>
+        </thead>
+        <tbody>
+        {{#each clients}}
+            {{>listClientsRow}}
+        {{else}}
+
+            <tr>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+
+</template>
+
+<template name="listClientsRow">
+    <tr>
+        <td>{{name}}</td>
+        <td>{{email userId}}</td>
+        <td><select>
+            {{#each projects}}
+                <option>{{name}}</option>
+            {{/each}}
+        </select></td>
+        <td><select>
+            {{#each teams}}
+                <option>{{name}}</option>
+            {{/each}}
+        </select></td>
+        <td>
+            <a href="">
+                <i class="ti-trash delete-client"  data-id="{{_id}}"></i>
+            </a>
+        </td>
+    </tr>
+</template>

@@ -38,6 +38,7 @@ ejson@1.0.13
 email@1.1.18
 es5-shim@4.6.15
 fastclick@1.0.13
+flowkey:hotkeys@1.2.0
 geojson-utils@1.0.10
 gfk:notifications@1.1.4
 gfk:server-messages@1.1.0
@@ -83,6 +84,7 @@ modules-runtime@0.7.7
 momentjs:moment@2.10.6
 mongo@1.1.14
 mongo-id@1.0.6
+mousetrap:mousetrap@1.4.6_1
 mrt:moment@2.8.1
 mrt:moment-timezone@0.2.1
 msavin:jetsetter@2.0.0

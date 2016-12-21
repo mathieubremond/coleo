@@ -1,7 +1,8 @@
 import {Schema} from '../../lib/api/schemas/index.js';
 import {getCurrentUserCompanyId} from '../helpers/getCurrentUserCompanyId.js';
 
-export function createTeam (team) {
+export function createTeam(team) {
+    //console.log("team = ", team);
     Schema.teamSchema.clean(team);
     let companyId = getCurrentUserCompanyId(Meteor.userId());
     team.companyId = companyId;
@@ -11,4 +12,4 @@ export function createTeam (team) {
         companyId: companyId,
         timeout: 5000
     });
-};
+}

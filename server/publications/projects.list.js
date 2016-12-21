@@ -6,8 +6,15 @@ export function listProjects ({search, selectedIds}) {
 
     let query = {},
         projection = {sort: {name: 1}};
+
+    let client = Clients.findOne({userId: this.userId});
+    if(!!client) {
+        search = true;
+        selectedIds = client.projectIds;
+    }
+
     if (search) {
-        console.log("searching...");
+        //console.log("searching...");
         let regex = new RegExp(search, 'i');
         query = {
             $or: [

@@ -11,7 +11,7 @@ AutoForm.hooks({
     AddColeoUserForm: {
         onError: function(formType, err) {
             if(!!err && !!err.reason) {
-                showNotificationError('top', 'right', 'Erreur', err.reason);
+                showNotificationError('bottom', 'right', 'Erreur', err.reason);
             }
         }
     }

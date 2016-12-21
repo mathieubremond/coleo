@@ -1,3 +1,4 @@
+import {getCurrentUserCompanyId} from '../helpers/getCurrentUserCompanyId.js';
 import {createProject} from './createProject.js';
 import {createTask} from './createTask.js';
 import {updateTask} from './updateTask.js';
@@ -11,7 +12,12 @@ import {updateUserInfo} from './updateUser.js';
 import {markProjectAsDone} from './markProjectAsDone.js';
 import {markTeamAsDone} from './markTeamAsDone.js';
 import {removeUser} from './removeUser.js';
+import {createClientUser} from './createUser.js';
 import {updateProject} from './updateProject.js';
+import {getClientUser} from './clients.js';
+import {removeClient} from './clients.js';
+import {removeProject} from './removeProject.js';
+import {updateTeam} from './updateTeam.js';
 
 Meteor.methods({
     'users.findByEmail': function (email) {
@@ -19,7 +25,9 @@ Meteor.methods({
     },
     'teams.getTeamByName': function (name) {
         let regex = new RegExp(name, 'i');
-        let team = Teams.findOne({name: regex, hide: false});
+        let team = Teams.findOne({
+            name: regex, hide: false, companyId: getCurrentUserCompanyId(Meteor.userId())
+        });
         if (!!team) {
             return team;
         } else {
@@ -28,12 +36,16 @@ Meteor.methods({
     },
     'users.create': createColeoUser,
     'users.createFirstUser': createFirstUser,
+    'users.createClient': createClientUser,
+    'users.getClientUser': getClientUser,
+    'users.removeClient': removeClient,
     'projects.create': createProject,
     'projects.markAsDone': markProjectAsDone,
-    'projects.delete': ({id}) => {
-        Projects.remove({_id: id});
+    /*'projects.delete': ({id}) => {
+        Projects.remove({_id: id, companyId: getCurrentUserCompanyId(Meteor.userId())});
         Tasks.remove({projectId: id});
-    },
+    },*/
+    'projects.delete': removeProject,
     'teams.markAsDone': markTeamAsDone,
     'teams.create': createTeam,
     'tasks.create': createTask,
@@ -43,5 +55,16 @@ Meteor.methods({
     'users.updateMail': updateUserMail,
     'users.updatePassword': updateUserPassword,
     'users.remove': removeUser,
-    'projects.update': updateProject
+    'projects.update': updateProject,
+    'teams.update': updateTeam,
+    'user.getPath': function () {
+        let id = Meteor.userId();
+        let coleoUser = ColeoUsers.findOne({userId: id});
+        if (!!coleoUser) return "suivi";
+
+        let client = Clients.findOne({userId: id});
+        if (!!client) return "client";
+
+        return 'suivi';
+    }
 });

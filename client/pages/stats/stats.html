@@ -1,24 +1,26 @@
 <template name="stats">
 
     <div class="row">
-        <div class="col-md-3">
-            <div class="row">
-                {{> totalHours}}
-            </div>
-        </div>
 
-        <div class="col-md-5">
+        <div class="col-md-6">
             <div class="card">
                 {{> listProjectsSimplified }}
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div class="card">
                 {{> listTeamsSimplified }}
             </div>
         </div>
 
-        <div class="col-md-9">
+
+        <div class="col-md-12">
+            <div class="row">
+                {{> totalHours}}
+            </div>
+        </div>
+
+        <div class="col-md-12">
             <div class="card">
                 {{> listResult}}
             </div>

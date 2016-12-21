@@ -1,7 +1,7 @@
 <template name="listTeams">
     <div class="header">
         <h4 class="title">Équipes</h4>
-        <p style="color:#f4d387;">
+        <p style="color:#e95e37;">
             <a href="" class="selectAll">Toutes</a> /
             <a href="" class="unselectAll">Aucune</a>
         </p>
@@ -12,29 +12,29 @@
                                                placeholder="Rechercher (appuyer sur entrée)"></p>
     </div>
 
-    <div class="content  fixed-height" style="margin-top: 15px">
+    <div class="content  fixed-height table-full-width" style="margin-top: 15px">
 
         <ul class="list-unstyled team-members">
             {{#if searching}}
                 {{> loading}}
             {{else}}
                 {{#each teams}}
-                        <li id="list_team_item_{{_id}}" class="{{selected}}" style="cursor:pointer">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <div class="avatar">
-                                        <img src="{{full}}/assets/img/faces/face-0.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                    </div>
-                                </div>
-                                <div class="col-xs-6">
-                                    {{name}}
-                                </div>
+                        <li id="list_team_item_{{_id}}" class="{{selected}} hoverable" style="cursor:pointer">
+                            <div class="row padding-left-row">
 
-                                <div class="col-xs-3 text-right">
+                                <div class="col-xs-1 text-right">
                                     <btn class="btn btn-sm btn-info
                                     btn-icon {{btnSelected}}">
                                         <i class="fa"></i>
                                     </btn>
+                                </div>
+                                <div class="col-xs-7">
+                                    {{name}}
+                                </div>
+                                <div class="col-xs-3 avatar-parent">
+                                    <div class="avatar">
+                                        <img src="{{full}}/assets/img/faces/face-0.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                    </div>
                                 </div>
                             </div>
                         </li>
@@ -45,7 +45,7 @@
                     <li>
                         <div class="row">
                             <div class="col-xs-12">
-                                <a href="" class="cancelSearch">Annuler la recherche</a>
+                                <a href="" class="cancelSearch">Tout afficher</a>
                             </div>
                         </div>
                     </li>

@@ -28,8 +28,14 @@ Template.listProjectsSimplified.onRendered(function () {
 
 Template.listProjectsSimplified.helpers({
     projects() {
-        if (!Session.get('currentColeoUser')) return null;
-        return Projects.find({companyId: Session.get('currentColeoUser').companyId});
+        let coleo = Session.get('currentColeoUser');
+        let client = Session.get('currentClientUser');
+        if (!coleo && !client) return null;
+        if(!!coleo) {
+            return Projects.find({companyId: Session.get('currentColeoUser').companyId});
+        } else if(!!client) {
+            return Projects.find({companyId: Session.get('currentClientUser').companyId});
+        }
     },
     searching() {
         return Template.instance().searching.get();

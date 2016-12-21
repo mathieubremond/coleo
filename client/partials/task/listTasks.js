@@ -1,12 +1,12 @@
-Template.listTasks.onCreated(function() {
+Template.listTasks.onCreated(function () {
     let self = this;
     self.showTasksDone = new ReactiveVar();
     self.showTasksDone.set(false);
 
-    self.autorun(function() {
-        let selectPjt = {hide:false};
+    self.autorun(function () {
+        let selectPjt = {hide: false};
         let selectedProjectIds = Session.get('selectedProjectIds');
-        if(!!selectedProjectIds || selectedProjectIds > 0) {
+        if (!!selectedProjectIds || selectedProjectIds > 0) {
             selectPjt._id = {$in: selectedProjectIds};
         }
         let pjtIds = Projects.find(selectPjt).map((item) => {
@@ -20,22 +20,30 @@ Template.listTasks.onCreated(function() {
 });
 
 Template.listTasks.helpers({
-    showTasksDone: () => {return Template.instance().showTasksDone.get();},
+    selectorText: () => {
+        if (Template.instance().showTasksDone.get() == true)
+            return "Cacher les tâches terminées";
+        else
+            return "Afficher les tâches terminées";
+    },
+    showTasksDone: () => {
+        return Template.instance().showTasksDone.get();
+    },
     tasks: () => {
         let teamIds = Session.get('selectedTeamIds');
         let projectIds = Session.get('selectedProjectIds');
-        if(teamIds.length == 0 && projectIds.length == 0) {
+        if (teamIds.length == 0 && projectIds.length == 0) {
             return null;
         }
 
         let selector = {};
         // Si la checkbox est pas coché, on ne montre que les taches en cours
-        if(Template.instance().showTasksDone.get() != true) {
+        if (Template.instance().showTasksDone.get() != true) {
             selector.done = false;
         }
 
         // On ne retourne que les tâches dont le projet n'est pas terminé
-        if(Projects.find().count() > 0) {
+        if (Projects.find().count() > 0) {
             let pjtIds = Projects.find({hide: false}).map((item) => {
                 return item._id;
             });
@@ -48,16 +56,16 @@ Template.listTasks.helpers({
 
 Template.listTasks.events({
     'click .add-task'() {
-        if(Session.get('selectedTeamIds').length == 0
-            || Session.get('selectedProjectIds').length == 0 ) {
+        if (Session.get('selectedTeamIds').length == 0
+            || Session.get('selectedProjectIds').length == 0) {
             Modal.show('selectProjectTeamModal');
         } else {
             Modal.show('addTask');
         }
     },
-    'change #showTasksDone'(event, template) {
-        let checked = $('#showTasksDone').prop('checked');
-        template.showTasksDone.set(checked);
+    'click .showTasksDone'(event, template) {
+        let checked = template.showTasksDone.get();
+        template.showTasksDone.set(!checked);
     }
 });
 

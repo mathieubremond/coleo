@@ -1,35 +1,37 @@
 <template name="listProjects">
     <div class="header">
         <h4 class="title">Projets</h4>
-        <p style="color:#f4d387;">
+        <p style="color:#e95e37;">
             <a href="" class="selectAll">Tous</a> /
             <a href="" class="unselectAll">Aucun</a>
         </p>
         <div class="addAction"><a href="/suivi/projects">
             <h5><i class="ti-plus"></i></h5>
-        </a></div>
+        </a>
+        </div>
         <p class="category search-wrap"><input type="text" name="search" class="searchProject form-control" width="250px"
                                                placeholder="Rechercher (appuyer sur entrée)"></p>
     </div>
-    <div class="content fixed-height" style="margin-top: 15px">
+    <div class="content fixed-height table-full-width" style="margin-top: 15px">
         <ul class="list-unstyled team-members projects-item">
             {{#if searching}}
                 {{> loading}}
             {{else}}
                 {{#each projects}}
-                    <li id="list_pjts_item_{{_id}}" class="{{selected}}" style="cursor:pointer">
-                        <div class="row">
-                            <div class="col-xs-8 pjt_list_name">
-                                {{name}}
-                                <br />
-                                <span class="text-muted"><small>{{desc}}</small></span>
-                            </div>
-                            <div class="col-xs-4 text-right">
+                    <li id="list_pjts_item_{{_id}}" class="{{selected}} hoverable" style="cursor:pointer">
+                        <div class="row padding-left-row">
+                            <div class="col-xs-1 text-right">
                                 <btn class="btn btn-sm btn-info
                                     btn-icon {{btnSelected}}">
                                     <i class="fa"></i>
                                 </btn>
                             </div>
+                            <div class="col-xs-8 pjt_list_name">
+                                {{name}}
+                                <br />
+                                <span class="text-muted"><small>{{desc}}</small></span>
+                            </div>
+
                         </div>
                     </li>
                 {{else}}

@@ -4,7 +4,7 @@ serverMessages.listen('serverMessage:company', function (subject, message, optio
 
         // Ne notifie que les utilisateurs de la même entreprise que celle de l'emetteur
         //Notifications.info(subject, message, options);
-        showNotification('top', 'right', subject, message);
+        showNotification('bottom', 'right', subject, message);
     }
 });
 

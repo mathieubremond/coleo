@@ -28,8 +28,14 @@ Template.listTeamsSimplified.onRendered(function () {
 
 Template.listTeamsSimplified.helpers({
     teams: () => {
-        if (!Session.get('currentColeoUser')) return null;
-        return Teams.find({companyId: Session.get('currentColeoUser').companyId});
+        let coleo = Session.get('currentColeoUser');
+        let client = Session.get('currentClientUser');
+        if (!coleo && !client) return null;
+        if(!!coleo) {
+            return Teams.find({companyId: Session.get('currentColeoUser').companyId});
+        } else if(!!client) {
+            return Teams.find({companyId: Session.get('currentClientUser').companyId});
+        }
     },
     searching() {
         return Template.instance().searching.get();

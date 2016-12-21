@@ -2,8 +2,8 @@
 
     <div class="header">
         <h4 class="title">Tâches </h4>
-        <p><label for="showTasksDone">Afficher les tâches terminées</label>
-            <input id="showTasksDone" type="checkbox" class="show-tasks-done">
+        <p><a class="showTasksDone" href="">{{selectorText}}</a>
+            <!--<input id="showTasksDone" type="checkbox" class="show-tasks-done">-->
         </p>
         <div class="addAction"><a href="">
             <h5><i class="ti-plus add-task"></i></h5>
@@ -41,10 +41,16 @@
             </tbody>
         </table>
     </div>
+    <div class="footer">
+        <hr>
+        <div class="stats small" style="margin-left: 30px;">
+            <i class="ti-reload"></i> Depuis votre sélection
+        </div>
+    </div>
 </template>
 
 <template name="rowTask">
-    <tr class="{{#if done}}doneTask{{else}}ongoindTask{{/if}}" style="cursor:pointer">
+    <tr class="{{#if done}}doneTask{{else}}ongoingTask{{/if}}" style="cursor:pointer">
         <td class="hideIfSmall">
             {{#if done}}<i class="ti-check"></i>
             {{else}}<i class="ti-reload"></i>{{/if}}

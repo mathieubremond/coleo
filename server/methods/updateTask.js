@@ -13,8 +13,8 @@ export function updateTask(arg) {
 
     Tasks.update({_id: task._id}, upTask);
 
-    serverMessages.notify('serverMessage:company', 'Info', 'Tâche mise à jour : ' + task.name, {
+    /*serverMessages.notify('serverMessage:company', 'Info', 'Tâche mise à jour : ' + task.name, {
         companyId: companyId,
         timeout: 1000
-    });
+    });*/
 }

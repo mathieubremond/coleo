@@ -18,7 +18,7 @@
                         <div class="col-md-4">
                             <h5>Modifier le mail</h5>
                             {{#autoForm schema=temporaryUserSchema id="editUserMail" doc=user }}
-                                {{> afQuickField name='email' disabled=true}}
+                                {{> afQuickField name='email'}}
                             {{/autoForm}}
                         </div>
                         <div class="col-md-4">
@@ -40,6 +40,12 @@
                     </button>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <a href="/suivi/users"><i class="ti-arrow-left"></i>  Retour</a>
         </div>
     </div>
 </template>

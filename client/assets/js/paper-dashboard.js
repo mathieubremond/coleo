@@ -89,7 +89,7 @@ export function initPaperDashboard () {
 
                         $('.add-task').click(function() {
                             if( lbd.misc.navbar_menu_visible == 1 ) {
-                                console.log("click sur add-task");
+                                //console.log("click sur add-task");
                                 if (Session.get('selectedTeamIds').length == 0
                                     || Session.get('selectedProjectIds').length == 0) {
                                     Modal.show('selectProjectTeamModal');

@@ -6,14 +6,25 @@
                     <h4 class="title">{{team.name}}</h4>
                 </div>
                 <div class="content">
-                    {{> quickForm collection='Teams' id="editTeamForm"
-                            doc=team type="update"
-                            buttonContent="Sauvegarder"
-                            omitFields="hide,userId,companyId"
-                    }}
+                    {{#autoForm schema=temporaryTeamSchema doc=team id="editTeamForm"
+                                type="method" meteormethod='teams.update' class="add-team-form"}}
+
+                        {{> afQuickField name='name' label="Nom"}}
+                        {{> afQuickField name='userIds' type="select-multiple"
+                                options=userOption firstOption=false label="Utilisateurs"
+                                class="selectMultipleUsers"
+                        }}
+                        <button type="submit" class="btn btn-primary save">Sauvegarder</button>
+                    {{/autoForm}}
                     <br/>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <a href="/suivi/teams"><i class="ti-arrow-left"></i>  Retour</a>
         </div>
     </div>
 </template>

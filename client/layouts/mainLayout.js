@@ -1,5 +1,5 @@
 Template.mainLayout.onCreated(function () {
-    var self = this;
+    let self = this;
     self.autorun(function () {
         if(Meteor.userId()) {
             // On subscribe a l'utilisateur courant et à l'entreprise courante
@@ -9,10 +9,21 @@ Template.mainLayout.onCreated(function () {
                 let currentColeoUser = ColeoUsers.findOne({userId: Meteor.userId()});
                 Session.set('currentColeoUser', currentColeoUser);
             });
+            self.subscribe('clients.current', function() {
+                let currentClientUser = Clients.findOne({userId: Meteor.userId()});
+                Session.set('currentClientUser', currentClientUser);
+            });
             self.subscribe('companies.current', function() {
                 let currentCompany = Companies.findOne({});
                 Session.set('currentCompany', currentCompany);
             });
         }
     });
+});
+
+Template.mainLayout.helpers({
+    hostname: () => {
+        let full = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '');
+        return full;
+    }
 });

@@ -10,9 +10,17 @@ Template.connexion.events({
 
             // Si l'utilisateur est connecté (et pas en cours de connexion)
             if(!!Meteor.userId()) {
-                FlowRouter.go('suivi');
-                Session.set('onGoingConnexion', false);
-                return true;
+                Meteor.call('user.getPath', function(err, path) {
+                    if(!err) {
+                        FlowRouter.go(path);
+                        Session.set('onGoingConnexion', false);
+                        return true;
+                    } else {
+                        FlowRouter.go("home");
+                        Session.set('onGoingConnexion', false);
+                        return false;
+                    }
+                });
             } else if(Meteor.loggingIn()) {
                 return checkIfLoggedIn();
             } else {

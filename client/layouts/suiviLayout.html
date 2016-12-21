@@ -1,118 +1,131 @@
 <template name="suiviLayout">
+    {{#if currentColeoUser}}
 
-    <div class="wrapper">
-        {{#if currentUser}}
-            {{> notifications}}
-        {{/if}}
-        <div class="sidebar" data-background-color="white" data-active-color="danger">
+        <div class="wrapper">
+            {{#if currentUser}}
+                {{> notifications}}
+            {{/if}}
+            <div class="sidebar" data-background-color="white" data-active-color="danger">
 
-            <div class="sidebar-wrapper">
-                <div class="logo">
-                    <img class="img-responsive" src="{{hostname}}/assets/img/logo_beta.svg">
-                </div>
-
-                <ul class="nav">
-                    <li class="{{active 'Suivi'}} close-sidebar">
-                        <a href="/suivi">
-                            <i class="ti-home"></i>
-                            <p>Suivi</p>
-                        </a>
-                    </li>
-                    <li class="dropdown {{active 'Gestion'}}">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="ti-ruler-pencil"></i>
-                            <p>Gestion</p>
-                        </a>
-                        <ul class="dropdown-menu ocelo-dropdown">
-                            <li class="close-sidebar"><a href="/suivi/users">Utilisateurs</a></li>
-                            <li class="close-sidebar"><a href="/suivi/projects">Projets</a></li>
-                            <li class="close-sidebar"><a href="/suivi/teams">Équipes</a></li>
-                        </ul>
-                    </li>
-                    <li class="{{active 'Statistiques'}} close-sidebar">
-                        <a href="/suivi/stats">
-                            <i class="ti-stats-up"></i>
-                            <p>Statistiques</p>
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-
-        <div class="main-panel">
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar bar1"></span>
-                            <span class="icon-bar bar2"></span>
-                            <span class="icon-bar bar3"></span>
-                        </button>
-                        <a class="navbar-brand">{{currentPage}}</a>
+                <div class="sidebar-wrapper">
+                    <div class="logo">
+                        <img class="img-responsive" src="{{hostname}}/assets/img/logo_beta.svg">
                     </div>
-                    <div class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="close-sidebar">
-                                <a href="/suivi" class="add-task">
-                                    <p>Ajouter une tâche</p>
-                                    <i class="ti-plus"></i>
+
+                    <ul class="nav">
+                        {{#if currentColeoUser}}
+                            <li class="{{active 'Suivi'}} close-sidebar">
+                                <a href="/suivi">
+                                    <i class="ti-home"></i>
+                                    <p>Suivi</p>
                                 </a>
                             </li>
-
-                            <li class="dropdown">
+                            <li class="dropdown {{active 'Gestion'}}">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="ti-user"></i>
-                                    <p>{{currentColeoUser.firstName}} {{currentColeoUser.lastName}}</p>
+                                    <i class="ti-ruler-pencil"></i>
+                                    <p>Gestion</p>
                                 </a>
                                 <ul class="dropdown-menu ocelo-dropdown">
-                                    <li class="close-sidebar">
-                                        <a href="/logout">
-                                            <p>Déconnexion</p>
-                                        </a>
-                                    </li>
+                                    <li class="close-sidebar"><a href="/suivi/users">Utilisateurs</a></li>
+                                    <li class="close-sidebar"><a href="/suivi/projects">Projets</a></li>
+                                    <li class="close-sidebar"><a href="/suivi/teams">Équipes</a></li>
                                 </ul>
                             </li>
-                        </ul>
+                            <li class="{{active 'Statistiques'}} close-sidebar">
+                                <a href="/suivi/stats">
+                                    <i class="ti-stats-up"></i>
+                                    <p>Statistiques</p>
+                                </a>
+                            </li>
 
-                    </div>
-                </div>
-            </nav>
-
-
-            <div class="content">
-                <div class="container-fluid">
-                    {{> Template.dynamic template=main}}
+                            <li class="{{active 'Accès client'}} close-sidebar">
+                                <a href="/suivi/clients">
+                                    <i class="ti-share"></i>
+                                    <p>Accès clients</p>
+                                </a>
+                            </li>
+                        {{/if}}
+                    </ul>
                 </div>
             </div>
 
+            <div class="main-panel">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar bar1"></span>
+                                <span class="icon-bar bar2"></span>
+                                <span class="icon-bar bar3"></span>
+                            </button>
+                            <a class="navbar-brand">{{currentCompany.name}} - {{currentPage}}</a>
+                        </div>
+                        <div class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav navbar-right">
+                                {{#if currentColeoUser}}
+                                    <li class="close-sidebar">
+                                        <a href="/suivi" class="add-task">
+                                            <p>Ajouter une tâche</p>
+                                            <i class="ti-plus" ></i>
+                                        </a>
+                                    </li>
 
-            <footer class="footer">
-                <div class="container-fluid">
-                    <div class="pull-right">
-                        <div class="row">
-                            <div class="copyright ">
-                                &copy;
-                                2016
-                                , avec <i class="fa fa-heart heart"></i> par
-                                <a class="ocelo-href" href="http://ocelo.fr">
-                                    Ocelo
-                                </a>
-                            </div><!--
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <i class="ti-user"></i>
+                                            <p>{{currentColeoUser.firstName}} {{currentColeoUser.lastName}}</p>
+                                        </a>
+                                        <ul class="dropdown-menu ocelo-dropdown">
+                                            <li class="close-sidebar">
+                                                <a href="/logout">
+                                                    <p>Déconnexion</p>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                {{/if}}
+                            </ul>
+
+                        </div>
+                    </div>
+                </nav>
+
+
+                <div class="content">
+                    <div class="container-fluid">
+                        {{> Template.dynamic template=main}}
+                    </div>
+                </div>
+
+
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="pull-right">
+                            <div class="row">
+                                <div class="copyright ">
+                                    &copy;
+                                    2016
+                                    , avec <i class="fa fa-heart heart"></i> par
+                                    <a class="ocelo-href" href="http://ocelo.fr">
+                                        Ocelo
+                                    </a>
+                                </div><!--
                             <div class="pull-right">
                                 <a class="href-logo" href="http://www.ocelo.fr">
                                     <i class="logoOcelo"></i>
                                 </a>
                             </div>-->
+                            </div>
+
                         </div>
 
                     </div>
+                </footer>
 
-                </div>
-            </footer>
-
+            </div>
         </div>
-    </div>
-
+    {{else }}
+        {{>loadingApp}}
+    {{/if}}
 </template>

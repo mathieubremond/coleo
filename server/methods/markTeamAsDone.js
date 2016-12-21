@@ -9,7 +9,9 @@ export function markTeamAsDone(id) {
         throw new Meteor.Error(500, 'L\'équipe n\'existe pas.');
     }
 
-    Teams.update(team, {$set: {hide: true}});
+    //Teams.update(team, {$set: {hide: true}});
+    Tasks.remove({teamId: id});
+    Teams.remove({_id: id});
 
     serverMessages.notify('serverMessage:company',
         'Info', 'Équipe supprimée : ' + team.name, {

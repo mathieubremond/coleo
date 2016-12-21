@@ -13,10 +13,10 @@ export function createTask(task) {
     if (!!tm && !!pjt) {
         Tasks.insert(task);
 
-        serverMessages.notify('serverMessage:company', 'Info', 'Tâche ajoutée : ' + task.name, {
+        /*serverMessages.notify('serverMessage:company', 'Info', 'Tâche ajoutée : ' + task.name, {
             companyId: companyId,
-            timeout: 1000
-        });
+            timeout: 3000
+        });*/
     } else {
         throw new Meteor.Error(500, "Un projet et une équipe doivent être renseignée", e);
     }

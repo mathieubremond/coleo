@@ -11,6 +11,7 @@
             <thead>
             <tr>
                 <th>Projet</th>
+                <td>Équipe</td>
                 <th>Nom</th>
                 <th>Temps passé</th>
             </tr></thead>
@@ -18,6 +19,7 @@
             {{#each tasks}}
                 <tr>
                     <td>{{projectName projectId}}</td>
+                    <td>{{teamName teamId}}</td>
                     <td>{{name}}</td>
                     <td>{{time}} heures {{#unless done}} (en cours) {{/unless}}</td>
                 </tr>

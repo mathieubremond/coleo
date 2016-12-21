@@ -1,0 +1,58 @@
+<template name="clients">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="icon-big icon-warning text-center">
+                                <i class="ti-info-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content  fixed-height" style="margin-top: 15px">
+                    <p>Vous pouvez donner accès à vos clients aux projets et équipes de votre choix. Ces derniers utiliseront le compte que vous leur aurez créer pour se connecter à Coleo.</p><br/>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">Clients</h4>
+                </div>
+                <div class="content table-responsive table-full-width"  style="max-height: 400px">
+                    {{>listClients}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card no-height-constraint">
+                {{> listProjects }}
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card no-height-constraint">
+                {{> listTeams }}
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">Ajouter</h4>
+                </div>
+                <div class="content add-client-form">
+                    {{#if error}}<p class="alert alert-danger">{{error}}</p>{{/if}}
+                    <input type="text" name="signupName" placeholder="Nom du client">
+                    <input type="email" name="signupEmail" placeholder="Email">
+                    <input type="text" name="signupPassword" placeholder="Mot de passe">
+                    <button class="btn btn-primary add-client"
+                            style="margin-top: 10px">Ajouter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

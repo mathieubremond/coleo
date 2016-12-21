@@ -9,7 +9,7 @@ Template.setProjectNotDone.onCreated(function(){
 
 Template.setProjectDone.events({
     'click .yesBtn'(event, template) {
-        console.log("this = ", this);
+        //console.log("this = ", this);
         Meteor.call('projects.markAsDone', {id:this._id, done:true});
         Modal.hide(template);
         Session.set('selectedProjectIds', []);

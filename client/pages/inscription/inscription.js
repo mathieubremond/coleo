@@ -15,16 +15,16 @@ Template.inscription.onCreated(function () {
 AutoForm.addHooks(['NewCompanyForm'], {
     after: {
         insert: function (error, result) {
-            console.log("instance : ", INSTANCE);
+            //console.log("instance : ", INSTANCE);
             if (!error) {
 
                 // On retient dans la ReactiveVar companyId l'id de
                 // la company tout juste créée
                 INSTANCE.companyId.set(result);
-                console.log("Id : ", result);
+                //console.log("Id : ", result);
             } else {
                 INSTANCE.companyId.set(null);
-                console.log("error : ", error);
+                //console.log("error : ", error);
             }
         }
     }
@@ -33,15 +33,15 @@ AutoForm.addHooks(['NewCompanyForm'], {
 AutoForm.addHooks(['NewColeoUserForm'], {
     before: {
         method: function (doc) {
-            console.log("Before inserting the coleo user");
+            //console.log("Before inserting the coleo user");
             let userId = Meteor.userId();
-            console.log("User id = ", userId);
+            //console.log("User id = ", userId);
 
             // Ajout des clés étrangères au document coleo user avant insertion
             doc.companyId = INSTANCE.companyId.get();
             doc.userId = userId;
 
-            console.log("doc = ", doc);
+            //console.log("doc = ", doc);
 
             // Et maintenant on laisse autoform sauvegardé le document
             // Avec les clés etrangères qui vont bien
@@ -50,7 +50,7 @@ AutoForm.addHooks(['NewColeoUserForm'], {
     },
     after: {
         method: function(doc) {
-            console.log("after insert coleo user : ", doc);
+            //console.log("after insert coleo user : ", doc);
 
             if(!!doc) {
                 return doc;

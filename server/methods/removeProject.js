@@ -1,6 +1,6 @@
 import {getCurrentUserCompanyId} from '../helpers/getCurrentUserCompanyId.js';
 
-export function removeProject(id) {
+export function removeProject({id}) {
     let companyId = getCurrentUserCompanyId(Meteor.userId());
 
     let project = Projects.findOne({_id:id, companyId: companyId});

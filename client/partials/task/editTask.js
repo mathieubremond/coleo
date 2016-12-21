@@ -13,11 +13,11 @@ Template.editTask.events({
 
         if(valid) {
             value.insertDoc._id = template.data._id;
-            console.log("Maj de la tâche : ", value);
+            //console.log("Maj de la tâche : ", value);
             Modal.hide(template);
             Meteor.call('tasks.update', value);
         } else {
-            showNotificationError('top', 'right', 'Oups', "Une erreur s'est produite.");
+            showNotificationError('bottom', 'right', 'Oups', "Une erreur s'est produite.");
         }
     }
 });

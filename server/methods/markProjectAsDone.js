@@ -12,7 +12,7 @@ export function markProjectAsDone({id, done}) {
     Projects.update(pjt, {$set: {hide: done}});
 
     serverMessages.notify('serverMessage:company',
-        'Info', 'Projet modifié : ' + pjt.name, {
+        'Félicitations', 'État du projet modifié : ' + pjt.name, {
             companyId: companyId,
             timeout: 500
         });

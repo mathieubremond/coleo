@@ -22,7 +22,7 @@ AutoForm.hooks({
         after: {
             update: (error, result) => {
                 if(!!error) {
-                    showNotificationError('top', 'right', 'Erreur', error.reason);
+                    showNotificationError('bottom', 'right', 'Erreur', error.reason);
                 } else {
                     FlowRouter.go('projects');
                 }

@@ -4,6 +4,9 @@ import {singleProject} from './projects.list.js';
 import {singleTeam} from './teams.list.js';
 import {listTasks} from'./tasks.list.js';
 import {listTeams} from'./teams.list.js';
+import {listClients} from'./clients.list.js';
+import {singleClient} from'./clients.list.js';
+import {currentClient} from'./clients.list.js';
 
 Meteor.publish('companies.current', function () {
     let id = getCurrentUserCompanyId(this.userId);
@@ -38,3 +41,7 @@ Meteor.publish('users.single', function(id) {
 
 Meteor.publish('projects.single', singleProject);
 Meteor.publish('teams.single', singleTeam);
+
+Meteor.publish('clients.list', listClients);
+Meteor.publish('clients.single', singleClient);
+Meteor.publish('clients.current', currentClient);

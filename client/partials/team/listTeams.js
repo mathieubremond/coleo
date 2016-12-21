@@ -1,5 +1,6 @@
 Template.listTeams.onCreated(function () {
     let template = Template.instance();
+    let self = this;
 
     template.searchQuery = new ReactiveVar();
     template.searching = new ReactiveVar(false);
@@ -7,12 +8,24 @@ Template.listTeams.onCreated(function () {
     let arr = Session.get('selectedTeamIds');
     if(!arr || arr.length == 0) {
         Session.set('selectedTeamIds', []);
+        setTimeout(()=> {
+            // Recherche des équipes dont fait parti l'utilisateur actuel
+            let currUser = Session.get('currentColeoUser');
+            if(!!currUser) {
+                let currId = currUser._id;
+                let teamsCursor = Teams.find({userIds: {$in: [currId]}});
+                if(!!teamsCursor) {
+                    let teamIds = teamsCursor.map((team)=>{return team._id});
+                    //console.log("teams = ", teamIds);
+                    Session.set('selectedTeamIds', teamIds);
+                } else {
+                    //console.log("l'utilisateur ne fait parti d'aucune équipe");
+                }
+            } else {
+                //console.log("pas d'utilisateur trouvé");
+            }
+        }, 500);
     }
-});
-
-Template.listTeams.onRendered(function () {
-    let self = this;
-    let template = Template.instance();
 
     self.autorun(function () {
         self.subscribe('teams.list', {
@@ -24,6 +37,10 @@ Template.listTeams.onRendered(function () {
             }, 300);
         });
     });
+});
+
+Template.listTeams.onRendered(function () {
+
 });
 
 Template.listTeams.helpers({

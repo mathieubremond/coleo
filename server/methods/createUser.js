@@ -2,7 +2,7 @@ import {Schema} from '../../lib/api/schemas/index.js';
 import {getCurrentUserCompanyId} from '../helpers/getCurrentUserCompanyId.js';
 
 export function createColeoUser(user) {
-    var userId = Accounts.createUser({
+    let userId = Accounts.createUser({
         email: user.email,
         password: user.password
     });
@@ -19,17 +19,17 @@ export function createColeoUser(user) {
     serverMessages.notify('serverMessage:company', 'Info',
         'Utilisateur ajouté : ' + user.firstName + ' ' + user.lastName, {
             companyId: companyId,
-            timeout: 5000
+            timeout: 3000
         });
 
     // On crée une equipe avec le nom de l'utilisateur
     let newTeam = {
         name: user.firstName + " " + user.lastName,
         companyId: user.companyId,
-        userId: newId
+        userIds: [newId]
     };
 
-    //Schema.teamSchema.validate(newTeam);
+    Schema.teamSchema.clean(newTeam);
     Teams.insert(newTeam);
 }
 
@@ -43,9 +43,47 @@ export function createFirstUser(user) {
     let newTeam = {
         name: user.firstName + " " + user.lastName,
         companyId: user.companyId,
-        userId: newId
+        userIds: [newId]
     };
 
-    //Schema.teamSchema.validate(newTeam);
+    Schema.teamSchema.clean(newTeam);
     Teams.insert(newTeam);
+}
+
+export function createClientUser(newClient) {
+    //console.log("create client : ", newClient);
+    let companyId = getCurrentUserCompanyId(Meteor.userId());
+    newClient.userId = null;
+    newClient.companyId = companyId;
+    try {
+        let userId = Accounts.createUser({
+            email: newClient.email,
+            password: newClient.password
+        });
+
+        newClient.userId = userId;
+
+        Schema.clientSchema.clean(newClient);
+        Schema.clientSchema.validate(newClient);
+
+        //console.log("create clean client : ", newClient);
+
+        let client =  Clients.insert(newClient);
+
+        serverMessages.notify('serverMessage:company', 'Info',
+            'Client ajouté : ' + newClient.name, {
+                companyId: companyId,
+                timeout: 3000
+            });
+
+        return client;
+
+    } catch (e) {
+        //console.log("e = ", e);
+
+        if(!!newClient.userId)
+            Meteor.users.remove({_id: newClient.userId});
+
+        throw e;
+    }
 }

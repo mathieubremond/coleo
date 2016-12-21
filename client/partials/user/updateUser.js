@@ -1,4 +1,6 @@
 import {Schema} from '../../../lib/api/schemas/index.js';
+import {showNotificationError} from '../../notifications/index.js';
+
 
 Template.updateUser.onCreated(function () {
     SimpleSchema.debug = true;
@@ -37,20 +39,24 @@ Template.updateUser.events({
         let valuePassword = AutoForm.getFormValues('editUserPassword');
 
         let id = FlowRouter.getParam('id');
+        let myId = Meteor.userId();
         if (!id) return null;
         let coleoUser = ColeoUsers.findOne({_id: id});
         if (!coleoUser) return null;
         let meteorUser = Meteor.users.findOne({_id: coleoUser.userId});
         if (!meteorUser) return null;
 
-        console.log("values : ", [valueInfo, valueMail, valuePassword]);
+        //console.log("values : ", [valueInfo, valueMail, valuePassword]);
 
         if (coleoUser.firstName != valueInfo.insertDoc.firstName
             || coleoUser.lastName != valueInfo.insertDoc.lastName) {
             valueInfo.updateDoc._id = coleoUser._id;
             Meteor.call('users.updateInfo', valueInfo.updateDoc,
                 (err) => {
-                    console.log("err info : ", err);
+                    //console.log("err info : ", err);
+                    if(!!err) {
+                        showNotificationError('bottom', 'right', 'Erreur', err.reason);
+                    }
                 });
         }
 
@@ -58,27 +64,41 @@ Template.updateUser.events({
             valuePassword.insertDoc._id = meteorUser._id;
             Meteor.call('users.updatePassword', valuePassword.insertDoc,
                 (err) => {
-                    console.log("err password : ", err);
+                    //console.log("err password : ", err);
+                    if(!!err) {
+                        showNotificationError('bottom', 'right', 'Erreur', err.reason);
+                    } else {
+                        if(myId == id)
+                            setTimeout(()=>{FlowRouter.go('home')}, 1000);
+                    }
                 });
         }
 
         // Modification de l'adresse mail
-        // TODO FIX
-        /*if (!!meteorUser
-         && !!meteorUser.emails
-         && Array.isArray(meteorUser.emails)
-         && meteorUser.emails.length > 0) {
+        if (!!meteorUser
+            && !!meteorUser.emails
+            && Array.isArray(meteorUser.emails)
+            && meteorUser.emails.length > 0) {
 
-         let originalEmail = meteorUser.emails[0].address;
-         if (originalEmail != valueMail.email) {
-         valueMail.insertDoc.oldEmail = originalEmail;
-         valueMail.insertDoc._id = meteorUser._id;
-         Meteor.call('users.updateMail', valueMail.insertDoc,
-         (err) => {
-         console.log("err mail : ", err);
-         });
-         }
-         }*/
+            let originalEmail = meteorUser.emails[0].address;
+            if (originalEmail !== valueMail.insertDoc.email) {
+                valueMail.insertDoc.oldEmail = originalEmail;
+                valueMail.insertDoc._id = meteorUser._id;
+                console.log("valueMail : ", valueMail);
+                Meteor.call('users.updateMail', valueMail.insertDoc,
+                    (err) => {
+                        //console.log("err mail : ", err);
+                        if(!!err) {
+                            showNotificationError('bottom', 'right', 'Erreur', err.reason);
+                        } else {
+                            if(myId == id)
+                                setTimeout(()=>{FlowRouter.go('home')}, 1000);
+                        }
+                    });
+            } else {
+                console.log("pas de changement de mail.");
+            }
+        }
 
         FlowRouter.go('users');
     }

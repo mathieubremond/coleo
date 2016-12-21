@@ -6,6 +6,16 @@ export function getCurrentUserCompanyId(id) {
         {fields: {'companyId':1}}
     );
 
-    if(!coleoUser) return null;
+    if(!coleoUser) {
+        let client = Clients.findOne(
+            {userId: id},
+            {fields: {'companyId':1}}
+        );
+        if(!client) {
+            return null;
+        } else {
+            return client.companyId;
+        }
+    }
     else return coleoUser.companyId;
 }

@@ -1,42 +1,44 @@
 <template name="home">
-    <div class="row">
-        <div class="col-md-12">
-            <div id="logoBig"></div>
-        </div>
-    </div>
-
-    <div class="row coleo-btn">
-        {{#unless loggedIn}}
-
-            <div class="col-md-12 text-center">
-                <input type="button" id="connexionBtn" value="Connexion">
-                <input type="button" id="inscriptionBtn" value="Inscription">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="logoBig"></div>
             </div>
-        {{else}}
-            <div class="col-md-12 text-center">
-                <input type="button" id="suiviBtn" value="Vers l'application">
+        </div>
+
+        <div class="row coleo-btn">
+            {{#unless loggedIn}}
+
+                <div class="col-md-12 text-center">
+                    <button id="connexionBtn" class="btn btn-primary">Connexion</button>
+                    <button id="inscriptionBtn" class="btn btn-primary">Inscription</button>
+                </div>
+            {{else}}
+                <div class="col-md-12 text-center">
+                    <button id="suiviBtn" class="btn btn-primary">Vers l'application</button>
+                </div>
+            {{/unless}}
+
+        </div>
+
+        <div class="row info-home">
+            <div class="col-md-2"></div>
+            <div class="col-md-4 ">
+                <h1>Gérez rapidement vos tâches</h1>
+                <p>Collaborez en équipe et visualiser les objectifs de chacun. </p>
+                <p> Définissez vos projets, équipes et gérez vos tâches en
+                    cours.</p>
             </div>
-        {{/unless}}
+            <div class="col-md-4">
+                <h1>Soyez plus agile</h1>
+                <p>Vous pouvez donner l'accès à vos clients à certains de vos projets.</p>
+                <p>En améliorant la confiance que vous porte vos clients en étant plus transparent.</p>
 
-    </div>
-
-    <div class="row info-home">
-        <div class="col-md-2"></div>
-        <div class="col-md-4 ">
-            <h1>Gérez rapidement vos tâches</h1>
-            <p>Outils de gestion collaborative des tâches. </p>
-            <p> Définissez vos projets, équipes et gérez vos tâches en
-                cours.</p>
+            </div>
         </div>
-        <div class="col-md-4">
-            <h1>Simplement efficace</h1>
-
-            <p>Accès aux stats</p>
-            <p>Accès pour vos clients</p>
-
-        </div>
+        <!--<footer>
+            <div id="logoOcelo"></div>
+        </footer>-->
     </div>
-    <!--<footer>
-        <div id="logoOcelo"></div>
-    </footer>-->
+    <div id="logoOceloFooter"></div>
 </template>

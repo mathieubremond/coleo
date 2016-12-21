@@ -6,7 +6,11 @@
         {{#autoForm schema=temporaryTeamSchema id="AddTeamtForm"
                     type="method" meteormethod="teams.create" class="add-team-form"}}
 
-            {{> afQuickField name='name'}}
+            {{> afQuickField name='name' label="Nom"}}
+            {{> afQuickField name='userIds' type="select-multiple"
+                    options=userOption firstOption=false label="Utilisateurs"
+                    class="selectMultipleUsers"
+            }}
             <button type="submit" class="btn btn-primary">Ajouter</button>
         {{/autoForm}}
     </div>

@@ -32,29 +32,34 @@ Template.addTask.helpers({
 });
 
 Template.addTask.events({
-    'click .btn-add-task'(event, template) {
-        //console.log("click .btn-add");
-        let valid = AutoForm.validateForm('AddTaskForm');
-        //console.log("form is valid ? ", valid);
-        let value = AutoForm.getFormValues('AddTaskForm');
-        //console.log("form value = ", value);
-        if(valid) {
-            console.log("Sauvegarde de la tâche : ", value);
-            Modal.hide(template);
-            Meteor.call('tasks.create', value.insertDoc);
-        } else {
-            showNotificationError('top', 'right', 'Oups', "Une erreur s'est produite.");
-        }
+    'click .btn-add-task': addTask,
+    'keyup input'(event, template) {
+
+        if(event.keyCode != 13) return;
+
+        addTask(event, template);
     }
 });
 
-
+function addTask(event, template) {
+    //console.log("click .btn-add");
+    let valid = AutoForm.validateForm('AddTaskForm');
+    //console.log("form is valid ? ", valid);
+    let value = AutoForm.getFormValues('AddTaskForm');
+    //console.log("form value = ", value);
+    if(valid) {
+        //console.log("Sauvegarde de la tâche : ", value);
+        Modal.hide(template);
+        Meteor.call('tasks.create', value.insertDoc);
+    } else {
+        showNotificationError('bottom', 'right', 'Oups', "Une erreur s'est produite.");
+    }
+}
 
 Template.addTask.onRendered(function() {
     // Init du checkbox
     $('#addTaskDone input[type="checkbox"]').each(function () {
         let $checkbox = $(this);
         $checkbox.checkbox();
-
     });
 });

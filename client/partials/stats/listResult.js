@@ -28,7 +28,7 @@ Template.listResult.helpers({
 
 Template.listResult.events({
     'click .export-data'() {
-        console.log("click .export-data");
+        //console.log("click .export-data");
 
         let download = true;
 
@@ -143,7 +143,7 @@ function export_table_to_excel(id, name) {
     /* original data */
     var data = oo[0];
     var ws_name = "Feuille1";
-    console.log(data);
+    //console.log(data);
 
     var wb = new Workbook(), ws = sheet_from_array_of_arrays(data);
 
