@@ -32,6 +32,7 @@ body {
 }
 #infosInscription {
     list-style: none;
+    margin-bottom: 200px;
 }
 #logo {
     background-image: url("assets/img/logo_beta.svg");
@@ -94,13 +95,11 @@ body {
     vertical-align: middle;
 }
 .coleo-btn input,
-.new-admin-signup input,
-#loginForm input,
-.new-company-form input{
+.inscription-container input, .at-input input{
+    margin-left: 0;
+    padding-left: 0;
     margin-bottom: 1vh;
     margin-top: 1vh;
-    padding-bottom: 1vh;
-    padding-top: 1vh;
     border-bottom: 1px solid #EA6037!important;
     border-top: none;
     border-left: none;
@@ -115,13 +114,13 @@ body {
 }
 
 .coleo-btn input:focus,
-.new-admin-signup input:focus,
+.inscription-container input:focus,
 #loginForm input:focus,
-.new-company-form input:focus, .new-company-form textarea:focus {
+.inscription-container textarea:focus {
+    margin-left: 0;
+    padding-left: 0;
     margin-bottom: 1vh;
     margin-top: 1vh;
-    padding-bottom: 1vh;
-    padding-top: 1vh;
     border-bottom: 1px solid #EA6037!important;
     border-top: none!important;
     border-left: none!important;
@@ -132,17 +131,14 @@ body {
 .form-control.border-input {
     border: 1px solid #CCC5B9!important;
 }
-.coleo-btn input[type=button],
-.new-admin-signup input[type="button"],
-#loginForm input[type="button"],
-.new-company-form input[type="button"]{
+.coleo-btn input[type=button]{
     border: none;
     background-color: #EA6037;
     color: white;
     padding: 10px 15px;
     margin-top: 2vh;
 }
-#loginForm label, .new-admin-signup label {
+#loginForm label {
     display: none;
 }
 #cgu_agreement_container {
@@ -153,7 +149,7 @@ body {
     margin-right: 30px;
     margin-left: 40px;
 }
-#loginForm input, .new-admin-signup input {
+#loginForm input {
     width: 300px;
 }
 
@@ -196,41 +192,25 @@ body {
 .add-entreprise-title h1 {
     margin-top: 0;
 }
-
-.new-company-form label, .new-admin-signup label, .new-admin-signup .at-title {
-    display: none !important;;
+.inscription-container .glyphicon {
+    margin-top: 25px;
 }
 
-.new-company-form input, .new-admin-signup .at-input, #loginForm .at-input {
-    width: 300px !important;
-    margin-bottom: 10px !important;
+.inscription-container input, #loginForm .at-input {
+    margin-bottom: 10px;
 }
 
-.new-company-form .btn-primary, .new-admin-signup .btn-primary {
-    border: none !important;
-    background-color: #EA6037 !important;;
-    color: white !important;;
-    padding: 10px 15px !important;
-    margin-top: 2vh !important;
-    border-radius: 5px!important;
-}
-
-.new-company-form input, .new-admin-signup input,
-.new-company-form textarea, .new-admin-signup textarea {
+.inscription-container textarea{
+    margin-left: 0!important;
+    padding-left: 0!important;
     margin-bottom: 1vh !important;;
     margin-top: 1vh !important;;
-    padding-bottom: 1vh !important;;
-    padding-top: 1vh !important;;
     border-bottom: 1px solid #EA6037 !important;;
     border-top: none !important;;
     border-left: none !important;;
     border-right: none !important;;
     border-radius: 0px!important;
     background-color: transparent!important;
-}
-
-.new-company-form .form-control, .new-admin-signup .form-control {
-    background-color: white;
 }
 
 .loading {
@@ -242,7 +222,21 @@ body {
     margin-right: auto;
     margin-top: 50px;
 }
+.inscription-container .btn-primary {
+    margin-top: 20px;
+}
 
+.inscription-container input, .inscription-container textarea, .at-input input {
+    min-height: 50px;
+}
+
+.inscription-container label {
+    margin-top: 25px;
+}
+
+/*.inscription-container .help-block {
+    color: #EA6037;
+}*/
 
 /*
   Pour les listes de projets ou d'équipes
@@ -591,6 +585,13 @@ a:not(.btn):hover, a:not(.btn):focus {
     color: #069C70!important;
 }
 
+.alert-danger{
+    background-color: #EA6037!important;
+}
+.alert-danger span {
+    color: white!important;
+}
+
 .ti-info-alt {
     color: #8a7c83;
 }
@@ -603,7 +604,21 @@ a:not(.btn):hover, a:not(.btn):focus {
     border-bottom: 1px dotted black; !* If you want dots under the hoverable text *!
     */
 }
-
+::placeholder {
+    color: #43393c;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #43393c;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color: #43393c;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: #43393c;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: #43393c;
+}
 /* Tooltip text */
 .tooltip-container .tooltiptext {
     visibility: hidden;
@@ -703,4 +718,8 @@ a:not(.btn):hover, a:not(.btn):focus {
 .inscription-container {
     align-items: center;
     justify-content: center;
+}
+
+.accounts-centered-dialog {
+    display: none;
 }

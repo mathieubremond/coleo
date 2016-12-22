@@ -1,98 +1,17 @@
-// Global variable pour l'ux (permet de savoir ou l'utilisateur
-// en est dans son inscription (est remis à zero  à la fin)
-var INSTANCE = null;
-
-// Création d'un variable reactive
 Template.inscription.onCreated(function () {
-    Meteor.logout();
-    this.companyId = new ReactiveVar();
-    this.companyId.set(null);
-
-    // Permet de faire un lien, et de récupérer ensuite l'instance du template
-    INSTANCE = this;
+    Session.set('inscriptionStep', 'company');
+    Session.set('inscriptionCompany', null);
 });
-
-// Ajout d'un hook après la creation de l'entreprise dans la bdd
-AutoForm.addHooks(['NewCompanyForm'], {
-    after: {
-        insert: function (error, result) {
-            //console.log("instance : ", INSTANCE);
-            if (!error) {
-
-                // On retient dans la ReactiveVar companyId l'id de
-                // la company tout juste créée
-                INSTANCE.companyId.set(result);
-                //console.log("Id : ", result);
-            } else {
-                INSTANCE.companyId.set(null);
-                //console.log("error : ", error);
-            }
-        }
-    }
-});
-
-AutoForm.addHooks(['NewColeoUserForm'], {
-    before: {
-        method: function (doc) {
-            //console.log("Before inserting the coleo user");
-            let userId = Meteor.userId();
-            //console.log("User id = ", userId);
-
-            // Ajout des clés étrangères au document coleo user avant insertion
-            doc.companyId = INSTANCE.companyId.get();
-            doc.userId = userId;
-
-            //console.log("doc = ", doc);
-
-            // Et maintenant on laisse autoform sauvegardé le document
-            // Avec les clés etrangères qui vont bien
-            return doc;
-        }
-    },
-    after: {
-        method: function(doc) {
-            //console.log("after insert coleo user : ", doc);
-
-            if(!!doc) {
-                return doc;
-            } else {
-                // Redirection vers suivi suite à l'inscription
-                if (!!Meteor.userId()) {
-                    FlowRouter.go('suivi');
-                } else {
-                    FlowRouter.go('login');
-                }
-            }
-
-        }
-    }
-});
-
 Template.inscription.helpers({
-    // Un helper pour savoir si l'entreprise a déjà été ajoutée ou non,
-    // Permet de modifier le dom en conséquence
-    companyCreated: function () {
-        return !!Template.instance().companyId.get();
-        // Si true, affiche l'étape suivante de l'inscription
-    },
-    // Un helper pour savoir on nous en sommes dans le processus d'inscription
-    // Depuis le html
-    userCreated: function () {
-        return !!Meteor.userId();
-        // Si true, affiche l'étape suivante de l'inscription
-    }
+    stepCompany: () => {return Session.get('inscriptionStep')=='company';},
+    stepAdmin: () => {return Session.get('inscriptionStep')=='admin';},
+    stepConfirmation: () => {return Session.get('inscriptionStep')=='confirmation';}
 });
-
 Template.inscription.events({
-    'click #logoBig' () {/*FlowRouter.go('home');*/},
-    'change #cgu_agreement'(event, template) {
-        let checked = $('#cgu_agreement').prop('checked');
-        $(".next").prop('disabled', !checked);
-    }
+    'click .logout'() {Meteor.logout();}
 });
-
 Template.inscription.onRendered(function() {
-    // Init du checkbox
+    // Init des checkbox
     $('input[type="checkbox"]').each(function () {
         let $checkbox = $(this);
         $checkbox.checkbox();

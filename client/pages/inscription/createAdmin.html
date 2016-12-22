@@ -1,0 +1,45 @@
+<template name="createAdmin">
+    <h2>Création du compte administrateur</h2>
+
+    <form novalidate="novalidate">
+
+        <div class="alert alert-danger" style="display:none;">
+            <span class="help-block" id="help-block-create-company"></span>
+        </div>
+
+        <span class="help-block help-block-create-admin"></span>
+
+        <div class="form-group" data-required="true">
+            <label for="adminLastName">Nom de famille </label>
+            <input type="text" label="false" placeholder="Nom de famille" name="lastName" id="adminLastName" required
+                   class="form-control">
+        </div>
+
+        <div class="form-group" data-required="true">
+            <label for="adminFirstName">Prénom </label>
+            <input type="text" label="false" placeholder="Prénom" name="firstName" id="adminFirstName" required
+                   class="form-control">
+        </div>
+
+        <div class="form-group" data-required="true">
+            <label for="adminEmail">Adresse mail </label>
+            <input type="email" label="false" placeholder="Adresse mail" name="email" id="adminEmail" required
+                   class="form-control">
+        </div>
+
+        <div class="form-group" data-required="true">
+            <label for="adminPassword" class="info-password">Mot de passe  <i
+                    class="glyphicon glyphicon-info-sign "></i></label>
+            <input type="password" label="false" name="password" id="adminPassword" required class="form-control">
+        </div>
+
+        <div class="form-group has-feedback" data-required="true">
+            <label class="control-label" for="adminPasswordConfirmation">Confirmation du mot de passe </label>
+            <input type="password" label="false" name="passwordConfirmation" id="adminPasswordConfirmation" required
+                   class="form-control">
+        </div>
+
+
+        <button type="submit" class="btn btn-primary signin">S'inscrire</button>
+    </form>
+</template>

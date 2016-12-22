@@ -1,0 +1,36 @@
+<template name="createCompany">
+    <h2>Ajouter votre entreprise</h2>
+
+    <form novalidate="novalidate">
+
+        <div class="alert alert-danger" style="display:none;">
+            <span class="help-block" id="help-block-create-company"></span>
+        </div>
+
+
+        <div class="form-group" data-required="true">
+            <label for="companyName">Nom de la société </label>
+            <input type="text" label="false" placeholder="Nom" name="name" id="companyName" required="" data-schema-key="name" class="form-control" selected="selected">
+        </div>
+
+        <div class="form-group">
+            <label for="companyName">Description de l'activité </label>
+            <textarea label="false" placeholder="Description" name="desc" rows="3" class="new-company-desc form-control" id="companyDesc" data-schema-key="desc"></textarea>
+        </div>
+
+
+        <div class="form-group">
+            <div class="checkbox">
+                <label id="cgu_agreement_container">
+                    <span class="icons"><span class="first-icon fa fa-square fa-base"></span><span class="second-icon fa fa-check-square fa-base"></span></span><input type="checkbox" value="true" name="done" id="cgu_agreement" data-schema-key="done">
+                    Accepter les <a target="_blank"
+                                    href="{{host}}/assets/CGU_Ocelo_Coleo.pdf">
+                    conditions générales de ventes</a>.
+                </label>
+            </div>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary next">Suivant</button>
+    </form>
+</template>

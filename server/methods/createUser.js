@@ -34,6 +34,8 @@ export function createColeoUser(user) {
 }
 
 export function createFirstUser(user) {
+    console.log("first user = ", user);
+
     Schema.userSchema.clean(user);
     Schema.userSchema.validate(user);
     let newId = ColeoUsers.insert(user);
@@ -48,6 +50,8 @@ export function createFirstUser(user) {
 
     Schema.teamSchema.clean(newTeam);
     Teams.insert(newTeam);
+
+    return newId;
 }
 
 export function createClientUser(newClient) {
@@ -86,4 +90,11 @@ export function createClientUser(newClient) {
 
         throw e;
     }
+}
+
+export function createMetorUser({email, password}) {
+    return Accounts.createUser({
+        email: email,
+        password: password
+    });
 }

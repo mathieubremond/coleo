@@ -18,6 +18,8 @@ import {getClientUser} from './clients.js';
 import {removeClient} from './clients.js';
 import {removeProject} from './removeProject.js';
 import {updateTeam} from './updateTeam.js';
+import {createCompany} from './createCompany.js';
+import {createMetorUser} from './createUser.js';
 
 Meteor.methods({
     'users.findByEmail': function (email) {
@@ -61,10 +63,13 @@ Meteor.methods({
         let id = Meteor.userId();
         let coleoUser = ColeoUsers.findOne({userId: id});
         if (!!coleoUser) return "suivi";
-
         let client = Clients.findOne({userId: id});
         if (!!client) return "client";
-
         return 'suivi';
-    }
+    },
+    'companies.create': createCompany,
+    'companies.findByName': (name) => {
+        return Companies.findOne({name:name});
+    },
+    'users.createMeteorUser': createMetorUser
 });
