@@ -1,0 +1,44 @@
+<template name="firstLogin">
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content modal-firstLogin">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Informations</h4>
+                </div>
+
+                <div class="modal-body">
+
+                    {{> firstLoginPageOne}}
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-info understood">Compris</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="firstLoginPageOne">
+    <h3>Commencez par ajouter un projet</h3>
+    <p>Depuis la page de Suivi, ou depuis le menu Gestion.</p>
+    <img src="assets/img/coleo_capture_add_project.png" alt="Capture d'écran" class="img-responsive">
+    <h4>Gérer les projets existants</h4>
+    <p>
+        Depuis la page des Projets, vous pouvez modifier l'état d'un projet.
+    </p>
+
+</template>
+
+<template name="firstLoginPageTwo">
+    <h3>Ajouter des tâches</h3>
+
+    <p>Montrer les raccourcis et le tri au passage</p>
+</template>
+
+<template name="firstLoginPageThree"></template>
+
+<template name="firstLoginPageFour"></template>

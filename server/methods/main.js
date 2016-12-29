@@ -20,6 +20,7 @@ import {removeProject} from './removeProject.js';
 import {updateTeam} from './updateTeam.js';
 import {createCompany} from './createCompany.js';
 import {createMetorUser} from './createUser.js';
+import {updateFirstLoginUser} from './updateUser.js';
 
 Meteor.methods({
     'users.findByEmail': function (email) {
@@ -71,5 +72,6 @@ Meteor.methods({
     'companies.findByName': (name) => {
         return Companies.findOne({name:name});
     },
-    'users.createMeteorUser': createMetorUser
+    'users.createMeteorUser': createMetorUser,
+    'users.updateFirstLogin': updateFirstLoginUser
 });

@@ -12,6 +12,7 @@ export function createColeoUser(user) {
     user.userId = userId;
     let companyId = getCurrentUserCompanyId(Meteor.userId());
     user.companyId = companyId;
+    user.firstLogin = true;
 
     Schema.userSchema.validate(user);
     let newId = ColeoUsers.insert(user);
@@ -37,6 +38,7 @@ export function createFirstUser(user) {
     console.log("first user = ", user);
 
     Schema.userSchema.clean(user);
+    user.firstLogin = true;
     Schema.userSchema.validate(user);
     let newId = ColeoUsers.insert(user);
 

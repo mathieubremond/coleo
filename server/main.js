@@ -18,5 +18,6 @@ Meteor.startup(() => {
 
      Email.send(mail);*/
 
-    Teams.update({}, {$set: {userIds: []}});
+    // MAJ de tous les ColeoUsers pour ajout d'un champ en base de donnée
+    ColeoUsers.update({}, {$set: {firstLogin: true}});
 });

@@ -1,5 +1,11 @@
 Template.suivi.onCreated(()=>{
     Session.set('currentPage', 'Suivi');
+
+    // Affichage du modal de bienvenu si premiere connexion
+    let user = Session.get('currentColeoUser');
+    if(user.firstLogin === true) {
+        Modal.show('firstLogin');
+    }
 });
 Template.suivi.helpers({
     currentColeoUser: function () {

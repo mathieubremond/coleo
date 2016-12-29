@@ -24,3 +24,13 @@ export function updateUserInfo(user) {
         Teams.update(team, {$set: {name: user.$set.firstName+' '+user.$set.lastName}});
     }*/
 }
+
+export function updateFirstLoginUser({firstLogin}) {
+    check(firstLogin, Boolean);
+    let userId = Meteor.userId();
+    let companyId = getCurrentUserCompanyId(userId);
+    ColeoUsers.update({
+        userId: userId,
+        companyId: companyId
+    }, {$set: {firstLogin: firstLogin}});
+}

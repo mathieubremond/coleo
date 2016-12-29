@@ -723,3 +723,7 @@ a:not(.btn):hover, a:not(.btn):focus {
 .accounts-centered-dialog {
     display: none;
 }
+
+.modal-firstLogin h3{
+    margin-top: 0;
+}
