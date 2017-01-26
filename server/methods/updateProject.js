@@ -7,6 +7,8 @@ export function updateProject(project) {
 
     Schema.projectSchema.validate(project);
 
+    console.log("project : ", project);
+
     Projects.update({
         _id: project.id,
         companyId: getCurrentUserCompanyId(Meteor.userId())

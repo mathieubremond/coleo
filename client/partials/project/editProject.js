@@ -9,6 +9,14 @@ Template.editProject.onCreated(function() {
     });
 });
 
+Template.editProject.onRendered(function() {
+    // Initialisation des checkbox
+    $('input[type="checkbox"]').each(function () {
+        let $checkbox = $(this);
+        $checkbox.checkbox();
+    });
+});
+
 Template.editProject.helpers({
     project: () => {
         let id = FlowRouter.getParam('id');
