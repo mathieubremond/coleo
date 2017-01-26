@@ -724,6 +724,11 @@ a:not(.btn):hover, a:not(.btn):focus {
     display: none;
 }
 
-.modal-firstLogin h3{
+#modal-firstLogin h3{
     margin-top: 0;
+}
+@media (min-width: 991px) {
+    #modal-firstLogin {
+        width: 80%;
+    }
 }

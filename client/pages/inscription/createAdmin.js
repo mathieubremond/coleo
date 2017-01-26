@@ -43,7 +43,7 @@ function verifyForm(event) {
     }
 
     if(!checkStringLength([lastName,firstName,password,passwordConfirmation,email])) {
-        showError("Attention : au moins un des chaînes de caractères est trop grande.");
+        showError("Attention : au moins une des chaînes de caractères est trop grande.");
         return;
     }
 
@@ -159,10 +159,10 @@ function validatePasswordConfirmation(password, passwordConfirmation) {
 }
 
 function checkStringLength(str) {
-    let re = /^[ -~]{1,50}$/;
+    //let re = /^[ -~]{1,50}$/;
     let isOk = true;
     str.forEach((item) => {
-         if(!re.test(item)) {
+         if(str.length >= 50) {
              console.log("item ", item, " est trop grand!");
              isOk = false;
          }

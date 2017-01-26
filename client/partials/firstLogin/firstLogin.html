@@ -1,20 +1,19 @@
 <template name="firstLogin">
     <div class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content modal-firstLogin">
+        <div id="modal-firstLogin" class="modal-dialog">
+            <div class="modal-content">
 
                 <div class="modal-header">
-                    <h4 class="modal-title">Informations</h4>
+                    <h4 class="modal-title">Par où commencer ?</h4>
                 </div>
 
                 <div class="modal-body">
-
                     {{> firstLoginPageOne}}
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-                    <button type="button" class="btn btn-info understood">Compris</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Revoir plus tard</button>
+                    <button type="button" class="btn btn-info understood">Compris, je n'ai plus besoin de voir l'aide</button>
                 </div>
 
             </div>
@@ -25,10 +24,25 @@
 <template name="firstLoginPageOne">
     <h3>Commencez par ajouter un projet</h3>
     <p>Depuis la page de Suivi, ou depuis le menu Gestion.</p>
-    <img src="assets/img/coleo_capture_add_project.png" alt="Capture d'écran" class="img-responsive">
-    <h4>Gérer les projets existants</h4>
+    <img src="{{hostname}}/assets/img/coleo_capture_add_project.png" alt="Capture d'écran" class="img-responsive">
+    <h3>Puis une équipe</h3>
+    <p>De la même manière que pour ajouter un projet, l'ajout d'une équipe peut se faire depuis l'onglet Gestion ou directement depuis la page de Suivi.</p>
+    <p>À noter : la création d'un nouvel utilisateur crée automatiquement une équipe dont le seul membre est l'utilisateur tout juste ajouté.</p>
+    <h3>Et une tâche !</h3>
+    <p>En haut de la page, à coté de votre nom, vous pouvez ajouter une tâche.</p>
+    <p>Si vous avez déjà au moins un projet et une équipe sélectionnés, la tâche sera ajoutée à ces derniers. Si ce n'est pas le cas vous serez invité à choisir le projet et l'équipe lors de la création.</p>
+    <h3 style="margin-top:30px;">Les différentes parties de Coleo</h3>
+    <h4>Les pages de Gestion</h4>
     <p>
-        Depuis la page des Projets, vous pouvez modifier l'état d'un projet.
+        Dans l'onglet Gestion, vous pourrez créer, modifier et supprimer des projets, des équipes, ainsi que les utilisateurs.
+    </p>
+    <h4>Les Statistiques</h4>
+    <p>
+        Choisissez les projets et les équipes dont vous voulez voir les statistiques. Vous pouvez également exporter les données vers une feuille de calcul excel.
+    </p>
+    <h4>Les Accès Clients</h4>
+    <p>
+        Donnez l'accès à un ou plusieurs de vos clients aux projets de votre choix. Ils ne pourront que visualiser votre avancement.
     </p>
 
 </template>
