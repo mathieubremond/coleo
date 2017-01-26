@@ -16,11 +16,13 @@ import {createClientUser} from './createUser.js';
 import {updateProject} from './updateProject.js';
 import {getClientUser} from './clients.js';
 import {removeClient} from './clients.js';
+import {updateClient} from './clients.js';
 import {removeProject} from './removeProject.js';
 import {updateTeam} from './updateTeam.js';
 import {createCompany} from './createCompany.js';
 import {createMetorUser} from './createUser.js';
 import {updateFirstLoginUser} from './updateUser.js';
+import {getTaskCreator} from './getTaskCreator.js';
 
 Meteor.methods({
     'users.findByEmail': function (email) {
@@ -54,6 +56,7 @@ Meteor.methods({
     'tasks.create': createTask,
     'tasks.update': updateTask,
     'tasks.remove': removeTask,
+    'tasks.getCreator': getTaskCreator,
     'users.updateInfo': updateUserInfo,
     'users.updateMail': updateUserMail,
     'users.updatePassword': updateUserPassword,
@@ -73,5 +76,6 @@ Meteor.methods({
         return Companies.findOne({name:name});
     },
     'users.createMeteorUser': createMetorUser,
-    'users.updateFirstLogin': updateFirstLoginUser
+    'users.updateFirstLogin': updateFirstLoginUser,
+    'clients.update': updateClient
 });

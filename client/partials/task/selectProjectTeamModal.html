@@ -10,19 +10,21 @@
                 <div class="modal-body">
                     {{#if errorMessage}}
                         <div class="alert alert-danger">
-                            <strong>Attention!</strong>
-                            {{errorMessage}}
+                            <span>
+                                Attention!
+                                {{errorMessage}}
+                            </span>
                         </div>
                     {{/if}}
                     <div class="row">
                         <div class="col-md-6">
                             <div class="card card-plain">
-                                {{> listProjectsSimplified }}
+                                {{> listChoixProjects }}
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="card card-plain">
-                                {{> listTeamsSimplified }}
+                                {{> listChoixTeams }}
                             </div>
                         </div>
                     </div>

@@ -3,12 +3,12 @@ import {getCurrentUserCompanyId} from '../helpers/getCurrentUserCompanyId.js';
 export function updateUserMail(user) {
     Accounts.addEmail(user._id, user.email);
     Accounts.removeEmail(user._id, user.oldEmail);
-    if(user._id == Meteor.userId()) console.log("go home");
+    if(user._id == Meteor.userId()) Meteor.logout();
 }
 
 export function updateUserPassword(user) {
     Accounts.setPassword(user._id, user.password);
-    if(user._id == Meteor.userId()) console.log("go home");
+    if(user._id == Meteor.userId()) Meteor.logout();
 }
 
 export function updateUserInfo(user) {

@@ -50,6 +50,7 @@ function verifyForm(event) {
     // Sauvegarde
 
     checkEmail(email, () => {
+        // Le compte n'existe pas
         createCompany({name: company.name, desc: company.desc}, ({companyId}) => {
             console.log("arg companyId = ", companyId);
             createUser({email: email, password: password, companyId:companyId}, ({userId}) => {
@@ -65,6 +66,11 @@ function verifyForm(event) {
                 });
             });
         });
+    }, () => {
+        // Cas ou le mail est déjà utilisé
+        // On vérifie qu'il ne s'agit pas d'un compte de type 'Client'
+        // Dans ce cas, on pourra créer un compte Coleo classique
+        // TODO Chemin pour création compte Coleo classique si compte Client existe déjà
     });
 }
 
@@ -137,15 +143,16 @@ function validateEmail(email) {
     return re.test(email);
 }
 
-function checkEmail(mail, callback, args) {
+function checkEmail(mail, callback, callbackError) {
     Meteor.call('users.findByEmail', mail, (err, user) => {
         console.log("err = ", err);
         console.log("user = ", user);
         if (!!err || !!user) {
             showError("Erreur : cette adresse mail est déjà utilisée.");
+            callbackError();
             return;
         }
-        callback(args);
+        callback();
     });
 }
 

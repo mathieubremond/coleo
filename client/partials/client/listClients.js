@@ -14,7 +14,7 @@ Template.listClients.helpers({
 
 Template.listClientsRow.events({
     'click .delete-client'(event, template) {
-        Meteor.call('users.removeClient', template.data);
+        Modal.show('deleteClient', this);
     }
 });
 

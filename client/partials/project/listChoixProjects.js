@@ -1,4 +1,4 @@
-Template.listProjects.onCreated(function () {
+Template.listChoixProjects.onCreated(function () {
     let template = Template.instance();
 
     template.searchQuery = new ReactiveVar();
@@ -10,7 +10,7 @@ Template.listProjects.onCreated(function () {
     }
 });
 
-Template.listProjects.onRendered(function () {
+Template.listChoixProjects.onRendered(function () {
     let self = this;
     let template = Template.instance();
 
@@ -26,19 +26,16 @@ Template.listProjects.onRendered(function () {
     });
 });
 
-Template.listProjects.helpers({
+Template.listChoixProjects.helpers({
     projects() {
-        if (!Session.get('currentColeoUser')) return null;
-        let selector = {hide:false,companyId: Session.get('currentColeoUser').companyId};
-
-        // Si jamais on se trouve sur la page de gestion des clients
-        // On propose la recherche dans les projets y compris parmi les projets terminés
-        let context = FlowRouter.current();
-        if(!!context && context.path.substring(0, 13) == '/suivi/client') {
-            selector = {companyId: Session.get('currentColeoUser').companyId};
+        let coleo = Session.get('currentColeoUser');
+        let client = Session.get('currentClientUser');
+        if (!coleo && !client) return null;
+        if(!!coleo) {
+            return Projects.find({companyId: Session.get('currentColeoUser').companyId, hide: false});
+        } else if(!!client) {
+            return Projects.find({companyId: Session.get('currentClientUser').companyId});
         }
-
-        return Projects.find(selector);
     },
     searching() {
         return Template.instance().searching.get();
@@ -58,32 +55,20 @@ Template.listProjects.helpers({
             return "";
         }
     },
-    btnSelected() {
+    liSelected() {
         let arr = Session.get('selectedProjectIds');
         if(Array.isArray(arr) && arr.indexOf(this._id) > -1) {
-            return "btn-fill";
+            return "liSelected";
         } else {
             return "";
         }
     }
 });
 
-Template.listProjects.events({
+Template.listChoixProjects.events({
     'click .projects-item li': projectClickEvent,
     'keyup [name="search"]': searchKeyUpEvent,
-    'click button[name="searchButton"]': searchClickEvent,
-    'click .selectAll': (evt, template) => {
-        let pjtIds = Projects.find({hide:false}).map((item)=>{return item._id;});
-        Session.set('selectedProjectIds', pjtIds);
-    },
-    'click .unselectAll': (evt, template) => {
-        Session.set('selectedProjectIds', []);
-    },
-    'click .cancelSearch': (evt, template) => {
-        template.searchQuery.set('');
-        $('.searchProject').val('');
-        Session.set('selectedProjectIds', []);
-    }
+    'click button[name="searchButton"]': searchClickEvent
 });
 
 function searchKeyUpEvent(event, template) {

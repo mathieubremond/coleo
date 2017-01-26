@@ -2062,7 +2062,7 @@ textarea.form-control {
 }
 
 .card ul.team-members li {
-    padding: 10px 0px;
+    padding: 10px 3px;
 }
 
 .card ul.team-members li:not(:last-child) {

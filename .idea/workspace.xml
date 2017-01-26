@@ -2,10 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcb59464-fbc3-447c-bbba-1008f5e299b3" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/partials/client/deleteClient.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/partials/client/deleteClient.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/partials/client/editClient.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/partials/client/editClient.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/partials/project/listChoixProjects.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/partials/project/listChoixProjects.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/partials/team/listChoixTeams.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/partials/team/listChoixTeams.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/methods/getTaskCreator.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/partials/project/editProject.js" afterPath="$PROJECT_DIR$/client/partials/project/editProject.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/api/schemas/projects.schema.js" afterPath="$PROJECT_DIR$/lib/api/schemas/projects.schema.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/methods/updateProject.js" afterPath="$PROJECT_DIR$/server/methods/updateProject.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/assets/css/coleo.css" afterPath="$PROJECT_DIR$/client/assets/css/coleo.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/assets/css/paper-dashboard.css" afterPath="$PROJECT_DIR$/client/assets/css/paper-dashboard.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/layouts/suiviLayout.html" afterPath="$PROJECT_DIR$/client/layouts/suiviLayout.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/pages/inscription/confirmEmail.html" afterPath="$PROJECT_DIR$/client/pages/inscription/confirmEmail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/pages/inscription/createAdmin.js" afterPath="$PROJECT_DIR$/client/pages/inscription/createAdmin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/partials/client/clients.html" afterPath="$PROJECT_DIR$/client/partials/client/clients.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/partials/client/listClients.html" afterPath="$PROJECT_DIR$/client/partials/client/listClients.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/partials/client/listClients.js" afterPath="$PROJECT_DIR$/client/partials/client/listClients.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/partials/project/listProjects.js" afterPath="$PROJECT_DIR$/client/partials/project/listProjects.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/partials/project/listProjectsSimplified.html" afterPath="$PROJECT_DIR$/client/partials/project/listProjectsSimplified.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/partials/task/editTask.html" afterPath="$PROJECT_DIR$/client/partials/task/editTask.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/partials/task/editTask.js" afterPath="$PROJECT_DIR$/client/partials/task/editTask.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/partials/task/selectProjectTeamModal.html" afterPath="$PROJECT_DIR$/client/partials/task/selectProjectTeamModal.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/partials/task/selectProjectTeamModal.js" afterPath="$PROJECT_DIR$/client/partials/task/selectProjectTeamModal.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/api/schemas/tasks.schema.js" afterPath="$PROJECT_DIR$/lib/api/schemas/tasks.schema.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/routes/authRoutes.js" afterPath="$PROJECT_DIR$/lib/routes/authRoutes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/methods/clients.js" afterPath="$PROJECT_DIR$/server/methods/clients.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/methods/createTask.js" afterPath="$PROJECT_DIR$/server/methods/createTask.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/methods/main.js" afterPath="$PROJECT_DIR$/server/methods/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/methods/updateUser.js" afterPath="$PROJECT_DIR$/server/methods/updateUser.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/publications/clients.list.js" afterPath="$PROJECT_DIR$/server/publications/clients.list.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,44 +53,64 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="editProject.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/partials/project/editProject.html">
+      <file leaf-file-name="createAdmin.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/pages/inscription/createAdmin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-58">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="542">
+              <caret line="154" column="17" lean-forward="false" selection-start-line="154" selection-start-column="17" selection-end-line="154" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editProject.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/partials/project/editProject.js">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/methods/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="13" column="50" lean-forward="false" selection-start-line="13" selection-start-column="50" selection-end-line="13" selection-end-column="50" />
+            <state relative-caret-position="234">
+              <caret line="27" column="4" lean-forward="false" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
               <folding>
-                <element signature="e#0#57#0" expanded="true" />
+                <element signature="e#0#78#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="projects.schema.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/api/schemas/projects.schema.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-              <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>modal-firstLogin</find>
+      <find>public</find>
+      <find>find</find>
+      <find>padding: 10px</find>
+      <find>padding</find>
+      <find>.padding-left</find>
+      <find>padding-left</find>
+      <find>card ul.team-members li</find>
+      <find>team-members li</find>
+      <find>background-color</find>
+      <find>project</find>
+      <find>team</find>
+      <find>listProjectsSimplified</find>
+      <find>listTeamsSimplified</find>
+      <find>alert</find>
+      <find>veuil</find>
+      <find>clients</find>
+      <find>getClientUser</find>
+      <find>client</find>
+      <find>checkEmail</find>
     </findStrings>
+    <replaceStrings>
+      <replace>listChoixProjects</replace>
+      <replace>listChoixTeams</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -72,19 +119,51 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/lib/api/schemas/coleoUsers.schema.js" />
-        <option value="$PROJECT_DIR$/server/methods/main.js" />
         <option value="$PROJECT_DIR$/server/main.js" />
         <option value="$PROJECT_DIR$/server/methods/createUser.js" />
         <option value="$PROJECT_DIR$/client/partials/firstLogin/firstLogin.js" />
-        <option value="$PROJECT_DIR$/server/methods/updateUser.js" />
         <option value="$PROJECT_DIR$/client/pages/suivi/suivi.js" />
-        <option value="$PROJECT_DIR$/client/pages/inscription/createAdmin.js" />
         <option value="$PROJECT_DIR$/lib/account-configuration/index.js" />
         <option value="$PROJECT_DIR$/client/partials/firstLogin/firstLogin.html" />
-        <option value="$PROJECT_DIR$/client/assets/css/coleo.css" />
         <option value="$PROJECT_DIR$/server/methods/updateProject.js" />
-        <option value="$PROJECT_DIR$/lib/api/schemas/projects.schema.js" />
         <option value="$PROJECT_DIR$/client/partials/project/editProject.js" />
+        <option value="$PROJECT_DIR$/lib/api/schemas/projects.schema.js" />
+        <option value="$PROJECT_DIR$/server/methods/createProject.js" />
+        <option value="$PROJECT_DIR$/server/helpers/getCurrentUserCompanyId.js" />
+        <option value="$PROJECT_DIR$/lib/api/schemas/tasks.schema.js" />
+        <option value="$PROJECT_DIR$/server/methods/createTask.js" />
+        <option value="$PROJECT_DIR$/server/methods/getTaskCreator.js" />
+        <option value="$PROJECT_DIR$/lib/api/collections/tasks.js" />
+        <option value="$PROJECT_DIR$/client/main.js" />
+        <option value="$PROJECT_DIR$/client/partials/task/editTask.js" />
+        <option value="$PROJECT_DIR$/client/partials/task/editTask.html" />
+        <option value="$PROJECT_DIR$/client/assets/css/paper-dashboard.css" />
+        <option value="$PROJECT_DIR$/client/partials/project/listProjectsSimplified.html" />
+        <option value="$PROJECT_DIR$/client/partials/project/listChoixProjects.html" />
+        <option value="$PROJECT_DIR$/client/partials/project/listChoixProjects.js" />
+        <option value="$PROJECT_DIR$/client/partials/team/listChoixTeams.html" />
+        <option value="$PROJECT_DIR$/client/partials/team/listChoixTeams.js" />
+        <option value="$PROJECT_DIR$/client/layouts/suiviLayout.html" />
+        <option value="$PROJECT_DIR$/server/methods/updateUser.js" />
+        <option value="$PROJECT_DIR$/client/assets/css/coleo.css" />
+        <option value="$PROJECT_DIR$/client/partials/task/selectProjectTeamModal.js" />
+        <option value="$PROJECT_DIR$/client/partials/task/selectProjectTeamModal.html" />
+        <option value="$PROJECT_DIR$/client/partials/client/clients.html" />
+        <option value="$PROJECT_DIR$/client/pages/inscription/confirmEmail.html" />
+        <option value="$PROJECT_DIR$/lib/account-configuration/mailTemplate.js" />
+        <option value="$PROJECT_DIR$/lib/routes/authRoutes.js" />
+        <option value="$PROJECT_DIR$/client/partials/client/listClients.html" />
+        <option value="$PROJECT_DIR$/server/publications/clients.list.js" />
+        <option value="$PROJECT_DIR$/client/partials/client/editClient.html" />
+        <option value="$PROJECT_DIR$/client/partials/project/listProjects.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/server/methods/main.js" />
+        <option value="$PROJECT_DIR$/client/partials/client/editClient.js" />
+        <option value="$PROJECT_DIR$/client/partials/client/deleteClient.html" />
+        <option value="$PROJECT_DIR$/client/partials/client/listClients.js" />
+        <option value="$PROJECT_DIR$/client/partials/client/deleteClient.js" />
+        <option value="$PROJECT_DIR$/server/methods/clients.js" />
+        <option value="$PROJECT_DIR$/client/pages/inscription/createAdmin.js" />
       </list>
     </option>
   </component>
@@ -159,78 +238,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="methods" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="coleo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="coleo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="coleo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="coleo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="schemas" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="coleo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="coleo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="coleo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="coleo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -249,7 +256,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="partials" />
+              <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -267,11 +274,51 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="partials" />
+              <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="project" />
+              <option name="myItemId" value="inscription" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="coleo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="coleo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="connexion" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="coleo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="coleo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -288,10 +335,13 @@
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="SearchEverywhereHistoryKey" value="index&#9;FILE&#9;file:///Users/mathbre/dev/coleo/lib/account-configuration/index.js&#10;insc&#9;FILE&#9;file:///Users/mathbre/dev/coleo/client/pages/inscription/inscription.js&#10;index.js&#9;FILE&#9;file:///Users/mathbre/dev/coleo/lib/account-configuration/index.js" />
+    <property name="SearchEverywhereHistoryKey" value="listClient.html&#9;FILE&#9;file:///Users/mathbre/dev/coleo/client/partials/client/listClients.html&#10;inscrip&#9;FILE&#9;file:///Users/mathbre/dev/coleo/client/pages/inscription/inscription.html&#10;sty&#9;FILE&#9;file:///Users/mathbre/.meteor/packages/webapp/1.3.12/npm/node_modules/errorhandler/public/style.css&#10;index&#9;FILE&#9;file:///Users/mathbre/dev/coleo/lib/account-configuration/index.js&#10;insc&#9;FILE&#9;file:///Users/mathbre/dev/coleo/client/pages/inscription/inscription.js&#10;index.js&#9;FILE&#9;file:///Users/mathbre/dev/coleo/lib/account-configuration/index.js" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/partials/client" />
+      <recent name="$PROJECT_DIR$/client/partials/team" />
+      <recent name="$PROJECT_DIR$/client/partials/project" />
       <recent name="$PROJECT_DIR$/public/assets/img" />
     </key>
   </component>
@@ -3378,11 +3428,18 @@
       <option name="project" value="LOCAL" />
       <updated>1485421532813</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="[FIX] Edition d'un projet qui causait ce dernier de perdre son boolean d'état">
+      <created>1485422699242</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1485422699242</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9292000" />
+    <option name="totallyTimeSpent" value="27989000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -3415,9 +3472,9 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.9726027" sideWeight="0.50277996" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34246576" sideWeight="0.49722" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46438357" sideWeight="0.49722" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66849315" sideWeight="0.49722" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23907864" sideWeight="0.49452055" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21286735" sideWeight="0.49452055" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2494043" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -3437,388 +3494,436 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="[UP] Maj du message d'accueil lors de la première connexion&#10;[FIX] problème lors de la connexion / inscription" />
-    <option name="LAST_COMMIT_MESSAGE" value="[UP] Maj du message d'accueil lors de la première connexion&#10;[FIX] problème lors de la connexion / inscription" />
+    <MESSAGE value="[FIX] Edition d'un projet qui causait ce dernier de perdre son boolean d'état" />
+    <option name="LAST_COMMIT_MESSAGE" value="[FIX] Edition d'un projet qui causait ce dernier de perdre son boolean d'état" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/api/schemas/coleoUsers.schema.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-406">
-          <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/api/schemas/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="32" column="22" lean-forward="false" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/inscription/confirEmail.js">
+    <entry file="file://$PROJECT_DIR$/client/partials/project/listChoixProjects.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="29">
-          <caret line="1" column="43" lean-forward="false" selection-start-line="1" selection-start-column="43" selection-end-line="1" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/methods/createCompany.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/methods/createUser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="97" column="26" lean-forward="true" selection-start-line="97" selection-start-column="26" selection-end-line="97" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/inscription/confirmEmail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="3" column="90" lean-forward="false" selection-start-line="3" selection-start-column="90" selection-end-line="3" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/notFound/notFound.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="12" column="36" lean-forward="true" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/inscription/createCompany.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1247">
-          <caret line="43" column="6" lean-forward="false" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/methods/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="61" column="4" lean-forward="false" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/connexion/connexion.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/connexion/connexion.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.meteor/packages/gfk_notifications/1.1.4/web.browser/notifications.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="268" column="20" lean-forward="false" selection-start-line="268" selection-start-column="16" selection-end-line="268" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.meteor/packages/accounts-base/1.2.14/web.browser/accounts_client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1477">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/Meteor/lib/Meteor.jar!/tsMeteorStubs/meteor-v1.3.1.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="1656" column="13" lean-forward="false" selection-start-line="1656" selection-start-column="13" selection-end-line="1656" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.meteor/packages/kadira_flow-router/2.12.1/web.browser/client/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="205" column="0" lean-forward="false" selection-start-line="205" selection-start-column="0" selection-end-line="205" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/layouts/suiviLayout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-23">
-          <caret line="79" column="11" lean-forward="true" selection-start-line="79" selection-start-column="11" selection-end-line="79" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/account-configuration/confirmMail.html" />
-    <entry file="file://$PROJECT_DIR$/lib/account-configuration/mailTemplate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/assets/css/coleo.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="723" column="18" lean-forward="false" selection-start-line="723" selection-start-column="18" selection-end-line="723" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/partials/task/addTask.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="56" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/partials/task/listTasks.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="62" column="12" lean-forward="true" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/routes/publicRoutes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="44" column="20" lean-forward="false" selection-start-line="44" selection-start-column="11" selection-end-line="44" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/notifications/logoutPopup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/notifications/logoutPopup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="14" column="83" lean-forward="false" selection-start-line="14" selection-start-column="83" selection-end-line="14" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/api/schemas/companies.schema.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="13" column="20" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/api/schemas/coleoUsers.schema.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="749">
-          <caret line="36" column="26" lean-forward="true" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="20" column="73" lean-forward="false" selection-start-line="20" selection-start-column="73" selection-end-line="20" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/partials/task/addTask.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="796">
-          <caret line="50" column="69" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/methods/updateUser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="899">
-          <caret line="31" column="23" lean-forward="true" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/methods/createUser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="36" column="39" lean-forward="true" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/suivi/suivi.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <caret line="28" column="26" lean-forward="false" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="34" column="17" lean-forward="true" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/inscription/inscription.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/inscription/inscription.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/account-configuration/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/inscription/createAdmin.html">
+    <entry file="file://$PROJECT_DIR$/client/partials/team/listChoixTeams.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
+          <caret line="0" column="30" lean-forward="false" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/inscription/createAdmin.js">
+    <entry file="file://$PROJECT_DIR$/client/partials/team/listChoixTeams.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="159" column="0" lean-forward="true" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/head.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/layouts/mainLayout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="182">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/layouts/suiviLayout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="11" column="69" lean-forward="true" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="69" />
+        <state relative-caret-position="176">
+          <caret line="27" column="73" lean-forward="false" selection-start-line="27" selection-start-column="73" selection-end-line="27" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.meteor/packages/webapp/1.3.12/npm/node_modules/errorhandler/public/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/assets/css/coleo.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="728" column="1" lean-forward="true" selection-start-line="728" selection-start-column="1" selection-end-line="728" selection-end-column="1" />
+        <state relative-caret-position="274">
+          <caret line="591" column="1" lean-forward="true" selection-start-line="591" selection-start-column="1" selection-end-line="591" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/partials/firstLogin/firstLogin.js">
+    <entry file="file://$PROJECT_DIR$/client/partials/task/selectProjectTeamModal.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+        <state relative-caret-position="263">
+          <caret line="13" column="42" lean-forward="true" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/partials/firstLogin/firstLogin.html">
+    <entry file="file://$PROJECT_DIR$/client/partials/task/selectProjectTeamModal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="33" column="31" lean-forward="false" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
-          <folding>
-            <element signature="n#style#0;n#h3#3;n#template#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/methods/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="75" column="4" lean-forward="false" selection-start-line="75" selection-start-column="4" selection-end-line="75" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#78#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/api/schemas/projects.schema.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        <state relative-caret-position="238">
+          <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/methods/updateProject.js">
+    <entry file="file://$PROJECT_DIR$/server/methods/updateUser.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
-          <caret line="9" column="39" lean-forward="true" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/partials/task/editTask.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="52" column="7" lean-forward="true" selection-start-line="49" selection-start-column="4" selection-end-line="52" selection-end-column="7" />
+          <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/partials/project/editProject.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-58">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="29">
+          <caret line="1" column="21" lean-forward="true" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/inscription/confirmEmail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="4" column="61" lean-forward="false" selection-start-line="4" selection-start-column="61" selection-end-line="4" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/inscription/inscription.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/account-configuration/mailTemplate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="18" column="2" lean-forward="false" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
+          <folding>
+            <element signature="n#!!block;n#mailTemplate#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/account-configuration/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/partials/project/editProject.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="13" column="50" lean-forward="false" selection-start-line="13" selection-start-column="50" selection-end-line="13" selection-end-column="50" />
+        <state relative-caret-position="261">
+          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
           <folding>
             <element signature="e#0#57#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/routes/authRoutes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/routes/clientRoutes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/publications/publish.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="45" column="40" lean-forward="false" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/helpers/getCurrentUserCompanyId.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-58">
+          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/partials/client/listClients.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="46" column="16" lean-forward="true" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/publications/clients.list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="13" column="23" lean-forward="false" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/api/collections/projects.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="6" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/api/collections/coleoUsers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/api/collections/clients.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/api/collections/tasks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="8" column="15" lean-forward="true" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/api/schemas/clients.schema.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="754">
+          <caret line="26" column="9" lean-forward="true" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/partials/client/clients.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="899">
+          <caret line="31" column="23" lean-forward="true" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/partials/team/editTeam.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/partials/client/clients.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="33" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/publications/projects.list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/partials/team/editTeam.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="3" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/partials/project/listProjects.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/methods/updateTeam.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="13" column="57" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="13" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/partials/user/updateUser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="68" column="32" lean-forward="true" selection-start-line="68" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/notifications/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="11" column="36" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/partials/client/editClient.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="51" column="93" lean-forward="false" selection-start-line="51" selection-start-column="93" selection-end-line="51" selection-end-column="93" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/partials/client/editClient.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="18" column="44" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="44" />
+          <folding>
+            <element signature="n#div#1;n#div#1;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#template#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/partials/project/listProjectsEdit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/partials/project/listProjectsEdit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="38" column="21" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/partials/client/deleteClient.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/partials/client/deleteClient.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/partials/project/setProjectDone.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/partials/project/setProjectDone.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/partials/client/listClients.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="18" column="3" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/methods/clients.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="9" column="28" lean-forward="false" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/inscription/createAdmin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/inscription/inscription.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/methods/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="27" column="4" lean-forward="false" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#78#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/layouts/suiviClientLayout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pages/inscription/createAdmin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="154" column="17" lean-forward="false" selection-start-line="154" selection-start-column="17" selection-end-line="154" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>

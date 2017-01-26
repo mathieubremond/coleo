@@ -1,6 +1,6 @@
 <template name="clients">
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="card">
                 <div class="content">
                     <div class="row">
@@ -12,23 +12,15 @@
                     </div>
                 </div>
 
-                <div class="content  fixed-height" style="margin-top: 15px">
+                <div class="content" style="margin-top: 15px">
                     <p>Vous pouvez donner accès à vos clients aux projets et équipes de votre choix. Ces derniers utiliseront le compte que vous leur aurez créer pour se connecter à Coleo.</p><br/>
+                    <p>1 - Sélectionner au moins un projet.</p>
+                    <p>2 - Sélectionner au moins une équipe.</p>
+                    <p>3 - Renseigner le nom du client, son adresse mail et un mot de passe.</p>
+                    <p>4 - Le client va recevoir un email l'invitant à se connecter sur Coleo.</p>
                 </div>
             </div>
         </div>
-        <div class="col-md-9">
-            <div class="card">
-                <div class="header">
-                    <h4 class="title">Clients</h4>
-                </div>
-                <div class="content table-responsive table-full-width"  style="max-height: 400px">
-                    {{>listClients}}
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
         <div class="col-md-4">
             <div class="card no-height-constraint">
                 {{> listProjects }}
@@ -39,7 +31,9 @@
                 {{> listTeams }}
             </div>
         </div>
-        <div class="col-md-4">
+    </div>
+    <div class="row">
+        <div class="col-md-3">
             <div class="card">
                 <div class="header">
                     <h4 class="title">Ajouter</h4>
@@ -51,6 +45,16 @@
                     <input type="text" name="signupPassword" placeholder="Mot de passe">
                     <button class="btn btn-primary add-client"
                             style="margin-top: 10px">Ajouter</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">Clients</h4>
+                </div>
+                <div class="content table-responsive table-full-width"  style="max-height: 400px">
+                    {{>listClients}}
                 </div>
             </div>
         </div>

@@ -7,6 +7,7 @@ export function createTask(task) {
 
     Schema.taskSchema.clean(task);
     task.companyId = companyId;
+    task.creatorId = Meteor.userId();
     Schema.taskSchema.validate(task);
     let pjt = Projects.findOne({_id: task.projectId});
     let tm = Teams.findOne({_id: task.teamId});

@@ -58,6 +58,11 @@
                 </div>
 
                 <div class="modal-footer">
+                    <div class="text-modal-footer">
+                        Créé
+                        {{#if creatorName}}par {{creatorName}}{{/if}}
+                        {{#if creationDate}}le {{creationDate}}{{/if}}
+                    </div>
                     <button type="button" class="btn btn-default  " data-dismiss="modal">Annuler</button>
                     <button type="button" class="btn btn-info   btn-add-save">Sauvegarder</button>
                 </div>

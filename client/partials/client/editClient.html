@@ -1,0 +1,52 @@
+<template name="editClient">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="content" >
+                    <p>Les projets et équipes affichés sur cette page sont ceux visibles par le client {{client.name}}.</p>
+                    <p>Cocher les projets et les équipes que vous souhaitez patager avec ce client puis cliquer sur "Sauvegarder" pour que votre modification soit enregistrée.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">{{client.name}}</h4>
+                </div>
+                <div class="content">
+                    <form id="editClientForm" novalidate="novalidate">
+
+                        <div class="form-group" data-required="true">
+                            <label for="clientName" class="control-label">Nom du client</label>
+                            <input type="text" name="name" id="clientName" required="" data-schema-key="name" class="form-control" value="{{client.name}}">
+                            <span class="help-block"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary saveClient">
+                                Sauvegarder
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card no-height-constraint">
+                {{> listProjects }}
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card no-height-constraint">
+                {{> listTeams }}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <a href="/suivi/clients"><i class="ti-arrow-left"></i>  Retour</a>
+        </div>
+    </div>
+</template>

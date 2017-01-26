@@ -5,6 +5,7 @@
         <th>Email</th>
         <th>Projets visibles</th>
         <th>Équipes visibles</th>
+        <th>Éditer</th>
         <th>Supprimer</th>
         </thead>
         <tbody>
@@ -13,6 +14,7 @@
         {{else}}
 
             <tr>
+                <td>...</td>
                 <td>...</td>
                 <td>...</td>
                 <td>...</td>
@@ -40,6 +42,10 @@
             {{/each}}
         </select></td>
         <td>
+            <a href="/suivi/clients/{{userId}}">
+                <i class="ti-pencil-alt edit-client"  data-id="{{_id}}"></i>
+            </a>
+        </td><td>
             <a href="">
                 <i class="ti-trash delete-client"  data-id="{{_id}}"></i>
             </a>

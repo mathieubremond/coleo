@@ -1,0 +1,25 @@
+<template name="listChoixTeams">
+
+    <div class="header">
+        <h4 class="title">Équipes</h4>
+        <p class="category search-wrap"><input type="text" name="search" class="form-control" width="250px"
+                                                                             placeholder="Rechercher (appuyer sur entrée)"></p>
+
+    </div>
+    <div class="content fixed-height">
+        <ul class="list-unstyled team-members">
+            {{#if searching}}
+                {{> loading}}
+            {{else}}
+                {{#each teams}}
+                    <li id="list_team_item_{{_id}}" class="{{selected}} {{liSelected}}" style="cursor:pointer">
+                        {{name}}
+                    </li>
+                {{else}}
+                    <p class="no-results">Aucun résultat.</p>
+                {{/each}}
+            {{/if}}
+        </ul>
+    </div>
+
+</template>

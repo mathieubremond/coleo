@@ -330,7 +330,9 @@ input[name='search']:focus {
 }
 
 .liSelected {
-    background-color: #f4f4f4;
+    /*background-color: #f4f4f4;*/
+    background-color: #e95e37;
+    color: white;
 }
 
 .doneTask {}
@@ -588,6 +590,9 @@ a:not(.btn):hover, a:not(.btn):focus {
 .alert-danger{
     background-color: #EA6037!important;
 }
+.alert-danger strong{
+    background-color: #EA6037!important;
+}
 .alert-danger span {
     color: white!important;
 }
@@ -704,6 +709,26 @@ a:not(.btn):hover, a:not(.btn):focus {
 
 .table-hover tr:hover, .team-members li:hover {
     background-color: #f4f4f4;
+    color: black;
+}
+
+.team-members li {
+   /* -webkit-transition-property: background-color;
+    -webkit-transition-duration: .2s, .1s;
+    -webkit-transition-timing-function: linear;
+
+    -moz-transition-property: background-color;
+    -moz-transition-duration: .2s, .1s;
+    -moz-transition-timing-function: linear;
+
+    transition-property: background-color;
+    transition-duration: .2s, .1s;
+    transition-timing-function: linear;*/
+}
+
+.liSelected:hover {
+    background-color: #e95e37!important;
+    color: white!important;
 }
 
 .add-team-form select {
@@ -731,4 +756,9 @@ a:not(.btn):hover, a:not(.btn):focus {
     #modal-firstLogin {
         width: 80%;
     }
+}
+
+.text-modal-footer {
+    text-align: left;
+    position: absolute;
 }

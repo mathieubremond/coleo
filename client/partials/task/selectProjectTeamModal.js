@@ -14,7 +14,7 @@ Template.selectProjectTeamModal.events({
             }, 600);
             template.errorMessage.set(null);
         } else {
-            template.errorMessage.set("Vous devez sélectionner un projet et une équipe.");
+            template.errorMessage.set("Vous devez sélectionner un projet ET une équipe.");
         }
     }
 });

@@ -11,7 +11,7 @@ export function listClients () {
 
 export function singleClient(id) {
     check(id, String);
-    return Clients.findOne({_id: id, companyId: getCurrentUserCompanyId(id)});
+    return Clients.find({userId: id, companyId: getCurrentUserCompanyId(id)});;
 }
 export function currentClient() {
     return Clients.find({userId: this.userId});
