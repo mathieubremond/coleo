@@ -1,5 +1,5 @@
 Template.logoutPopup.events({
-    'click .btn'() {
+    'click .reconnecter'() {
         FlowRouter.go('connexion');
     }
 });
