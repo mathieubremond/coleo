@@ -111,7 +111,7 @@ function projectClickEvent(event) {
     let selectedIds = Session.get('selectedProjectIds');
     let id = event.currentTarget.id.substr(15);
     let index = selectedIds.indexOf(id);
-    if (index < 0) {
+    if (index < 0 && !!id && id != "") {
         selectedIds.push(id);
     } else if (index > -1) {
         selectedIds.splice(index, 1);

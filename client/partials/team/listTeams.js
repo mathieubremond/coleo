@@ -88,8 +88,8 @@ Template.listTeams.events({
         Session.set('selectedTeamIds', []);
     },
     'click .cancelSearch': (evt, template) => {
-        template.searchQuery.set('');
-        $('.searchTeam').val('');
+        template.searchQuery.set(null);
+        $('.searchTeam').val(null);
         Session.set('selectedTeamIds', []);
     }
 });
@@ -119,7 +119,7 @@ function teamClickEvent(event) {
     let selectedIds = Session.get('selectedTeamIds');
     let id = event.currentTarget.id.substr(15);
     let index = selectedIds.indexOf(id);
-    if (index < 0) {
+    if (index < 0 && !!id && id != "") {
         selectedIds.push(id);
     } else if (index > -1) {
         selectedIds.splice(index, 1);
