@@ -4,6 +4,7 @@ export function listTasks({projectIds, teamIds}) {
     check(projectIds, Array);
     check(teamIds, Array);
 
+
     // On charge le client (peut etre null s'il s'agit d'un user lambda)
     let client = Clients.findOne({userId: this.userId});
 
