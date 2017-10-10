@@ -1,0 +1,7 @@
+{
+  "galaxy.meteor.com": {
+    "env": {
+      "MONGO_URL": "mongodb://coleo:Coleoqsdaz91sjkdvn@@aws-eu-central-1-portal.2.dblayer.com:15987,aws-eu-central-1-portal.1.dblayer.com:15987/coleo?ssl=true"
+    }
+  }
+}
